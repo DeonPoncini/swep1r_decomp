@@ -13,9 +13,9 @@ COMCTL32.DLL
 void __stdcall InitCommonControls(void)
 
 DDRAW.DLL
-undefined DirectDrawCreate()
-undefined DirectDrawEnumerateA()
-undefined DirectInputCreateA()
+HRESULT DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter)
+HRESULT DirectDrawEnumerateA(LPDDENUMCALLBACKA lpCallback, LPVOID lpContext)
+HRESULT WINAPI DirectInputCreateA(HINSTANCE hinst,DWORD dwVersion,LPDIRECTINPUT* lplpDirectInput,LPUNKNOWN punkOuter)
 
 GDI32.DLL
 BOOL __stdcall DeleteObject(HGDIOBJ ho)
