@@ -1,5 +1,13 @@
 #ifndef TYPES_H
 #define TYPES_H
+
+#ifdef __linux__
+#define __cdecl
+#define __fastcall
+#define __stdcall
+#define __thiscall
+#endif
+
 // new types for the compiler
 typedef float float10; // we eventually want a real 10-bit float
 typedef long pointer32; // only used for file headers we don't really care about

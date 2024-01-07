@@ -6,6 +6,15 @@
 #include "global.h"
 #include "main.h"
 
+#ifdef __linux__
+#define size_t size_t_replace
+#include <cstddef>
+#undef size_t_replace
+int main(int argc, char* argv[]) {
+    return WinMain(NULL, NULL, argv[1], 0);
+}
+#endif
+
 /// THIS is WINMAIN
 /// at address 0x004238d0
 //undefined4 FUN_004238d0(undefined4 param_1,undefined4 param_2,
