@@ -5,22 +5,17 @@ CXX = g++
 DECOMPILED_SRC = decompiled
 BUILDDIR = build
 
-.PHONY=all clean dir
+.PHONY=all
 
 EXECUTABLE = swep1r
 SOURCES = $(wildcard $(DECOMPILED_SRC)/*.c)
 OBJECTS = $(patsubst $(DECOMPILED_SRC)/%.c,$(BUILDDIR)/%.o,$(SOURCES))
 
-all: dir $(BUILDDIR)/$(EXECUTABLE)
-
-dir:
-	mkdir -p $(BUILDDIR)
+all: $(BUILDDIR)/$(EXECUTABLE)
 
 $(BUILDDIR)/$(EXECUTABLE): $(OBJECTS)
-	$(CXX) $^ -o $@
+	$(CXX) $(CFLAGS) $^ -o $@
 
-$(OBJECTS): $(BUILDDIR)/%.o : $(DECOMPILED_SRC)/*.c
-	$(CXX) $(FLAGS) $< -o $@
+$(OBJECTS): $(BUILDDIR)/%.o: $(DECOMPILED_SRC)/*.c
+	$(CXX) $(CFLAGS) $< -o $@ -c
 
-clean:
-	rm -f $(BUILDDIR)/*.o $(BUILDDIR)/$(EXECUTABLE)

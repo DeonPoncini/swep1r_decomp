@@ -1,3 +1,8 @@
+// new types for the compiler
+typedef float float10; // we eventually want a real 10-bit float
+typedef long pointer32; // only used for file headers we don't really care about
+typedef long long longlong;
+
 typedef unsigned char   undefined;
 
 typedef pointer32 ImageBaseOffset32;
@@ -14,7 +19,7 @@ typedef unsigned long long    undefined6;
 typedef unsigned long long    undefined7;
 typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
-typedef short    wchar_t;
+
 typedef unsigned short    word;
 #define unkbyte9   unsigned long long
 #define unkbyte10   unsigned long long
@@ -236,7 +241,7 @@ typedef struct _TIME_ZONE_INFORMATION _TIME_ZONE_INFORMATION, *P_TIME_ZONE_INFOR
 
 typedef struct _TIME_ZONE_INFORMATION *LPTIME_ZONE_INFORMATION;
 
-typedef wchar_t WCHAR;
+typedef short WCHAR;
 
 typedef struct _SYSTEMTIME _SYSTEMTIME, *P_SYSTEMTIME;
 

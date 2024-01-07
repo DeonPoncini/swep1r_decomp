@@ -1,7 +1,5 @@
 #include "swep1rcr_text.h"
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 FUN_00401000(undefined4 param_1,uint param_2,int param_3)
@@ -19155,18 +19153,21 @@ undefined4 FUN_004238a0(void)
   }
   return 0;
 }
-
+#endif
 
 /// THIS is WINMAIN
-undefined4 FUN_004238d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
-
+/// at address 0x004238d0
+//undefined4 FUN_004238d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
     /// calling MAIN
-  FUN_0049cd40(param_1,param_2,param_3,param_4,s_Episode_I_Racer_004b7ae0);
-  return 0;
+#if 0
+    FUN_0049cd40(hInstance,hPrevInstance,lpCmdLine,nShowCmd,s_Episode_I_Racer_004b7ae0);
+#endif
+    return 0;
 }
 
-
+#if 0
 // this wasn't automatically dumped - was a label LAB_00423900
 // TODO: replace everywhere that LAB_00423900 is with this function pointer
 // Window_msg_default_handler
@@ -103388,5 +103389,4 @@ undefined4 * FUN_004ab5d0(undefined4 *param_1)
   }
   return param_1;
 }
-
 
