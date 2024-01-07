@@ -19167,6 +19167,65 @@ undefined4 FUN_004238d0(undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
+// this wasn't automatically dumped - was a label LAB_00423900
+// TODO: replace everywhere that LAB_00423900 is with this function pointer
+// Window_msg_default_handler
+int FUN_00423900(undefined4 param_1,uint param_2,uint param_3,int param_4,undefined4 *param_5)
+
+{
+  DAT_0050b5a8 = 0;
+  if (param_2 < 0x1d) {
+    if (param_2 == 0x1c) {
+      FUN_00423aa0(param_1,param_3,param_4);
+      return 0;
+    }
+    if (param_2 == 6) {
+      FUN_00423ac0(param_1,param_3 & 0xffff,param_4,param_3 >> 0x10);
+      return 0;
+    }
+  }
+  else if (param_2 < 0x113) {
+    if (param_2 == 0x112) {
+      if ((param_3 == 0xf100) || (param_3 == 0xf140)) {
+        DAT_0050b5a8 = 1;
+      }
+    }
+    else {
+      switch(param_2) {
+      case 0x100:
+      case 0x104:
+        if ((DAT_004eb1dc == 0) || (DAT_00ea0250 == 0)) {
+          FUN_004080c0(param_3,param_4 >> 0x10 & 0x1ff,1);
+          FUN_00415640(param_3,1);
+        }
+        break;
+      case 0x101:
+      case 0x105:
+        if ((DAT_004eb1dc == 0) || (DAT_00ea0250 == 0)) {
+          FUN_004080c0(param_3,param_4 >> 0x10 & 0x1ff,0);
+          FUN_00415640(param_3,0);
+        }
+        else {
+          FUN_0041be80(param_3);
+        }
+      }
+    }
+  }
+  else {
+    if (param_2 == 0x214) {
+      FUN_00423b90(param_1,param_3,param_4);
+      return 0;
+    }
+    if (param_2 == 0x232) {
+      FUN_00423c80(param_1);
+      return 0;
+    }
+  }
+  if (DAT_0050b5a8 != 0) {
+    *param_5 = 0;
+  }
+  return DAT_0050b5a8;
+}
 
 void FUN_00423aa0(undefined4 param_1,undefined4 param_2)
 
@@ -27047,6 +27106,7 @@ float10 FUN_0042f560(float param_1,float param_2)
 
 
 
+// rdVector_Add2
 void FUN_0042f6e0(float *param_1,float *param_2,float *param_3)
 
 {
@@ -27056,7 +27116,7 @@ void FUN_0042f6e0(float *param_1,float *param_2,float *param_3)
 }
 
 
-
+// rdVector_Scale2
 void FUN_0042f700(float *param_1,float param_2,float *param_3)
 
 {
@@ -27066,7 +27126,7 @@ void FUN_0042f700(float *param_1,float param_2,float *param_3)
 }
 
 
-
+// rdVector_Scale2Add2
 void FUN_0042f720(float *param_1,float *param_2,float param_3,float *param_4)
 
 {
@@ -27076,7 +27136,7 @@ void FUN_0042f720(float *param_1,float *param_2,float param_3,float *param_4)
 }
 
 
-
+// rdVector_Len2 // vector norm
 void FUN_0042f750(float *param_1)
 
 {
@@ -27085,7 +27145,7 @@ void FUN_0042f750(float *param_1)
 }
 
 
-
+// rdVector_Normalize2Acc
 void FUN_0042f780(float *param_1)
 
 {
@@ -27100,7 +27160,7 @@ void FUN_0042f780(float *param_1)
 }
 
 
-
+// rdVector_Copy3
 void FUN_0042f7b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
@@ -27111,7 +27171,7 @@ void FUN_0042f7b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,unde
 }
 
 
-
+// rdVector_Copy3
 void FUN_0042f7d0(undefined4 *param_1,undefined4 *param_2)
 
 {
@@ -27122,7 +27182,7 @@ void FUN_0042f7d0(undefined4 *param_1,undefined4 *param_2)
 }
 
 
-
+// rdVector_AreSame3
 undefined4 FUN_0042f7f0(float *param_1,float *param_2)
 
 {
@@ -27133,7 +27193,7 @@ undefined4 FUN_0042f7f0(float *param_1,float *param_2)
 }
 
 
-
+// rdVector_Add3
 void FUN_0042f830(float *param_1,float *param_2,float *param_3)
 
 {
@@ -27144,7 +27204,7 @@ void FUN_0042f830(float *param_1,float *param_2,float *param_3)
 }
 
 
-
+// rdVector_Sub3
 void FUN_0042f860(float *param_1,float *param_2,float *param_3)
 
 {
@@ -27155,7 +27215,7 @@ void FUN_0042f860(float *param_1,float *param_2,float *param_3)
 }
 
 
-
+// rdVector_Dot3
 float10 FUN_0042f890(float *param_1,float *param_2)
 
 {
@@ -27164,7 +27224,7 @@ float10 FUN_0042f890(float *param_1,float *param_2)
 }
 
 
-
+// rdVector_Len3
 void FUN_0042f8c0(float *param_1)
 
 {
@@ -27173,7 +27233,7 @@ void FUN_0042f8c0(float *param_1)
 }
 
 
-
+// rdVector_DistSquared3
 float10 FUN_0042f910(float *param_1,float *param_2)
 
 {
@@ -27185,7 +27245,7 @@ float10 FUN_0042f910(float *param_1,float *param_2)
 }
 
 
-
+// rdVector_Dist3
 void FUN_0042f950(float *param_1,float *param_2)
 
 {
@@ -27196,7 +27256,7 @@ void FUN_0042f950(float *param_1,float *param_2)
 }
 
 
-
+// rdVector_Normalize3
 void FUN_0042f9b0(float *param_1)
 
 {
@@ -27212,7 +27272,7 @@ void FUN_0042f9b0(float *param_1)
 }
 
 
-
+// rdVector_Cross3
 void FUN_0042f9f0(float *param_1,float *param_2,float *param_3)
 
 {
@@ -27240,7 +27300,7 @@ void FUN_0042f9f0(float *param_1,float *param_2,float *param_3)
 }
 
 
-
+// rdVector_Scale3
 void FUN_0042fa50(float *param_1,float param_2,float *param_3)
 
 {
@@ -27251,7 +27311,7 @@ void FUN_0042fa50(float *param_1,float param_2,float *param_3)
 }
 
 
-
+// rdVector_SCale3Add3
 void FUN_0042fa80(float *param_1,float *param_2,float param_3,float *param_4)
 
 {
@@ -27262,7 +27322,7 @@ void FUN_0042fa80(float *param_1,float *param_2,float param_3,float *param_4)
 }
 
 
-
+// rdVector_Scale3Add3
 void FUN_0042fac0(float *param_1,float param_2,float *param_3,float param_4,float *param_5)
 
 {
@@ -27301,7 +27361,7 @@ void FUN_0042fb40(int param_1,int param_2,undefined4 *param_3)
 }
 
 
-
+// rdMatrix_Multiply44
 void FUN_0042fb70(float *param_1,float *param_2,float *param_3)
 
 {
@@ -27390,7 +27450,7 @@ void FUN_0042fb70(float *param_1,float *param_2,float *param_3)
 }
 
 
-
+// rdMatrix_Multiply44Acc
 void FUN_0042ff80(float *param_1,float *param_2)
 
 {
@@ -71186,7 +71246,7 @@ float10 FUN_00480650(float param_1,float param_2)
 }
 
 
-
+// SQRT3
 float10 FUN_00480670(float param_1)
 
 {
@@ -80766,6 +80826,7 @@ void FUN_0048c6c0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
+// Window_SetHWND
 void FUN_0048c770(undefined4 param_1)
 
 {
@@ -80773,16 +80834,16 @@ void FUN_0048c770(undefined4 param_1)
   return;
 }
 
-
-
+// Window_GetHWND
 undefined4 FUN_0048c780(void)
 
 {
+    // this would be type HWND
   return DAT_0052ee70;
 }
 
 
-
+// Window_SetHINSTANCE
 void FUN_0048c790(undefined4 param_1)
 
 {
@@ -80791,10 +80852,11 @@ void FUN_0048c790(undefined4 param_1)
 }
 
 
-
+// Window_GetHINSTANCE
 undefined4 FUN_0048c7a0(void)
 
 {
+    // type HINSTANCE
   return DAT_0052ee74;
 }
 
@@ -80802,6 +80864,7 @@ undefined4 FUN_0048c7a0(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
+/// Window_SetGUID
 void FUN_0048c7b0(undefined4 *param_1)
 
 {
@@ -80813,10 +80876,11 @@ void FUN_0048c7b0(undefined4 *param_1)
 }
 
 
-
+// Window_GetGUID
 undefined * FUN_0048c7e0(void)
 
 {
+    // this would be a GUID
   return &DAT_0052ee60;
 }
 
@@ -84956,7 +85020,7 @@ void FUN_00492410(int param_1)
 }
 
 
-
+// rdVector_Normalize3Acc
 void FUN_00492440(float *param_1)
 
 {
