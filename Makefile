@@ -1,21 +1,31 @@
-CC = gcc
-CFLAGS = -g -Wall
-CXX = g++
-
-DECOMPILED_SRC = decompiled
-BUILDDIR = build
-
 .PHONY=all
 
+# compiler settings
+CC = gcc
+CFLAGS = -g -Wall -Iinclude -Iplatform
+CXX = g++
+
+# input directories
+BUILD_DIR = build
+GAME_DIR = src
+PLATFORM_DIR = platform
+
+# sources
+GAME_SRC = $(wildcard $(GAME_DIR)/*.c)
+PLATFORM_SRC = $(wildcard $(PLATFORM_DIR)/*.c)
+
+# objects
+GAME_OBJS = $(patsubst $(GAME_DIR)/%.c,$(BUILD_DIR)/%.o,$(GAME_SRC))
+PLATFORM_OBJS = $(patsubst $(PLATFORM_DIR)/%.c,$(BUILD_DIR)/%.o,$(PLATFORM_SRC))
+
 EXECUTABLE = swep1r
-SOURCES = $(wildcard $(DECOMPILED_SRC)/*.c)
-OBJECTS = $(patsubst $(DECOMPILED_SRC)/%.c,$(BUILDDIR)/%.o,$(SOURCES))
+all: $(BUILD_DIR)/$(EXECUTABLE)
 
-all: $(BUILDDIR)/$(EXECUTABLE)
+$(BUILD_DIR)/$(EXECUTABLE): $(GAME_OBJS) $(PLATFORM_OBJS)
+	$(CXX) -o $@ $^ $(CFLAGS)
 
-$(BUILDDIR)/$(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(CFLAGS) $^ -o $@
+$(GAME_OBJS): $(BUILD_DIR)/%.o: $(GAME_DIR)/%.c
+	$(CXX) -c -o $@ $< $(CFLAGS)
 
-$(OBJECTS): $(BUILDDIR)/%.o: $(DECOMPILED_SRC)/*.c
-	$(CXX) $(CFLAGS) $< -o $@ -c
-
+$(PLATFORM_OBJS): $(BUILD_DIR)/%.o: $(PLATFORM_DIR)/%.c
+	$(CXX) -c -o $@ $< $(CFLAGS)
