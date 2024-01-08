@@ -1,4 +1,4 @@
-.PHONY=all
+.PHONY=all clean
 
 # compiler settings
 CC = gcc
@@ -29,3 +29,6 @@ $(GAME_OBJS): $(BUILD_DIR)/%.o: $(GAME_DIR)/%.c
 
 $(PLATFORM_OBJS): $(BUILD_DIR)/%.o: $(PLATFORM_DIR)/%.c
 	$(CC) -c -o $@ $< $(CFLAGS)
+
+clean:
+	rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/$(EXECUTABLE)

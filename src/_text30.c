@@ -3,6 +3,8 @@
 #include "global.h"
 #include "types.h"
 
+#include "kernel32.h"
+
 #if 0
 uint * FUN_0049ed50(uint *param_1,char *param_2)
 
@@ -453,92 +455,6 @@ void FUN_0049f1e0(undefined4 param_1,undefined4 param_2)
   FUN_0049f1a0(param_1,param_2,0x40);
   return;
 }
-
-
-
-void FUN_0049f200(LPVOID param_1)
-
-{
-  LPVOID lpMem;
-  int iVar1;
-  undefined4 local_4;
-
-  lpMem = param_1;
-  if (param_1 != (LPVOID)0x0) {
-    FUN_004a1670(9);
-    iVar1 = FUN_004a3400(lpMem,&local_4,&param_1);
-    if (iVar1 != 0) {
-      FUN_004a3460(local_4,param_1,iVar1);
-      FUN_004a16f0(9);
-      return;
-    }
-    FUN_004a16f0(9);
-    HeapFree(DAT_00ecd604,0,lpMem);
-  }
-  return;
-}
-
-
-
-void FUN_0049f270(undefined4 param_1)
-
-{
-  FUN_0049f290(param_1,DAT_00dfab64);
-  return;
-}
-
-
-
-int FUN_0049f290(uint param_1,int param_2)
-
-{
-  int iVar1;
-
-  if (param_1 < 0xffffffe1) {
-    if (param_1 == 0) {
-      param_1 = 1;
-    }
-    do {
-      if (param_1 < 0xffffffe1) {
-        iVar1 = FUN_0049f2e0(param_1);
-      }
-      else {
-        iVar1 = 0;
-      }
-      if (iVar1 != 0) {
-        return iVar1;
-      }
-      if (param_2 == 0) {
-        return 0;
-      }
-      iVar1 = FUN_004a3950(param_1);
-    } while (iVar1 != 0);
-  }
-  return 0;
-}
-
-
-
-LPVOID FUN_0049f2e0(int param_1)
-
-{
-  LPVOID pvVar1;
-  uint dwBytes;
-
-  dwBytes = param_1 + 0xfU & 0xfffffff0;
-  if (dwBytes <= DAT_004d422c) {
-    FUN_004a1670(9);
-    pvVar1 = (LPVOID)FUN_004a34c0(param_1 + 0xfU >> 4);
-    FUN_004a16f0(9);
-    if (pvVar1 != (LPVOID)0x0) {
-      return pvVar1;
-    }
-  }
-  pvVar1 = HeapAlloc(DAT_00ecd604,0,dwBytes);
-  return pvVar1;
-}
-
-
 
 // Library Function - Single Match
 //  _strncpy
@@ -2967,44 +2883,6 @@ LAB_004a1610:
   *psVar2 = 0;
   FUN_004a1780(param_3);
   return param_1;
-}
-
-
-
-void FUN_004a1640(void)
-
-{
-  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_004d2004);
-  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_004d1ff4);
-  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_004d1fe4);
-  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_004d1fc4);
-  return;
-}
-
-
-
-void FUN_004a1670(int param_1)
-
-{
-  LPCRITICAL_SECTION lpCriticalSection;
-
-  if (*(int *)(&DAT_004d1fc0 + param_1 * 4) == 0) {
-    lpCriticalSection = (LPCRITICAL_SECTION)FUN_0049f270(0x18);
-    if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
-      __amsg_exit(0x11);
-    }
-    FUN_004a1670(0x11);
-    if (*(int *)(&DAT_004d1fc0 + param_1 * 4) == 0) {
-      InitializeCriticalSection(lpCriticalSection);
-      *(LPCRITICAL_SECTION *)(&DAT_004d1fc0 + param_1 * 4) = lpCriticalSection;
-    }
-    else {
-      FUN_0049f200();
-    }
-    FUN_004a16f0(0x11);
-  }
-  EnterCriticalSection(*(LPCRITICAL_SECTION *)(&DAT_004d1fc0 + param_1 * 4));
-  return;
 }
 
 #endif

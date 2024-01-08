@@ -1,7 +1,16 @@
+#include "types.h"
+
+#define _SIZE_T_DEFINED
+#include <stddef.h>
+
 #include "prototype.h"
 #include "constants.h"
 #include "global.h"
-#include "types.h"
+
+#include "gdi.h"
+#include "kernel32.h"
+#include "user32.h"
+#include "winreg.h"
 
 #if 0
 int FUN_00498a60(int *param_1,float *param_2,float *param_3,float *param_4)
@@ -2297,10 +2306,9 @@ void FUN_0049ce90(undefined4 param_1)
   return;
 }
 
+#endif
 
-
-undefined4 FUN_0049cea0(HINSTANCE param_1,undefined4 param_2,LPCSTR param_3)
-
+undefined4 FUN_0049cea0(HINSTANCE hInstance,int nShowCmd,LPCSTR title)
 {
   ATOM AVar1;
   HWND pHVar2;
@@ -2311,16 +2319,16 @@ undefined4 FUN_0049cea0(HINSTANCE param_1,undefined4 param_2,LPCSTR param_3)
   WNDCLASSEXA local_30;
 
   local_30.cbSize = 0x30;
-  local_30.hInstance = param_1;
+  local_30.hInstance = hInstance;
   local_30.lpszClassName = s_wKernelJones3D_004d1aa4;
   local_30.lpszMenuName = (LPCSTR)0x0;
   local_30.lpfnWndProc = FUN_0049cfd0;
   local_30.style = 0;
-  local_30.hIcon = LoadIconA(param_1,s_APPICON_004d1ab4);
+  local_30.hIcon = LoadIconA(hInstance,s_APPICON_004d1ab4);
   if (local_30.hIcon == (HICON)0x0) {
     local_30.hIcon = LoadIconA((HINSTANCE)0x0,(LPCSTR)0x7f00);
   }
-  local_30.hIconSm = LoadIconA(param_1,s_APPICON_004d1ab4);
+  local_30.hIconSm = LoadIconA(hInstance,s_APPICON_004d1ab4);
   if (local_30.hIconSm == (HICON)0x0) {
     local_30.hIconSm = LoadIconA((HINSTANCE)0x0,(LPCSTR)0x7f00);
   }
@@ -2332,17 +2340,20 @@ undefined4 FUN_0049cea0(HINSTANCE param_1,undefined4 param_2,LPCSTR param_3)
   if (AVar1 == 0) {
     return 0;
   }
-  pHVar2 = FindWindowA(s_wKernelJones3D_004d1aa4,param_3);
+  pHVar2 = FindWindowA(s_wKernelJones3D_004d1aa4,title);
   if (pHVar2 != (HWND)0x0) {
+#if 0
+    // exit with some sort of error?
     FUN_0049ea40(0xffffffff);
+#endif
   }
   lpParam = (LPVOID)0x0;
   hMenu = (HMENU)0x0;
   pHVar2 = (HWND)0x0;
   nHeight = GetSystemMetrics(1);
   nWidth = GetSystemMetrics(0);
-  DAT_00dfaa28 = CreateWindowExA(8,s_wKernelJones3D_004d1aa4,param_3,0x90000000,0,0,nWidth,nHeight,
-                                 pHVar2,hMenu,param_1,lpParam);
+  DAT_00dfaa28 = CreateWindowExA(8,s_wKernelJones3D_004d1aa4,title,0x90000000,0,0,nWidth,nHeight,
+                                 pHVar2,hMenu,hInstance,lpParam);
   if (DAT_00dfaa28 == (HWND)0x0) {
     return 0;
   }
@@ -2351,11 +2362,9 @@ undefined4 FUN_0049cea0(HINSTANCE param_1,undefined4 param_2,LPCSTR param_3)
   return 1;
 }
 
-
-
 // WARNING: Removing unreachable block (ram,0x0049d045)
-
-UINT FUN_0049cfd0(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
+// WNDPROC
+LRESULT FUN_0049cfd0(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
 
 {
   LPARAM lParam;
@@ -2367,7 +2376,9 @@ UINT FUN_0049cfd0(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
   wParam = param_3;
   UVar2 = param_2;
   if (param_2 == 2) {
+#if 0
     FUN_004240d0();
+#endif
     PostQuitMessage(0);
     lParam = param_4;
     wParam = param_3;
@@ -2380,7 +2391,7 @@ UINT FUN_0049cfd0(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
   return UVar2;
 }
 
-
+#if 0
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
@@ -2759,16 +2770,17 @@ void FUN_0049ea10(void)
   return;
 }
 
-
+#endif
 
 void FUN_0049ea40(undefined4 param_1)
 
 {
+  // call the exit routine
   FUN_0049ea80(param_1,0,0);
   return;
 }
 
-
+#if 0
 
 // Library Function - Single Match
 //  __exit
@@ -2782,19 +2794,22 @@ void __cdecl __exit(int _Code)
   return;
 }
 
+#endif
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
+// shutting down the game
 void FUN_0049ea80(UINT param_1,int param_2,int param_3)
 
 {
   HANDLE hProcess;
-  code **ppcVar1;
-  code **ppcVar2;
+  code (**ppcVar1)(void);
+  code (**ppcVar2)(void);
   UINT uExitCode;
 
+#if 0
   FUN_0049eb40();
+#endif
   if (DAT_00dfaab4 == 1) {
     uExitCode = param_1;
     hProcess = GetCurrentProcess();
@@ -2803,8 +2818,8 @@ void FUN_0049ea80(UINT param_1,int param_2,int param_3)
   _DAT_00dfaab0 = 1;
   DAT_00dfaaac = (undefined)param_3;
   if (param_2 == 0) {
-    if ((DAT_00ecd618 != (code **)0x0) &&
-       (ppcVar2 = (code **)(DAT_00ecd614 + -4), ppcVar1 = DAT_00ecd618, DAT_00ecd618 <= ppcVar2)) {
+    if ((DAT_00ecd618 != NULL) /*(code **)0x0)*/ &&
+       (ppcVar2 = /*(code **)*/(DAT_00ecd614 + -4), ppcVar1 = DAT_00ecd618, DAT_00ecd618 <= ppcVar2)) {
       do {
         if (*ppcVar2 != (code *)0x0) {
           (**ppcVar2)();
@@ -2813,18 +2828,23 @@ void FUN_0049ea80(UINT param_1,int param_2,int param_3)
         ppcVar2 = ppcVar2 + -1;
       } while (ppcVar1 <= ppcVar2);
     }
+#if 0
     FUN_0049eb60(&DAT_004b2014,&DAT_004b201c);
+#endif
   }
+#if 0
   FUN_0049eb60(&DAT_004b2020,&DAT_004b2024);
+#endif
   if (param_3 != 0) {
+#if 0
     FUN_0049eb50();
+#endif
     return;
   }
   DAT_00dfaab4 = 1;
                     // WARNING: Subroutine does not return
   ExitProcess(param_1);
 }
-
 
 
 void FUN_0049eb40(void)
@@ -2835,6 +2855,7 @@ void FUN_0049eb40(void)
 }
 
 
+#if 0
 
 void FUN_0049eb50(void)
 

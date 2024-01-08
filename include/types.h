@@ -6,6 +6,7 @@
 #define __fastcall
 #define __stdcall
 #define __thiscall
+#define noreturn
 #endif
 
 // new types for the compiler

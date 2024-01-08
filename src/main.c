@@ -15,6 +15,7 @@
 #include "constants.h"
 #include "global.h"
 #include "main.h"
+#include "prototype.h"
 
 #ifdef __linux__
 
@@ -75,7 +76,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 //WPARAM FUN_0049cd40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 //                   undefined4 param_5)
-WPARAM FUN_0049cd40(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd, const char* title)
+WPARAM FUN_0049cd40(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd, LPCSTR title)
 {
   int iVar1;
   int iVar2;
@@ -83,8 +84,8 @@ WPARAM FUN_0049cd40(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
   tagMSG tStack_1c;
 
   _DAT_00dfaa2c = nShowCmd;
-#if 0
   FUN_0049cea0(hInstance,nShowCmd,title);
+#if 0
   FUN_0048c770(DAT_00dfaa28);
   FUN_0048c790(hInstance);
   FUN_0048c7b0(&DAT_004af9b0);
