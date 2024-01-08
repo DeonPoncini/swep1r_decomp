@@ -22,10 +22,10 @@ EXECUTABLE = swep1r
 all: $(BUILD_DIR)/$(EXECUTABLE)
 
 $(BUILD_DIR)/$(EXECUTABLE): $(GAME_OBJS) $(PLATFORM_OBJS)
-	$(CXX) -o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 $(GAME_OBJS): $(BUILD_DIR)/%.o: $(GAME_DIR)/%.c
-	$(CXX) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(PLATFORM_OBJS): $(BUILD_DIR)/%.o: $(PLATFORM_DIR)/%.c
-	$(CXX) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)

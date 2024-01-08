@@ -73,7 +73,7 @@ typedef unsigned short    word;
 #define unkfloat16   long double
 
 #define BADSPACEBASE   void
-#define code   void
+typedef void code;
 
 typedef unsigned short    wchar16;
 typedef struct tagMSG tagMSG, *PtagMSG;

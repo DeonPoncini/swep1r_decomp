@@ -1,3 +1,13 @@
+#define _SIZE_T_DEFINED
+#include "types.h"
+
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdint.h>
+
 #include "commctrl.h"
 #include "user32.h"
 #include "winreg.h"
@@ -7,11 +17,45 @@
 #include "main.h"
 
 #ifdef __linux__
-#define size_t size_t_replace
-#include <cstddef>
-#undef size_t_replace
+
+char* joinstr(char **s, char *sep) {
+    char* joined = NULL; // the final joined string with separator
+    uint64_t lensep = strlen(sep); // length of separator
+    uint64_t sz = 0; // how much is stored
+    int first = 1; // the first term in the list
+
+    while (*s) {
+        uint64_t len = strlen(*s);
+        void *tmp = realloc(joined, sz+len + (first ? 0 : lensep) + 1);
+        if (!tmp) {
+            exit (EXIT_FAILURE);
+        }
+        joined = (char *)tmp; // assign allocated block to join
+        if (!first) {
+            strcpy(joined + sz, sep); // copy the separator
+            sz += lensep; // update stored size
+        }
+        strcpy(joined + sz, *s++); // copy string to be joined
+        first = 0;
+        sz += len;
+    }
+
+    return joined;
+}
+
 int main(int argc, char* argv[]) {
-    return WinMain(NULL, NULL, argv[1], 0);
+    // this is given by the OS, just give it a unique ID
+    // put in a unique value here as a reference
+    HINSTANCE__ hInstance__ = { 0x905a4d };
+    HINSTANCE hInstance = &hInstance__; // take a pointer to this structure
+    HINSTANCE hPrevInstance = NULL; // this is always NULL on Windows
+    // command line arguments are all arguments except the first one
+    // represented as a single string
+    char* sep = " ";
+    LPSTR lpCmdLine = joinstr(&argv[1], sep);
+    printf("Command line: %s\n", lpCmdLine);
+    int nShowCmd = 10; // empirically derived by testing on windows
+    return WinMain(hInstance, hPrevInstance, lpCmdLine, nShowCmd);
 }
 #endif
 
@@ -21,6 +65,8 @@ int main(int argc, char* argv[]) {
 //  undefined4 param_3,undefined4 param_4)
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
+    printf("hInstance: 0x%08x, hPrevInstance: 0x%p, lpCmdLine: %s, nShowCmd: %d\n",
+            hInstance->unused, hPrevInstance, lpCmdLine, nShowCmd);
     /// calling MAIN
     FUN_0049cd40(hInstance,hPrevInstance,lpCmdLine,nShowCmd,s_Episode_I_Racer_004b7ae0);
     return 0;

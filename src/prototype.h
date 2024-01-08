@@ -1,5 +1,6 @@
 #ifndef PROTOTYPE_H
 #define PROTOTYPE_H
+#include <stdbool.h>
 
 #include "types.h"
 
