@@ -1,5 +1,6 @@
 #include "user32.h"
 
+#ifndef _WIN32
 int __cdecl wsprintfA(LPSTR param_1, LPCSTR param_2, ...) {
     return 0;
 }
@@ -106,3 +107,4 @@ BOOL __stdcall GetMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsg
 LRESULT __stdcall DispatchMessageA(MSG * lpMsg) {
     return 0;
 }
+#endif

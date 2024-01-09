@@ -3,8 +3,10 @@
 # compiler settings
 ifeq ($(OS), Windows_NT)
 	CC = i686-w64-mingw32-gcc
+	LDFLAGS = -ladvapi32 -lcomctl32 -lgdi32 -lkernel32 -luser32
 else
 	CC = gcc
+	LDFLAGS =
 endif
 CFLAGS = -m32 -g -Wall -Iinclude -Iplatform
 
@@ -28,7 +30,7 @@ EXECUTABLE = swep1r
 all: $(BUILD_DIR)/$(EXECUTABLE)
 
 $(BUILD_DIR)/$(EXECUTABLE): $(GAME_OBJS) $(PLATFORM_OBJS) $(HEADERS)
-	$(CC) -o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 $(GAME_OBJS): $(BUILD_DIR)/%.o: $(GAME_DIR)/%.c $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)

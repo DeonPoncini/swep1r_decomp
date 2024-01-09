@@ -1,5 +1,6 @@
 #include "gdi.h"
 
+#ifndef _WIN32
 BOOL __stdcall DeleteObject(HGDIOBJ ho) {
     return 0;
 }
@@ -21,3 +22,4 @@ HFONT __stdcall CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrien
 BOOL __stdcall TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     return 0;
 }
+#endif
