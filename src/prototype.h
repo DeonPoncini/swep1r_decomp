@@ -1,9 +1,9 @@
 #ifndef PROTOTYPE_H
 #define PROTOTYPE_H
+#include "types.h"
+
 #include <stdbool.h>
 #include <stddef.h>
-
-#include "types.h"
 
 undefined4 FUN_00401000(undefined4 param_1,uint param_2,int param_3);
 void FUN_00403e10(undefined *param_1);

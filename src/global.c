@@ -1,6 +1,5 @@
 #include "global.h"
 
-#define _SIZE_T_DEFINED
 #include <stddef.h>
 
 _RTL_CRITICAL_SECTION DAT_004d1fc0[192] = {};

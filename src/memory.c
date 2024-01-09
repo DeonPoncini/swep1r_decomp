@@ -1,12 +1,13 @@
-#include "types.h"
-
-#include <stddef.h>
-
 #include "prototype.h"
+
 #include "constants.h"
 #include "global.h"
 
 #include "kernel32.h"
+
+#include "types.h"
+
+#include <stddef.h>
 
 // functions related to allocating memory
 

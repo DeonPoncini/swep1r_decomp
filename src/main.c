@@ -1,19 +1,20 @@
+#include "prototype.h"
+
+#include "constants.h"
+#include "global.h"
+
+#include "commctrl.h"
+#include "user32.h"
+#include "winreg.h"
+
+#include "types.h"
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
-
-#include "commctrl.h"
-#include "user32.h"
-#include "winreg.h"
-
-#include "prototype.h"
-
-#include "constants.h"
-#include "global.h"
-#include "types.h"
 
 WPARAM FUN_0049cd40(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd, LPCSTR title);
 
