@@ -6,8 +6,8 @@
 #define __fastcall
 #define __stdcall
 #define __thiscall
-#define noreturn
 #endif
+#define noreturn
 
 // new types for the compiler
 typedef float float10; // we eventually want a real 10-bit float

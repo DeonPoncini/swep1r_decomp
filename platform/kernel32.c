@@ -1,5 +1,6 @@
 #include "kernel32.h"
 
+#ifndef _WIN32
 HANDLE __stdcall GetStdHandle(DWORD nStdHandle) {
     return 0;
 }
@@ -226,4 +227,4 @@ HANDLE __stdcall CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwS
 LPSTR __stdcall GetCommandLineA(void) {
     return 0;
 }
-
+#endif

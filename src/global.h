@@ -1,10 +1,11 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#include "types.h"
+
 #define _SIZE_T_DEFINED
 #include <stdbool.h>
 #include <stdint.h>
-#include "types.h"
 
 #ifdef __cplusplus
 extern "C"
