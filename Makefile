@@ -17,6 +17,9 @@ PLATFORM_DIR = platform
 GAME_SRC = $(wildcard $(GAME_DIR)/*.c)
 PLATFORM_SRC = $(wildcard $(PLATFORM_DIR)/*.c)
 
+# headers
+HEADERS = $(wildcard include/*h) $(wildcard platform/*h) $(wildcard src/*h)
+
 # objects
 GAME_OBJS = $(patsubst $(GAME_DIR)/%.c,$(BUILD_DIR)/%.o,$(GAME_SRC))
 PLATFORM_OBJS = $(patsubst $(PLATFORM_DIR)/%.c,$(BUILD_DIR)/%.o,$(PLATFORM_SRC))
@@ -24,13 +27,13 @@ PLATFORM_OBJS = $(patsubst $(PLATFORM_DIR)/%.c,$(BUILD_DIR)/%.o,$(PLATFORM_SRC))
 EXECUTABLE = swep1r
 all: $(BUILD_DIR)/$(EXECUTABLE)
 
-$(BUILD_DIR)/$(EXECUTABLE): $(GAME_OBJS) $(PLATFORM_OBJS)
+$(BUILD_DIR)/$(EXECUTABLE): $(GAME_OBJS) $(PLATFORM_OBJS) $(HEADERS)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-$(GAME_OBJS): $(BUILD_DIR)/%.o: $(GAME_DIR)/%.c
+$(GAME_OBJS): $(BUILD_DIR)/%.o: $(GAME_DIR)/%.c $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(PLATFORM_OBJS): $(BUILD_DIR)/%.o: $(PLATFORM_DIR)/%.c
+$(PLATFORM_OBJS): $(BUILD_DIR)/%.o: $(PLATFORM_DIR)/%.c $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
