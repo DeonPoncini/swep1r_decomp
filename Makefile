@@ -6,7 +6,7 @@ ifeq ($(OS), Windows_NT)
 	LDFLAGS = -ladvapi32 -lcomctl32 -lgdi32 -lkernel32 -luser32
 else
 	CC = gcc
-	LDFLAGS =
+	LDFLAGS = -L/usr/lib32/wine/i386-unix/ -l:win32u.so -l:ntdll.so
 endif
 CFLAGS = -m32 -g -Wall -Iinclude -Iplatform
 

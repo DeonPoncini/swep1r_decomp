@@ -38,3 +38,22 @@ pacman -S mingw-w64-i686-gcc
 ```
 Then run make to build. This will only build from inside that shell. The
 application executes normally on a 64-bit windows host.
+
+## Compiling on 64-bit Linux
+
+I used archlinux to build this, so instructions related to that.
+
+Install the 32-bit libraries for gcc:
+```
+sudo pacman -S lib32-gcc-libs
+```
+This requires the pacman multilib repository enabled.
+
+And install the 32-bit version of Wine for the windows libraries:
+```
+git clone https://aur.archlinux.org/wine-git.git
+makepkg
+sudo pacman -U wine-git-<version>.pkg.tar.zst
+```
+This is only available in the Arch User Repository.  There are a lot of
+dependencies, but they are all available in the main multilib repository

@@ -1,5 +1,6 @@
 #include "kernel32.h"
 
+
 #ifndef _WIN32
 HANDLE __stdcall GetStdHandle(DWORD nStdHandle) {
     return 0;
