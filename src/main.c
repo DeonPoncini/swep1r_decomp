@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 /// at address 0x004238d0
 //undefined4 FUN_004238d0(undefined4 param_1,undefined4 param_2,
 //  undefined4 param_3,undefined4 param_4)
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
     printf("hInstance: 0x%08x, hPrevInstance: 0x%p, lpCmdLine: %s, nShowCmd: %d\n",
             hInstance->unused, hPrevInstance, lpCmdLine, nShowCmd);

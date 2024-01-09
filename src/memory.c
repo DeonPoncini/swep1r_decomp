@@ -175,7 +175,7 @@ undefined ** FUN_004a3160(void)
       do {
         bVar1 = 0xf < iVar3;
         iVar3 = iVar3 + 1;
-        *ppuVar4 = (undefined *)((int64_t)(((bVar1 - 1) & 0xf1) - 1));
+        *ppuVar4 = (undefined *)((int)(((bVar1 - 1) & 0xf1) - 1));
         ppuVar4[1] = (undefined *)0xf1;
         ppuVar4 = ppuVar4 + 2;
       } while (iVar3 < 0x400);
@@ -187,7 +187,7 @@ undefined ** FUN_004a3160(void)
       if (lpAddress < (undefined4*)(lpMem[4] + 0x10000)) {
         do {
           lpAddress[1] = 0xf0;
-          *lpAddress = (undefined4)(uint64_t) lpAddress + 2;
+          *lpAddress = (undefined4)(uint) lpAddress + 2;
           *(undefined *)(lpAddress + 0x3e) = 0xff;
           lpAddress = lpAddress + 0x400;
         } while (lpAddress < (undefined4*)(lpMem[4] + 0x10000));
@@ -239,30 +239,30 @@ int * FUN_004a34c0(uint param_1)
   local_4 = (int *)PTR_LOOP_004d4228;
   do {
     if (local_4[4] != -1) {
-      piVar9 = (int *)(int64_t)local_4[2];
-      iVar8 = (int)((int64_t)(piVar9 + (-0x18 - (int64_t)local_4)) >> 3) * 0x1000 + local_4[4];
+      piVar9 = (int *)(int)local_4[2];
+      iVar8 = (int)((int)(piVar9 + (-0x18 - (int)local_4)) >> 3) * 0x1000 + local_4[4];
       for (; piVar9 < local_4 + 0x806; piVar9 = piVar9 + 2) {
         if (((int)param_1 <= *piVar9) && (param_1 < (uint)piVar9[1])) {
-          piVar3 = (int *)(int64_t)FUN_004a3700((int**)(int64_t)iVar8,(int*)(int64_t)*piVar9,(int*)(int64_t)param_1);
+          piVar3 = (int *)(int)FUN_004a3700((int**)(int)iVar8,(int*)(int)*piVar9,(int*)(int)param_1);
           if (piVar3 != (int *)0x0) {
             PTR_LOOP_004d4228 = (undefined *)local_4;
             *piVar9 = *piVar9 - param_1;
-            local_4[2] = (int)(int64_t)piVar9;
+            local_4[2] = (int)piVar9;
             return piVar3;
           }
           piVar9[1] = param_1;
         }
         iVar8 = iVar8 + 0x1000;
       }
-      piVar3 = (int *)(int64_t)local_4[2];
+      piVar3 = (int *)(int)local_4[2];
       iVar8 = local_4[4];
       for (piVar9 = local_4 + 6; piVar9 < piVar3; piVar9 = piVar9 + 2) {
         if (((int)param_1 <= *piVar9) && (param_1 < (uint)piVar9[1])) {
-          piVar4 = (int *)(int64_t)FUN_004a3700((int**)(int64_t)iVar8,(int*)(int64_t)*piVar9,(int*)(int64_t)param_1);
+          piVar4 = (int *)(int)FUN_004a3700((int**)(int)iVar8,(int*)(int)*piVar9,(int*)(int)param_1);
           if (piVar4 != (int *)0x0) {
             PTR_LOOP_004d4228 = (undefined *)local_4;
             *piVar9 = *piVar9 - param_1;
-            local_4[2] = (int)(int64_t)piVar9;
+            local_4[2] = (int)piVar9;
             return piVar4;
           }
           piVar9[1] = param_1;
@@ -270,7 +270,7 @@ int * FUN_004a34c0(uint param_1)
         iVar8 = iVar8 + 0x1000;
       }
     }
-    local_4 = (int *)(int64_t)*local_4;
+    local_4 = (int *)(int)*local_4;
   } while (local_4 != (int *)PTR_LOOP_004d4228);
   ppuVar7 = &PTR_LOOP_004d2208;
   while ((ppuVar7[4] == (undefined *)0xffffffff || (ppuVar7[3] == (undefined *)0x0))) {
@@ -283,7 +283,7 @@ int * FUN_004a34c0(uint param_1)
       piVar9 = *(int **)(puVar5 + 0x10);
       *(char *)(piVar9 + 2) = (char)param_1;
       PTR_LOOP_004d4228 = puVar5;
-      *piVar9 = (int)(int64_t)(piVar9 + param_1 + 8);
+      *piVar9 = (int)(piVar9 + param_1 + 8);
       piVar9[1] = 0xf0 - param_1;
       *(uint *)(puVar5 + 0x18) = *(int *)(puVar5 + 0x18) - (param_1 & 0xff);
       return piVar9 + 0x40;
@@ -291,7 +291,7 @@ int * FUN_004a34c0(uint param_1)
   }
   ppuVar2 = (undefined **)ppuVar7[3];
   puVar5 = *ppuVar2;
-  piVar9 = (int *)(int64_t)(ppuVar7[4] + (((int)(int64_t)ppuVar2 + (-0x18 - (int)(int64_t)ppuVar7)) >> 3) * 0x1000);
+  piVar9 = (int *)(int)(ppuVar7[4] + (((int)ppuVar2 + (-0x18 - (int)ppuVar7)) >> 3) * 0x1000);
   ppuVar6 = ppuVar2;
   for (iVar8 = 0; (puVar5 == (undefined *)0xffffffff && (iVar8 < 0x10)); iVar8 = iVar8 + 1) {
     puVar5 = ppuVar6[2];
@@ -306,7 +306,7 @@ int * FUN_004a34c0(uint param_1)
     piVar3 = piVar9 + 1;
     do {
       *piVar3 = 0xf0;
-      piVar3[-1] = (int)(int64_t)(piVar3 + 1);
+      piVar3[-1] = (int)(piVar3 + 1);
       *(undefined *)(piVar3 + 0x3d) = 0xff;
       *ppuVar6 = (undefined *)0xf0;
       ppuVar6[1] = (undefined *)0xf1;
@@ -325,12 +325,12 @@ int * FUN_004a34c0(uint param_1)
     bVar10 = ppuVar6 < ppuVar1;
   }
   PTR_LOOP_004d4228 = (undefined *)ppuVar7;
-  ppuVar7[3] = (undefined *)(uint64_t)(-(uint)bVar10 & (uint)(uint64_t)ppuVar6);
+  ppuVar7[3] = (undefined *)(uint)(-(uint)bVar10 & (uint)(uint)ppuVar6);
   *(char *)(piVar9 + 2) = (char)param_1;
   ppuVar7[2] = (undefined *)ppuVar2;
   *ppuVar2 = *ppuVar2 + -param_1;
   piVar9[1] = piVar9[1] - param_1;
-  *piVar9 = (int)(int64_t)piVar9 + param_1 + 8;
+  *piVar9 = (int)piVar9 + param_1 + 8;
   return piVar9 + 0x40;
 }
 
@@ -347,16 +347,16 @@ undefined* FUN_004a3400(undefined *param_1,int **param_2,uint *param_3)
       return 0;
     }
   }
-  if (((uint)(uint64_t)param_1 & 0xf) != 0) {
+  if (((uint)(uint)param_1 & 0xf) != 0) {
     return 0;
   }
-  if (((uint)(uint64_t)param_1 & 0xfff) < 0x100) {
+  if (((uint)(uint)param_1 & 0xfff) < 0x100) {
     return 0;
   }
   *param_2 = (int *)ppuVar1;
-  uVar2 = (uint)(uint64_t)param_1 & 0xfffff000;
+  uVar2 = (uint)(uint)param_1 & 0xfffff000;
   *param_3 = uVar2;
-  return (undefined*)(int64_t)((int64_t)(param_1 + (-0x100 - uVar2)) >> 4) + 8 + uVar2;
+  return (undefined*)(int)((int)(param_1 + (-0x100 - uVar2)) >> 4) + 8 + uVar2;
 }
 
 void FUN_004a3460(int* param_1,LPVOID param_2,byte *param_3)
@@ -364,7 +364,7 @@ void FUN_004a3460(int* param_1,LPVOID param_2,byte *param_3)
   int *piVar1;
   int iVar2;
 
-  iVar2 = ((int)(int64_t)param_2 - *(int *)(param_1 + 0x10)) >> 0xc;
+  iVar2 = ((int)param_2 - *(int *)(param_1 + 0x10)) >> 0xc;
   piVar1 = (int *)(param_1 + 0x18 + iVar2 * 8);
   *piVar1 = *(int *)(param_1 + 0x18 + iVar2 * 8) + (uint)*param_3;
   *param_3 = 0;
@@ -393,7 +393,7 @@ void FUN_004a3330(int param_1)
       iVar3 = 0x3ff000;
       do {
         if (*piVar2 == 0xf0) {
-          BVar1 = VirtualFree((LPVOID)(int64_t)(*(int *)(puVar5 + 0x10) + iVar3),0x1000,0x4000);
+          BVar1 = VirtualFree((LPVOID)(int)(*(int *)(puVar5 + 0x10) + iVar3),0x1000,0x4000);
           if (BVar1 != 0) {
             *piVar2 = -1;
             DAT_00dfab60 = DAT_00dfab60 + -1;
@@ -439,75 +439,75 @@ int FUN_004a3700(int **param_1,int *param_2,int *param_3)
 
   ppiVar2 = (int **)*param_1;
   if (param_3 <= param_1[1]) {
-    *(char *)ppiVar2 = (char)(int64_t)param_3;
-    if ((int **)(int64_t)((int)(int64_t)ppiVar2 + (int)(int64_t)param_3) < param_1 + 0x3e) {
-      *param_1 = (int *)(int64_t)((int)(int64_t)*param_1 + (int)(int64_t)param_3);
-      param_1[1] = (int *)(int64_t)((int)(int64_t)param_1[1] - (int)(int64_t)param_3);
+    *(char *)ppiVar2 = (char)(int)param_3;
+    if ((int **)(int)((int)ppiVar2 + (int)param_3) < param_1 + 0x3e) {
+      *param_1 = (int *)(int)((int)*param_1 + (int)param_3);
+      param_1[1] = (int *)(int)((int)param_1[1] - (int)param_3);
     }
     else {
       param_1[1] = (int *)0x0;
       *param_1 = (int *)(param_1 + 2);
     }
-    return (int)(int64_t)(ppiVar2 + 2) * 0x10 + (int)(int64_t)param_1 * -0xf;
+    return (int)(ppiVar2 + 2) * 0x10 + (int)param_1 * -0xf;
   }
-  ppiVar3 = (int **)(int64_t)((int)(int64_t)param_1[1] + (int)(int64_t)ppiVar2);
+  ppiVar3 = (int **)(int)((int)param_1[1] + (int)ppiVar2);
   ppiVar6 = ppiVar2;
   if (*(char *)ppiVar3 != '\0') {
     ppiVar6 = ppiVar3;
   }
-  if ((int **)(int64_t)((int)(int64_t)ppiVar6 + (int)(int64_t)param_3) < param_1 + 0x3e) {
+  if ((int **)(int)((int)ppiVar6 + (int)param_3) < param_1 + 0x3e) {
     do {
       if (*(byte *)ppiVar6 == 0) {
-        ppiVar3 = (int **)(int64_t)((int)(int64_t)ppiVar6 + 1);
+        ppiVar3 = (int **)(int)((int)ppiVar6 + 1);
         piVar5 = (int *)0x1;
-        cVar1 = *(char *)((int64_t)ppiVar6 + 1);
+        cVar1 = *(char *)((int)ppiVar6 + 1);
         while (cVar1 == '\0') {
-          ppiVar3 = (int **)((int64_t)ppiVar3 + 1);
-          piVar5 = (int *)((int64_t)piVar5 + 1);
+          ppiVar3 = (int **)((int)ppiVar3 + 1);
+          piVar5 = (int *)((int)piVar5 + 1);
           cVar1 = *(char *)ppiVar3;
         }
         if (param_3 <= piVar5) {
-          if (param_1 + 0x3e <= (int **)((int64_t)ppiVar6 + (int64_t)param_3)) {
+          if (param_1 + 0x3e <= (int **)((int)ppiVar6 + (int)param_3)) {
             *param_1 = (int *)(param_1 + 2);
             goto LAB_004a384f;
           }
-          *param_1 = (int *)(int **)((int64_t)ppiVar6 + (int64_t)param_3);
-          param_1[1] = (int *)((int64_t)piVar5 - (int64_t)param_3);
+          *param_1 = (int *)(int **)((int)ppiVar6 + (int)param_3);
+          param_1[1] = (int *)((int)piVar5 - (int)param_3);
           goto LAB_004a3856;
         }
         if (ppiVar6 == ppiVar2) {
           param_1[1] = piVar5;
         }
         else {
-          param_2 = (int *)((int64_t)param_2 - (int64_t)piVar5);
+          param_2 = (int *)((int)param_2 - (int)piVar5);
           if (param_2 < param_3) {
             return 0;
           }
         }
       }
       else {
-        ppiVar3 = (int **)((int64_t)ppiVar6 + (uint)*(byte *)ppiVar6);
+        ppiVar3 = (int **)((int)ppiVar6 + (uint)*(byte *)ppiVar6);
       }
       ppiVar6 = ppiVar3;
-    } while ((int **)((int64_t)ppiVar3 + (int64_t)param_3) < param_1 + 0x3e);
+    } while ((int **)((int)ppiVar3 + (int)param_3) < param_1 + 0x3e);
   }
   ppiVar3 = param_1 + 2;
   ppiVar6 = ppiVar3;
   if (ppiVar3 < ppiVar2) {
-    while ((int **)((int64_t)ppiVar6 + (int64_t)param_3) < param_1 + 0x3e) {
+    while ((int **)((int)ppiVar6 + (int)param_3) < param_1 + 0x3e) {
       if (*(byte *)ppiVar6 == 0) {
-        ppiVar4 = (int **)((int64_t)ppiVar6 + 1);
+        ppiVar4 = (int **)((int)ppiVar6 + 1);
         piVar5 = (int *)0x1;
-        cVar1 = *(char *)((int64_t)ppiVar6 + 1);
+        cVar1 = *(char *)((int)ppiVar6 + 1);
         while (cVar1 == '\0') {
-          ppiVar4 = (int **)((int64_t)ppiVar4 + 1);
-          piVar5 = (int *)((int64_t)piVar5 + 1);
+          ppiVar4 = (int **)((int)ppiVar4 + 1);
+          piVar5 = (int *)((int)piVar5 + 1);
           cVar1 = *(char *)ppiVar4;
         }
         if (param_3 <= piVar5) {
-          if ((int **)((int64_t)ppiVar6 + (int64_t)param_3) < param_1 + 0x3e) {
-            *param_1 = (int *)(int **)((int64_t)ppiVar6 + (int64_t)param_3);
-            param_1[1] = (int *)((int64_t)piVar5 - (int64_t)param_3);
+          if ((int **)((int)ppiVar6 + (int)param_3) < param_1 + 0x3e) {
+            *param_1 = (int *)(int **)((int)ppiVar6 + (int)param_3);
+            param_1[1] = (int *)((int)piVar5 - (int)param_3);
           }
           else {
             *param_1 = (int *)ppiVar3;
@@ -515,16 +515,16 @@ LAB_004a384f:
             param_1[1] = (int *)0x0;
           }
 LAB_004a3856:
-          *(char *)ppiVar6 = (char)(int64_t)param_3;
-          return (int)(int64_t)(ppiVar6 + 2) * 0x10 + (int64_t)param_1 * -0xf;
+          *(char *)ppiVar6 = (char)(int)param_3;
+          return (int)(ppiVar6 + 2) * 0x10 + (int)param_1 * -0xf;
         }
-        param_2 = (int *)((int64_t)param_2 - (int64_t)piVar5);
+        param_2 = (int *)((int)param_2 - (int)piVar5);
         if (param_2 < param_3) {
           return 0;
         }
       }
       else {
-        ppiVar4 = (int **)((int64_t)ppiVar6 + (uint)*(byte *)ppiVar6);
+        ppiVar4 = (int **)((int)ppiVar6 + (uint)*(byte *)ppiVar6);
       }
       ppiVar6 = ppiVar4;
       if (ppiVar2 <= ppiVar4) {

@@ -14,3 +14,27 @@ the internals, just get types correct and the executable running.
 This is to assist the main [decompiler effort](https://github.com/tim-tim707/SW_RACER_RE),
 to get more information about the types in the function signatures and the DAT
 variables
+
+## Compiling on 64-bit Windows
+
+This is a 32-bit windows application, so it will need to be cross compiled on
+Windows using the i686-w64-mingw32-gcc variant.
+
+I recommend installing through chocolatey:
+
+```
+choco install mingw
+```
+
+Then launch the mingw32 environment, from the terminal:
+```
+mingw32
+```
+
+In the mingw32 shell, install the required compiler, and make:
+```
+pacman -S make
+pacman -S mingw-w64-i686-gcc
+```
+Then run make to build. This will only build from inside that shell. The
+application executes normally on a 64-bit windows host.

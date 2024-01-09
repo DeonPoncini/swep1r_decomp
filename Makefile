@@ -1,9 +1,12 @@
 .PHONY=all clean
 
 # compiler settings
-CC = gcc
-CFLAGS = -g -Wall -Iinclude -Iplatform
-CXX = g++
+ifeq ($(OS), Windows_NT)
+	CC = i686-w64-mingw32-gcc
+else
+	CC = gcc
+endif
+CFLAGS = -m32 -g -Wall -Iinclude -Iplatform
 
 # input directories
 BUILD_DIR = build

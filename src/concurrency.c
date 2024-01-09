@@ -62,8 +62,8 @@ void FUN_004a16f0(int param_1)
 void FUN_004a1710(LPCRITICAL_SECTION param_1)
 
 {
-  if ((0x4d45f7 < (int64_t)param_1) && ((int64_t)param_1 < 0x4d4859)) {
-    FUN_004a1670(((int64_t)(param_1 - 0x4d45f8) >> 5) + 0x1c);
+  if ((0x4d45f7 < (int)param_1) && ((int)param_1 < 0x4d4859)) {
+    FUN_004a1670(((int)(param_1 - 0x4d45f8) >> 5) + 0x1c);
     return;
   }
   EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x20));
@@ -84,8 +84,8 @@ void FUN_004a1750(int param_1,LPCRITICAL_SECTION param_2)
 
 void FUN_004a1780(LPCRITICAL_SECTION param_1)
 {
-  if ((0x4d45f7 < (int64_t)param_1) && ((int64_t)param_1 < 0x4d4859)) {
-    FUN_004a16f0(((int64_t)(param_1 - 0x4d45f8) >> 5) + 0x1c);
+  if ((0x4d45f7 < (int)param_1) && ((int)param_1 < 0x4d4859)) {
+    FUN_004a16f0(((int)(param_1 - 0x4d45f8) >> 5) + 0x1c);
     return;
   }
   LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x20));

@@ -1994,7 +1994,6 @@ int FUN_004ab3b0(undefined4 param_1,int param_2);
 undefined4 * FUN_004ab430(int *param_1);
 byte * FUN_004ab4a0(byte *param_1,uint param_2);
 undefined4 * FUN_004ab570(char *param_1);
-void RtlUnwind(PVOID TargetFrame,PVOID TargetIp,PEXCEPTION_RECORD ExceptionRecord,PVOID ReturnValue);
 undefined4 * FUN_004ab5d0(undefined4 *param_1);
 
 #endif
