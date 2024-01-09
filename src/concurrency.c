@@ -1,13 +1,12 @@
-#define _SIZE_T_DEFINED
-#include "types.h"
-
 #include <stddef.h>
 
+#include "kernel32.h"
+
 #include "prototype.h"
+
 #include "constants.h"
 #include "global.h"
-
-#include "kernel32.h"
+#include "types.h"
 
 // functions related to critical sections
 

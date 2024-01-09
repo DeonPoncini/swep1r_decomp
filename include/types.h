@@ -734,7 +734,7 @@ typedef LONG LSTATUS;
 
 typedef ACCESS_MASK REGSAM;
 
-typedef uint size_t;
+//typedef uint size_t;
 
 typedef struct IUnknownVtbl IUnknownVtbl, *PIUnknownVtbl;
 

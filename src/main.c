@@ -1,6 +1,3 @@
-#define _SIZE_T_DEFINED
-#include "types.h"
-
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,13 +9,17 @@
 #include "user32.h"
 #include "winreg.h"
 
+#include "prototype.h"
+
 #include "constants.h"
 #include "global.h"
-#include "main.h"
-#include "prototype.h"
+#include "types.h"
+
+WPARAM FUN_0049cd40(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd, LPCSTR title);
 
 #ifdef __linux__
 
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd);
 char* joinstr(char **s, char *sep) {
     char* joined = NULL; // the final joined string with separator
     uint64_t lensep = strlen(sep); // length of separator

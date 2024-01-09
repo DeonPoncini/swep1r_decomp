@@ -1,6 +1,5 @@
 #include "types.h"
 
-#define _SIZE_T_DEFINED
 #include <stddef.h>
 
 #include "prototype.h"

@@ -1,4 +1,3 @@
-#define _SIZE_T_DEFINED
 #include "types.h"
 
 #include <stddef.h>

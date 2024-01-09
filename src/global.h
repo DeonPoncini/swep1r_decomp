@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-#define _SIZE_T_DEFINED
 #include <stdbool.h>
 #include <stdint.h>
 
