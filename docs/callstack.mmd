@@ -1,0 +1,22 @@
+flowchart LR
+  WinMain --> FUN_0049cd40
+  FUN_0049cd40 --> FUN_0049cea0
+  FUN_0049cd40 --> FUN_0048c790
+  FUN_0049cd40 --> FUN_0048c7b0
+  FUN_0049cd40 -- commctrl.h --> InitCommonControls
+  FUN_0049cd40 -- user32.h --> GetSystemMetrics
+  FUN_0049cd40 --> FUN_00423cc0
+  FUN_0049cd40 -- user32.h --> PeekMessageA
+  FUN_0049cd40 -- user32.h --> GetMessageA
+  FUN_0049cd40 -- user32.h --> TranslateMessage
+  FUN_0049cd40 -- user32.h --> DispatchMessageA
+  FUN_0049cea0 -- user32.h --> LoadIconA
+  FUN_0049cea0 -- gdi.h --> GetStockObject
+  FUN_0049cea0 -- user32.h --> RegisterClassExA
+  FUN_0049cea0 -- user32.h --> FindWindowA
+  FUN_0049cea0 -- error --> FUN_0049ea40
+  FUN_0049cea0 -- user32.h --> GetSystemMetrics
+  FUN_0049cea0 -- user32.h --> CreateWindowExA
+  FUN_0049cea0 -- user32.h --> ShowWindow
+  FUN_0049cea0 -- user32.h --> UpdateWindow
+
