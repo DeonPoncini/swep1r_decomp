@@ -601,18 +601,21 @@ void FUN_00408510(void)
   return;
 }
 
-
+#endif
 
 void FUN_00408620(void)
 
 {
   if (DAT_004b4758 == 0) {
-    (**(code **)(*DAT_004d6be0 + 8))(DAT_004d6be0);
+    //(**(code **)(*DAT_004d6be0 + 8))(DAT_004d6be0);
+    // I think this is a function call on a class function
+    // this only really works if this is a pointer to a struct
+    DAT_004d6be0->unk3(DAT_004d6be0);
   }
   return;
 }
 
-
+#if 0
 
 void FUN_00408640(void)
 

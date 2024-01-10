@@ -1967,7 +1967,7 @@ void FUN_0044e290(undefined4 param_1,undefined4 param_2,uint param_3,uint param_
   return;
 }
 
-
+#endif
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
@@ -1996,7 +1996,9 @@ void FUN_0044e320(undefined4 *param_1)
   *(undefined *)((int)param_1 + 7) = 0;
   param_1[2] = 3;
   _DAT_0050c75c = 0;
+#if 0
   FUN_00426910();
+#endif
   param_1[4] = 0x22e01;
   *(undefined *)(param_1 + 3) = 7;
   *(undefined *)((int)param_1 + 0xd) = 3;
@@ -2021,8 +2023,8 @@ void FUN_0044e320(undefined4 *param_1)
       } while (iVar5 != 0);
       iVar6 = iVar6 + 1;
       puVar4 = puVar4 + 1;
-      *(undefined *)((int)puVar1 + iVar6 + iVar3 * 2 + 0xf63) = (&DAT_004bfef2)[(int)param_1];
-      *(undefined *)((int)puVar1 + iVar6 + iVar3 * 2 + 0xf95) = (&DAT_004bfef2)[(int)param_1];
+      *(undefined *)((int)puVar1 + iVar6 + iVar3 * 2 + 0xf63) = (char)(int)(&DAT_004bfef2)[(int)param_1];
+      *(undefined *)((int)puVar1 + iVar6 + iVar3 * 2 + 0xf95) = (char)(int)(&DAT_004bfef2)[(int)param_1];
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     iVar3 = iVar3 + 1;
@@ -2032,15 +2034,19 @@ void FUN_0044e320(undefined4 *param_1)
   iVar3 = 0;
   iVar6 = 4;
   do {
+#if 0
     FUN_0043ea00(1,iVar3);
+#endif
     iVar3 = iVar3 + 1;
     iVar6 = iVar6 + -1;
   } while (iVar6 != 0);
+#if 0
   DAT_00e364a0 = FUN_0044e440(&DAT_00e364a0);
+#endif
   return;
 }
 
-
+#if 0
 
 void FUN_0044e440(int param_1)
 
@@ -2139,7 +2145,7 @@ void FUN_0044e500(int param_1,int param_2)
   return;
 }
 
-
+#endif
 
 void FUN_0044e530(int param_1,int param_2)
 
@@ -2149,7 +2155,7 @@ void FUN_0044e530(int param_1,int param_2)
   undefined4 *puVar3;
 
   puVar2 = (undefined4 *)(&DAT_00e35a60 + param_2 * 0x50);
-  puVar3 = &DAT_00e364b4 + param_1 * 0x14;
+  puVar3 = (unsigned int*)&DAT_00e364b4 + param_1 * 0x14;
   for (iVar1 = 0x14; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
@@ -2157,8 +2163,6 @@ void FUN_0044e530(int param_1,int param_2)
   }
   return;
 }
-
-
 
 void FUN_0044e560(void)
 
@@ -2168,11 +2172,13 @@ void FUN_0044e560(void)
   }
   FUN_0044e530(0,0);
   FUN_00421c90();
+#if 0
   FUN_004219d0(&DAT_00e364b4);
+#endif
   return;
 }
 
-
+#if 0
 
 void FUN_0044e5a0(int param_1,int param_2,undefined4 *param_3)
 

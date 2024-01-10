@@ -11,9 +11,14 @@
 #include "user32.h"
 #include "winreg.h"
 
+void FUN_0049ea40(undefined4 param_1)
+{
+  FUN_0049ea80(param_1,0,0);
+  return;
+}
+
 #if 0
 int FUN_00498a60(int *param_1,float *param_2,float *param_3,float *param_4)
-
 {
   float fVar1;
   float fVar2;
@@ -497,8 +502,9 @@ int FUN_00498a60(int *param_1,float *param_2,float *param_3,float *param_4)
   return local_10;
 }
 
+#endif
 
-
+#if 0
 int FUN_00499840(int *param_1,float *param_2,float *param_3,int param_4)
 
 {
@@ -891,11 +897,10 @@ int FUN_00499840(int *param_1,float *param_2,float *param_3,int param_4)
   }
   return local_c;
 }
+#endif
 
-
-
+#if 0
 int FUN_0049a390(int *param_1,float *param_2,float *param_3,float *param_4,int param_5)
-
 {
   float fVar1;
   float fVar2;
@@ -1542,11 +1547,11 @@ int FUN_0049a390(int *param_1,float *param_2,float *param_3,float *param_4,int p
   }
   return local_18;
 }
+#endif
 
 
-
+#if 0
 int FUN_0049b7d0(int *param_1,float *param_2,float *param_3,float *param_4,int param_5)
-
 {
   float fVar1;
   float fVar2;
@@ -2064,10 +2069,10 @@ int FUN_0049b7d0(int *param_1,float *param_2,float *param_3,float *param_4,int p
   return iVar4;
 }
 
+#endif
 
-
+#if 0
 int FUN_0049c810(int *param_1,int *param_2)
-
 {
   float *pfVar1;
   int iVar2;
@@ -2194,11 +2199,10 @@ LAB_0049c9d8:
   }
   return 0;
 }
+#endif
 
-
-
+#if 0
 void FUN_0049c9f0(int param_1,int *param_2,int param_3)
-
 {
   int *piVar1;
   int *piVar2;
@@ -2341,10 +2345,8 @@ undefined4 FUN_0049cea0(HINSTANCE hInstance,int nShowCmd,LPCSTR title)
   }
   pHVar2 = FindWindowA(s_wKernelJones3D_004d1aa4,title);
   if (pHVar2 != (HWND)0x0) {
-#if 0
     // exit with some sort of error?
     FUN_0049ea40(0xffffffff);
-#endif
   }
   lpParam = (LPVOID)0x0;
   hMenu = (HMENU)0x0;
@@ -2375,9 +2377,7 @@ LRESULT FUN_0049cfd0(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
   wParam = param_3;
   UVar2 = param_2;
   if (param_2 == 2) {
-#if 0
     FUN_004240d0();
-#endif
     PostQuitMessage(0);
     lParam = param_4;
     wParam = param_3;
@@ -2417,7 +2417,6 @@ undefined4 FUN_0049d060(HKEY param_1,LPCSTR param_2)
   }
   return 1;
 }
-
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -2768,19 +2767,9 @@ void FUN_0049ea10(void)
   FUN_0049eb60(&DAT_004b2000,&DAT_004b2004);
   return;
 }
-
 #endif
 
-void FUN_0049ea40(undefined4 param_1)
-
-{
-  // call the exit routine
-  FUN_0049ea80(param_1,0,0);
-  return;
-}
-
 #if 0
-
 // Library Function - Single Match
 //  __exit
 //
@@ -2792,7 +2781,6 @@ void __cdecl __exit(int _Code)
   FUN_0049ea80(_Code,1,0);
   return;
 }
-
 #endif
 
 
@@ -2806,9 +2794,7 @@ void FUN_0049ea80(UINT param_1,int param_2,int param_3)
   code (**ppcVar2)(void);
   UINT uExitCode;
 
-#if 0
   FUN_0049eb40();
-#endif
   if (DAT_00dfaab4 == 1) {
     uExitCode = param_1;
     hProcess = GetCurrentProcess();
@@ -2827,17 +2813,11 @@ void FUN_0049ea80(UINT param_1,int param_2,int param_3)
         ppcVar2 = ppcVar2 + -1;
       } while (ppcVar1 <= ppcVar2);
     }
-#if 0
     FUN_0049eb60(&DAT_004b2014,&DAT_004b201c);
-#endif
   }
-#if 0
   FUN_0049eb60(&DAT_004b2020,&DAT_004b2024);
-#endif
   if (param_3 != 0) {
-#if 0
     FUN_0049eb50();
-#endif
     return;
   }
   DAT_00dfaab4 = 1;
@@ -2846,6 +2826,7 @@ void FUN_0049ea80(UINT param_1,int param_2,int param_3)
 }
 
 
+// enter a critical section
 void FUN_0049eb40(void)
 
 {
@@ -2853,9 +2834,7 @@ void FUN_0049eb40(void)
   return;
 }
 
-
-#if 0
-
+// leave a critical section
 void FUN_0049eb50(void)
 
 {
@@ -2863,48 +2842,22 @@ void FUN_0049eb50(void)
   return;
 }
 
-
-
-void FUN_0049eb60(code **param_1,code **param_2)
+// some sort of stack unwinding?
+void FUN_0049eb60(code (**param_1)(void),code **param_2)
 
 {
-  if (param_1 < param_2) {
+  if ((code **)param_1 < param_2) {
     do {
       if (*param_1 != (code *)0x0) {
         (**param_1)();
       }
       param_1 = param_1 + 1;
-    } while (param_1 < param_2);
+    } while ((code **)param_1 < param_2);
   }
   return;
 }
 
-
-
-undefined4 FUN_0049eb80(undefined *param_1,undefined4 param_2)
-
-{
-  undefined4 uVar1;
-  undefined *local_20;
-  int local_1c;
-  undefined *local_18;
-  undefined4 local_14;
-
-  local_18 = param_1;
-  local_20 = param_1;
-  local_14 = 0x42;
-  local_1c = 0x7fffffff;
-  uVar1 = FUN_004a1920(&local_20,param_2,&stack0x0000000c);
-  local_1c = local_1c + -1;
-  if (-1 < local_1c) {
-    *local_20 = 0;
-    return uVar1;
-  }
-  FUN_004a17f0(0,&local_20);
-  return uVar1;
-}
-
-
+#if 0
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match

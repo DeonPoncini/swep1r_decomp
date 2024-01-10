@@ -55,44 +55,44 @@ LAB_00421c24:
   }
   return iVar4 == 0;
 }
+#endif
 
-
-
+// saving the player information to disk
 bool FUN_00421c90(void)
-
 {
-  int iVar1;
+  bool iVar1;
   int iVar2;
   int iVar3;
   undefined4 local_104;
-  undefined local_100 [256];
+  char local_100 [256];
 
   local_104 = 0x10003;
   iVar1 = FUN_00421d80();
-  if (iVar1 != 0) {
+  if (iVar1 != false) {
     FUN_0044e530(0,0);
     FUN_00421b20(0);
   }
+  // this creates a path to save the player information
   FUN_00484310(s___data_player__004b4f6c);
-  FUN_0049eb80(local_100,&DAT_004b2524,s___data_player__004b4f6c,s_tgfd_dat_004b6d00);
-  iVar1 = FUN_0049f1e0(local_100,&DAT_004b6cfc);
-  if (iVar1 != 0) {
-    iVar2 = FUN_004a0160(&local_104,1,4,iVar1);
-    iVar3 = FUN_004a0160(&DAT_00e364a0,1,0xfd4,iVar1);
-    FUN_0049f0f0(iVar1);
+  // is this sprintf?
+  FUN_0049eb80(local_100,DAT_004b2524,s___data_player__004b4f6c,s_tgfd_dat_004b6d00);
+  // open the file for writing binary
+  LPCRITICAL_SECTION iVarLP = FUN_0049f1e0(local_100,DAT_004b6cfc);
+  if (iVarLP != 0) {
+    iVar2 = FUN_004a0160(&local_104,1,4,iVarLP);
+    iVar3 = FUN_004a0160(&DAT_00e364a0,1,0xfd4,iVarLP);
+    FUN_0049f0f0(iVarLP);
     return iVar3 != 0 && iVar2 != 0;
   }
   return false;
 }
 
-
-
 bool FUN_00421d80(void)
-
 {
   return DAT_00e364b0 == 0;
 }
 
+#if 0
 
 
 undefined4 FUN_00421d90(void)
@@ -1526,17 +1526,19 @@ undefined4 FUN_00423efd(void)
   FUN_00408640(0x5a);
   return 1;
 }
-
+#endif
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
+// called from within the WNDPROC - this handles window messages
 void FUN_004240d0(void)
 
 {
   _DAT_0050b5a0 = 0;
   FUN_00408620();
   FUN_0044e560();
+#if 0
   FUN_00449e50();
   FUN_00412e40();
   FUN_00426910();
@@ -1550,11 +1552,12 @@ void FUN_004240d0(void)
   FUN_0049ce90(0);
   FUN_00421330();
   FUN_00484760();
+#endif
   return;
 }
 
 
-
+#if 0
 void thunk_FUN_00423cb0(void)
 
 {

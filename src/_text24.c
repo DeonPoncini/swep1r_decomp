@@ -3,6 +3,8 @@
 #include "global.h"
 #include "types.h"
 
+#include "kernel32.h"
+
 #if 0
 void FUN_00483fc0(undefined4 param_1)
 
@@ -205,18 +207,17 @@ undefined4 FUN_00484220(int *param_1,undefined4 *param_2)
   param_2[0x42] = local_10c;
   return 1;
 }
-
+#endif
 
 
 void FUN_00484310(LPCSTR param_1)
-
 {
   CreateDirectoryA(param_1,(LPSECURITY_ATTRIBUTES)0x0);
   return;
 }
 
 
-
+#if 0
 BOOL FUN_00484330(LPCSTR param_1)
 
 {

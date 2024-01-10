@@ -387,10 +387,9 @@ void FUN_0049f0e0(undefined4 param_1)
   return;
 }
 
+#endif
 
-
-undefined4 FUN_0049f0f0(int param_1)
-
+undefined4 FUN_0049f0f0(LPCRITICAL_SECTION param_1)
 {
   undefined4 uVar1;
 
@@ -405,9 +404,7 @@ undefined4 FUN_0049f0f0(int param_1)
 }
 
 
-
-undefined4 FUN_0049f130(int param_1)
-
+undefined4 FUN_0049f130(LPCRITICAL_SECTION param_1)
 {
   int iVar1;
   undefined4 uVar2;
@@ -422,7 +419,7 @@ undefined4 FUN_0049f130(int param_1)
       return 0xffffffff;
     }
     if (*(int *)(param_1 + 0x1c) != 0) {
-      FUN_0049f200(*(int *)(param_1 + 0x1c));
+      FUN_0049f200((LPVOID)(param_1 + 0x1c));
       *(undefined4 *)(param_1 + 0x1c) = 0;
     }
   }
@@ -432,30 +429,7 @@ undefined4 FUN_0049f130(int param_1)
 
 
 
-undefined4 FUN_0049f1a0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
-
-{
-  int iVar1;
-  undefined4 uVar2;
-
-  iVar1 = FUN_004a3040();
-  if (iVar1 == 0) {
-    return 0;
-  }
-  uVar2 = FUN_004a2e70(param_1,param_2,param_3,iVar1);
-  FUN_004a1780(iVar1);
-  return uVar2;
-}
-
-
-
-void FUN_0049f1e0(undefined4 param_1,undefined4 param_2)
-
-{
-  FUN_0049f1a0(param_1,param_2,0x40);
-  return;
-}
-
+#if 0
 // Library Function - Single Match
 //  _strncpy
 //
@@ -1500,10 +1474,9 @@ uint FUN_004a0020(undefined4 *param_1,uint param_2,uint param_3,int *param_4)
   } while( true );
 }
 
+#endif
 
-
-undefined4 FUN_004a0160(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
-
+undefined4 FUN_004a0160(undefined4 *param_1,undefined4 param_2,undefined4 param_3,LPCRITICAL_SECTION param_4)
 {
   undefined4 uVar1;
 
@@ -1514,10 +1487,9 @@ undefined4 FUN_004a0160(undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-
-uint FUN_004a01a0(undefined4 *param_1,uint param_2,uint param_3,int *param_4)
-
+uint FUN_004a01a0(undefined4 *param_1,uint param_2,uint param_3, LPCRITICAL_SECTION param_4)
 {
+#if 0
   int *piVar1;
   uint uVar2;
   int iVar3;
@@ -1596,8 +1568,11 @@ LAB_004a02b9:
       return param_3;
     }
   } while( true );
+#endif
+  return 0;
 }
 
+#if 0
 
 
 uint FUN_004a02f0(byte *param_1,byte *param_2)
@@ -1651,11 +1626,11 @@ LAB_004a03bf:
   } while( true );
 }
 
-
+#endif
 
 undefined4 FUN_004a03e0(uint param_1)
-
 {
+#if 0
   undefined4 uVar1;
   undefined4 *puVar2;
 
@@ -1670,10 +1645,11 @@ undefined4 FUN_004a03e0(uint param_1)
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004a3dd0();
   *puVar2 = 0;
+#endif
   return 0xffffffff;
 }
 
-
+#if 0
 
 undefined4 FUN_004a0450(uint param_1)
 
