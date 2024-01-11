@@ -4,6 +4,7 @@
 #include "types.h"
 
 #if 0
+// asset loading entry point?
 void FUN_00412650(void)
 
 {

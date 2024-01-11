@@ -763,7 +763,7 @@ void FUN_00463ff0(undefined4 param_1,undefined4 param_2)
 }
 
 
-
+// load a lot of textures?
 void FUN_00464010(int param_1,int param_2)
 
 {

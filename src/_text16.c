@@ -1635,7 +1635,7 @@ switchD_00458610_caseD_0:
 }
 
 
-
+// texture unpacking??
 void FUN_004586e0(int param_1)
 
 {

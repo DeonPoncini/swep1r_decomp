@@ -1467,6 +1467,7 @@ undefined4 FUN_00423cc0(undefined4 param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
+// some kind of setup function?
 undefined4 FUN_00423efd(void)
 
 {

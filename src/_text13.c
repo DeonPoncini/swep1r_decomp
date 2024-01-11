@@ -131,7 +131,7 @@ void FUN_00446c20(int *param_1,undefined4 param_2)
 }
 
 
-
+// sprite load texture
 undefined2 * FUN_00446ca0(int param_1)
 
 {
