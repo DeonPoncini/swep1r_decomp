@@ -1,0 +1,19 @@
+; FUN_0048bf50
+MOV EDX,dword ptr [ESP + 0x4]
+XOR ECX,ECX
+MOV EAX,0x4aeeb0
+CMP EDX,dword ptr [EAX]
+JL 0x0048bf70
+ADD EAX,0x4
+INC ECX
+CMP EAX,0x4aef30
+JL 0x0048bf5b
+MOV EAX,dword ptr [ESP + 0x4]
+JMP 0x0048bf77
+MOV EAX,dword ptr [ECX*0x4 + 0x4aeeb0]
+CMP EDX,0x7cf
+JLE 0x0048bf88
+PUSH EDX
+CALL 0x0048bf90
+ADD ESP,0x4
+RET

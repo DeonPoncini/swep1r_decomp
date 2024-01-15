@@ -1,0 +1,5 @@
+; FUN_00483ca0
+PUSH 0xdfb1ac
+CALL 0x0044de10
+ADD ESP,0x4
+RET

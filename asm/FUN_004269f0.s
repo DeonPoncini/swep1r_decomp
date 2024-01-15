@@ -1,0 +1,4 @@
+; FUN_004269f0
+MOV AL,byte ptr [ESP + 0x4]
+MOV [0x0050c688],AL
+RET

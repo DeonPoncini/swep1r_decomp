@@ -1,0 +1,246 @@
+; FUN_00488410
+PUSH EBP
+MOV EBP,ESP
+PUSH ECX
+MOV EDX,dword ptr [EBP + 0x8]
+PUSH EBX
+PUSH ESI
+PUSH EDI
+MOV EAX,dword ptr [EDX]
+XOR EDI,EDI
+SUB EAX,EDI
+JZ 0x00488463
+DEC EAX
+JNZ 0x0048865d
+MOV EAX,dword ptr [EDX + 0xcc]
+TEST AL,0x20
+JZ 0x00488443
+TEST EAX,0x200000
+JZ 0x00488443
+XOR EAX,EAX
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV EAX,dword ptr [EBP + 0x10]
+MOV ECX,dword ptr [EBP + 0xc]
+PUSH EAX
+ADD EDX,0x60
+PUSH ECX
+PUSH EDX
+CALL 0x00489bd0
+ADD ESP,0xc
+NEG EAX
+SBB EAX,EAX
+INC EAX
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV EAX,dword ptr [EDX + 0x24]
+CMP EAX,0x8
+JZ 0x004885c0
+CMP EAX,0x10
+JZ 0x00488505
+CMP EAX,0x20
+JNZ 0x0048865d
+MOV ESI,dword ptr [EBP + 0x10]
+CMP ESI,EDI
+JNZ 0x004884af
+MOV EAX,dword ptr [EDX + 0x14]
+MOV ECX,dword ptr [EDX + 0x58]
+SHR EAX,0x2
+MOV dword ptr [EBP + 0x10],EAX
+MOV dword ptr [EBP + 0x8],ECX
+MOV EDI,dword ptr [EBP + 0x8]
+MOV EAX,dword ptr [EBP + 0xc]
+MOV ECX,dword ptr [EBP + 0x10]
+CLD
+STOSD.REP ES:EDI
+MOV EAX,0x1
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV EAX,dword ptr [EDX + 0x1c]
+MOV ECX,dword ptr [ESI]
+IMUL EAX,dword ptr [ESI + 0x4]
+ADD EAX,ECX
+MOV ECX,dword ptr [EDX + 0x58]
+MOV dword ptr [EBP + -0x4],EDI
+LEA EBX,[ECX + EAX*0x4]
+MOV EAX,dword ptr [ESI + 0xc]
+CMP EAX,EDI
+MOV dword ptr [EBP + 0x10],EBX
+JLE 0x0048865d
+MOV EAX,dword ptr [ESI + 0x8]
+MOV dword ptr [EBP + 0x8],EAX
+MOV EDI,dword ptr [EBP + 0x10]
+MOV EAX,dword ptr [EBP + 0xc]
+MOV ECX,dword ptr [EBP + 0x8]
+CLD
+STOSD.REP ES:EDI
+MOV EAX,dword ptr [EDX + 0x18]
+MOV ECX,dword ptr [ESI + 0xc]
+ADD EBX,EAX
+MOV EAX,dword ptr [EBP + -0x4]
+INC EAX
+MOV dword ptr [EBP + 0x10],EBX
+CMP EAX,ECX
+MOV dword ptr [EBP + -0x4],EAX
+JL 0x004884d1
+MOV EAX,0x1
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV ESI,dword ptr [EBP + 0x10]
+CMP ESI,EDI
+JNZ 0x0048854e
+MOV ECX,dword ptr [EDX + 0x14]
+MOV EDX,dword ptr [EDX + 0x58]
+SHR ECX,0x1
+MOV dword ptr [EBP + 0x10],ECX
+MOV dword ptr [EBP + 0x8],EDX
+MOV EDI,dword ptr [EBP + 0x8]
+MOV ECX,dword ptr [EBP + 0x10]
+TEST ECX,0x1
+JNZ 0x0048853a
+MOV AX,word ptr [EBP + 0xc]
+SHL EAX,0x10
+MOV AX,word ptr [EBP + 0xc]
+SHR ECX,0x1
+CLD
+STOSD.REP ES:EDI
+JMP 0x00488542
+MOV AX,word ptr [EBP + 0xc]
+CLD
+STOSW.REP ES:EDI
+MOV EAX,0x1
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV EAX,dword ptr [EDX + 0x1c]
+MOV ECX,dword ptr [ESI]
+IMUL EAX,dword ptr [ESI + 0x4]
+ADD EAX,ECX
+MOV ECX,dword ptr [EDX + 0x58]
+MOV dword ptr [EBP + -0x4],EDI
+LEA EBX,[ECX + EAX*0x2]
+MOV EAX,dword ptr [ESI + 0xc]
+CMP EAX,EDI
+MOV dword ptr [EBP + 0x10],EBX
+JLE 0x0048865d
+MOV EAX,dword ptr [ESI + 0x8]
+MOV dword ptr [EBP + 0x8],EAX
+MOV EDI,dword ptr [EBP + 0x10]
+MOV ECX,dword ptr [EBP + 0x8]
+TEST ECX,0x1
+JNZ 0x00488596
+MOV AX,word ptr [EBP + 0xc]
+SHL EAX,0x10
+MOV AX,word ptr [EBP + 0xc]
+SHR ECX,0x1
+CLD
+STOSD.REP ES:EDI
+JMP 0x0048859e
+MOV AX,word ptr [EBP + 0xc]
+CLD
+STOSW.REP ES:EDI
+MOV EAX,dword ptr [EDX + 0x18]
+MOV ECX,dword ptr [ESI + 0xc]
+ADD EBX,EAX
+MOV EAX,dword ptr [EBP + -0x4]
+INC EAX
+MOV dword ptr [EBP + 0x10],EBX
+CMP EAX,ECX
+MOV dword ptr [EBP + -0x4],EAX
+JL 0x00488570
+MOV EAX,0x1
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV ECX,dword ptr [EBP + 0x10]
+CMP ECX,EDI
+JNZ 0x004885fb
+MOV EAX,dword ptr [EBP + 0xc]
+MOV ECX,dword ptr [EDX + 0x14]
+MOV EDI,dword ptr [EDX + 0x58]
+AND EAX,0xff
+MOV BL,AL
+MOV EDX,ECX
+MOV BH,BL
+MOV EAX,EBX
+SHL EAX,0x10
+MOV AX,BX
+SHR ECX,0x2
+STOSD.REP ES:EDI
+MOV ECX,EDX
+AND ECX,0x3
+STOSB.REP ES:EDI
+MOV EAX,0x1
+POP EDI
+POP ESI
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET
+MOV ESI,dword ptr [EDX + 0x1c]
+MOV EBX,dword ptr [EDX + 0x58]
+IMUL ESI,dword ptr [ECX + 0x4]
+MOV EDX,dword ptr [ECX]
+MOV EAX,dword ptr [ECX + 0xc]
+ADD ESI,EBX
+MOV dword ptr [EBP + -0x4],EDI
+ADD ESI,EDX
+CMP EAX,EDI
+JLE 0x0048865d
+MOV EAX,dword ptr [EBP + 0xc]
+AND EAX,0xff
+MOV dword ptr [EBP + 0xc],EAX
+JMP 0x00488625
+MOV EAX,dword ptr [EBP + 0xc]
+MOV ECX,dword ptr [ECX + 0x8]
+MOV BL,AL
+MOV BH,BL
+MOV EDX,ECX
+MOV EAX,EBX
+MOV EDI,ESI
+SHL EAX,0x10
+MOV AX,BX
+SHR ECX,0x2
+STOSD.REP ES:EDI
+MOV ECX,EDX
+AND ECX,0x3
+STOSB.REP ES:EDI
+MOV EAX,dword ptr [EBP + 0x8]
+MOV ECX,dword ptr [EBP + 0x10]
+MOV EBX,dword ptr [EAX + 0x18]
+MOV EAX,dword ptr [EBP + -0x4]
+MOV EDX,dword ptr [ECX + 0xc]
+ADD ESI,EBX
+INC EAX
+CMP EAX,EDX
+MOV dword ptr [EBP + -0x4],EAX
+JL 0x00488622
+POP EDI
+POP ESI
+MOV EAX,0x1
+POP EBX
+MOV ESP,EBP
+POP EBP
+RET

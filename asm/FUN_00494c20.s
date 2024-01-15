@@ -1,0 +1,24 @@
+; FUN_00494c20
+MOV ECX,dword ptr [ESP + 0x4]
+MOV EDX,dword ptr [ESP + 0x8]
+PUSH ESI
+XOR EAX,EAX
+CMP EDX,dword ptr [ECX + 0x10]
+JGE 0x00494c37
+MOV EAX,0x1
+JMP 0x00494c41
+CMP EDX,dword ptr [ECX + 0x18]
+JLE 0x00494c41
+MOV EAX,0x10
+MOV EDX,dword ptr [ESP + 0x10]
+MOV ESI,dword ptr [ECX + 0x14]
+CMP EDX,ESI
+JGE 0x00494c51
+OR AH,0x10
+POP ESI
+RET
+CMP EDX,dword ptr [ECX + 0x1c]
+JLE 0x00494c59
+OR AH,0x1
+POP ESI
+RET

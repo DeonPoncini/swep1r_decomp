@@ -1,0 +1,8 @@
+; FUN_0048d160
+MOV EAX,dword ptr [ESP + 0x4]
+MOV [0x0052ee7c],AX
+PUSH EAX
+MOV EAX,[0x0052ee78]
+PUSH EAX
+CALL dword ptr [0x004ac074]
+RET

@@ -1,0 +1,131 @@
+; FUN_0047eb60
+SUB ESP,0x40
+LEA EAX,[ESP]
+PUSH EBX
+MOV EBX,dword ptr [ESP + 0x48]
+PUSH EBP
+PUSH ESI
+PUSH EDI
+PUSH EAX
+PUSH EBX
+XOR EBP,EBP
+CALL 0x0044ed80
+MOV ESI,dword ptr [ESP + 0x60]
+ADD ESP,0x8
+FLD dword ptr [ESP + 0x28]
+FLD dword ptr [ESP + 0x24]
+FLD dword ptr [ESP + 0x40]
+FLD dword ptr [ESP + 0x44]
+FXCH ST3
+FMUL dword ptr [ESI + 0x8]
+FLD dword ptr [ESP + 0x20]
+FXCH ST3
+FMUL dword ptr [ESI + 0x4]
+MOV EDI,0x1
+FADDP
+FXCH
+FMUL dword ptr [ESP + 0x20]
+FLD dword ptr [ESP + 0x48]
+FXCH ST3
+FMUL dword ptr [ESI]
+FADDP ST2,ST0
+FXCH ST3
+FMUL dword ptr [ESP + 0x24]
+FADDP ST3,ST0
+FXCH
+FMUL dword ptr [ESP + 0x28]
+FADDP ST2,ST0
+FXCH
+FCOMPP
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0047ec05
+FLD dword ptr [EBX + 0x8]
+FSUB dword ptr [0x004adf50]
+MOV ECX,dword ptr [EBX + 0x8]
+LEA EDX,[ESP + 0x10]
+PUSH EDX
+PUSH EBX
+MOV dword ptr [ESP + 0x5c],ECX
+FSTP dword ptr [EBX + 0x8]
+CALL 0x0044ed80
+FLD dword ptr [ESP + 0x5c]
+FCOMP dword ptr [EBX + 0x8]
+ADD ESP,0x8
+FNSTSW AX
+TEST AH,0x40
+JNZ 0x0047ec00
+XOR EDI,EDI
+MOV EBP,0x1
+TEST EDI,EDI
+JZ 0x0047eb7f
+TEST EBP,EBP
+JNZ 0x0047ecd2
+FLD dword ptr [EBX + 0x8]
+FSUB dword ptr [0x004adf54]
+LEA EAX,[ESP + 0x10]
+PUSH EAX
+PUSH EBX
+FSTP dword ptr [EBX + 0x8]
+CALL 0x0044ed80
+ADD ESP,0x8
+FLD dword ptr [ESP + 0x28]
+FLD dword ptr [ESP + 0x24]
+FLD dword ptr [ESP + 0x40]
+FLD dword ptr [ESP + 0x44]
+FXCH ST3
+FMUL dword ptr [ESI + 0x8]
+FLD dword ptr [ESP + 0x20]
+FXCH ST3
+FMUL dword ptr [ESI + 0x4]
+MOV EDI,0x1
+FADDP
+FXCH
+FMUL dword ptr [ESP + 0x20]
+FLD dword ptr [ESP + 0x48]
+FXCH ST3
+FMUL dword ptr [ESI]
+FADDP ST2,ST0
+FXCH ST3
+FMUL dword ptr [ESP + 0x24]
+FADDP ST3,ST0
+FXCH
+FMUL dword ptr [ESP + 0x28]
+FADDP ST2,ST0
+FXCH
+FCOMPP
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0047ecb0
+FLD dword ptr [EBX + 0x8]
+FSUB dword ptr [0x004adf54]
+MOV ECX,dword ptr [EBX + 0x8]
+LEA EDX,[ESP + 0x10]
+PUSH EDX
+PUSH EBX
+MOV dword ptr [ESP + 0x5c],ECX
+FSTP dword ptr [EBX + 0x8]
+CALL 0x0044ed80
+FLD dword ptr [ESP + 0x5c]
+FCOMP dword ptr [EBX + 0x8]
+ADD ESP,0x8
+FNSTSW AX
+TEST AH,0x40
+JNZ 0x0047ecb0
+XOR EDI,EDI
+TEST EDI,EDI
+JZ 0x0047ec2f
+FLD dword ptr [EBX + 0x8]
+FSUB dword ptr [0x004adf50]
+LEA EAX,[ESP + 0x10]
+PUSH EAX
+PUSH EBX
+FSTP dword ptr [EBX + 0x8]
+CALL 0x0044ed80
+ADD ESP,0x8
+POP EDI
+POP ESI
+POP EBP
+POP EBX
+ADD ESP,0x40
+RET

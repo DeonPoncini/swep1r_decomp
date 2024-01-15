@@ -1,0 +1,33 @@
+; FUN_00465cb0
+PUSH EBX
+MOV EBX,dword ptr [ESP + 0x8]
+PUSH ESI
+PUSH EDI
+MOV EAX,dword ptr [EBX + 0x2c]
+LEA ESI,[EBX + 0x34]
+XOR EDI,EDI
+CMP EAX,EDI
+MOV dword ptr [ESI],EAX
+MOV dword ptr [ESI + 0x4],EDI
+MOV dword ptr [ESI + 0x8],EDI
+MOV dword ptr [ESI + 0xc],EDI
+MOV dword ptr [ESI + 0x20],EDI
+MOV dword ptr [ESI + 0x24],EDI
+MOV dword ptr [ESI + 0x28],EDI
+MOV dword ptr [ESI + 0x2c],EDI
+JZ 0x00465ce4
+PUSH EDI
+PUSH ESI
+CALL 0x0044eef0
+ADD ESP,0x8
+ADD EBX,0x64
+PUSH EDI
+PUSH EBX
+PUSH ESI
+CALL 0x0044eeb0
+ADD ESP,0xc
+MOV dword ptr [ESI + 0x4],0x3fe66666
+POP EDI
+POP ESI
+POP EBX
+RET

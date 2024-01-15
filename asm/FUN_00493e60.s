@@ -1,0 +1,6 @@
+; FUN_00493e60
+MOV EAX,[0x00df7fd4]
+TEST EAX,EAX
+JZ 0x00493e73
+MOV dword ptr [0x00df7fd4],0x0
+RET

@@ -1,0 +1,11 @@
+; FUN_00414b60
+MOV EAX,dword ptr [ESP + 0xc]
+MOV ECX,dword ptr [ESP + 0x8]
+MOV EDX,dword ptr [ESP + 0x4]
+PUSH EAX
+PUSH ECX
+PUSH 0xb
+PUSH EDX
+CALL 0x004151a0
+ADD ESP,0x10
+RET

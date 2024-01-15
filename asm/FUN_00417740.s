@@ -1,0 +1,39 @@
+; FUN_00417740
+SUB ESP,0x8
+PUSH EBX
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x1c]
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0x1c]
+MOV EAX,dword ptr [ESI*0x4 + 0xe99720]
+PUSH EAX
+PUSH EDI
+CALL 0x0042de30
+MOV ECX,dword ptr [ESI*0x4 + 0xe99720]
+ADD ESP,0x8
+MOV EBX,EAX
+PUSH ECX
+PUSH EDI
+CALL 0x0042df70
+ADD EAX,0x5
+XOR ESI,ESI
+IMUL EAX,EBX
+SHR EAX,0x3
+MOV dword ptr [ESP + 0x14],EAX
+MOV dword ptr [ESP + 0x18],ESI
+FILD qword ptr [ESP + 0x14]
+ADD ESP,0x8
+FSQRT
+CALL 0x0049ed20
+MOV ECX,dword ptr [ESP + 0x18]
+LEA EDX,[EAX*0x8 + 0x3b]
+ADD EAX,0x4f
+POP EDI
+MOV dword ptr [ECX + 0x4],ESI
+MOV dword ptr [ECX],ESI
+POP ESI
+MOV dword ptr [ECX + 0x8],EDX
+MOV dword ptr [ECX + 0xc],EAX
+POP EBX
+ADD ESP,0x8
+RET

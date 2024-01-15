@@ -1,0 +1,8 @@
+; FUN_00420f70
+MOV EAX,dword ptr [ESP + 0x4]
+LEA ECX,[EAX + EAX*0x4]
+LEA EDX,[EAX + ECX*0x2]
+SHL EDX,0x4
+MOV EAX,dword ptr [EDX + 0xe9f444]
+AND EAX,0x1
+RET

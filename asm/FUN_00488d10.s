@@ -1,0 +1,25 @@
+; FUN_00488d10
+MOV EAX,[0x0052d454]
+TEST EAX,EAX
+JZ 0x00488d4e
+PUSH EDI
+MOV EDI,dword ptr [EAX]
+PUSH 0x8
+CALL 0x0048c780
+PUSH EAX
+MOV EAX,[0x0052d454]
+PUSH EAX
+CALL dword ptr [EDI + 0x50]
+MOV EAX,[0x0052d454]
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x4c]
+MOV EAX,[0x0052d454]
+PUSH EAX
+MOV EDX,dword ptr [EAX]
+CALL dword ptr [EDX + 0x8]
+MOV dword ptr [0x0052d454],0x0
+POP EDI
+MOV dword ptr [0x004c86bc],0x8
+MOV dword ptr [0x0052d44c],0x0
+RET

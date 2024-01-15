@@ -1,0 +1,54 @@
+; FUN_0046d040
+SUB ESP,0x20
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x28]
+PUSH EDI
+MOV EAX,dword ptr [ESI + 0x60]
+MOV dword ptr [ESI + 0x1a4],0x0
+AND AL,0xef
+MOV dword ptr [ESI + 0x60],EAX
+FLD qword ptr [0x00e22a40]
+FSUBR dword ptr [ESI + 0x310]
+FCOM dword ptr [0x004ad750]
+FSTP dword ptr [ESI + 0x310]
+FNSTSW AX
+TEST AH,0x41
+JZ 0x0046d0eb
+LEA EAX,[ESP + 0x8]
+MOV dword ptr [ESP + 0x8],0x536e6170
+PUSH EAX
+PUSH ESI
+CALL 0x00450c00
+ADD ESP,0x8
+LEA ECX,[ESI + 0x288]
+MOV EDX,0x6
+MOV EDI,0xfffffff7
+AND dword ptr [ECX + 0x18],EDI
+FLD dword ptr [ECX]
+FCOMP dword ptr [0x004ad76c]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0046d0b8
+MOV dword ptr [ECX],0x3dcccccd
+ADD ECX,0x4
+DEC EDX
+JNZ 0x0046d0a0
+MOV ECX,dword ptr [ESI + 0x60]
+AND CH,0xf7
+MOV dword ptr [ESI + 0x60],ECX
+MOV AL,byte ptr [ESI + 0x60]
+TEST AL,0x20
+JZ 0x0046d0eb
+PUSH 0x1
+CALL 0x00405cf0
+ADD ESP,0x4
+PUSH 0x0
+CALL 0x0040a120
+ADD ESP,0x4
+PUSH ESI
+CALL 0x0040b110
+ADD ESP,0x4
+POP EDI
+POP ESI
+ADD ESP,0x20
+RET

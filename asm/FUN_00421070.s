@@ -1,0 +1,26 @@
+; FUN_00421070
+MOV ECX,dword ptr [ESP + 0x4]
+PUSH 0x1f
+PUSH 0xe9f380
+MOV dword ptr [0x004eb3b4],ECX
+LEA EAX,[ECX + ECX*0x4]
+LEA EAX,[ECX + EAX*0x2]
+SHL EAX,0x4
+ADD EAX,0xe9f3c0
+MOV [0x004eb3c0],EAX
+ADD EAX,0x4
+PUSH EAX
+CALL 0x0049ef50
+MOV ECX,dword ptr [0x004eb3c0]
+ADD ESP,0xc
+MOV word ptr [ECX + 0x42],0x0
+MOV EDX,dword ptr [0x004eb3c0]
+PUSH 0x1f
+ADD EDX,0x44
+PUSH 0xec8c00
+PUSH EDX
+CALL 0x0049ef50
+MOV EAX,[0x004eb3c0]
+ADD ESP,0xc
+MOV word ptr [EAX + 0x82],0x0
+RET

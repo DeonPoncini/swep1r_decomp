@@ -1,0 +1,20 @@
+; FUN_0046a9f0
+MOV EAX,dword ptr [ESP + 0x4]
+XOR ECX,ECX
+FLD dword ptr [0x004ad750]
+LEA EDX,[EAX + 0x288]
+FLD dword ptr [EDX]
+FCOMP qword ptr [0x004ad758]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0046aa24
+CMP ECX,0x3
+JGE 0x0046aa1e
+FSUB dword ptr [0x004ad760]
+JMP 0x0046aa24
+FSUB dword ptr [0x004ad764]
+INC ECX
+ADD EDX,0x4
+CMP ECX,0x6
+JL 0x0046aa02
+RET

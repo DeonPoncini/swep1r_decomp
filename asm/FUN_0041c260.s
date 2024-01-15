@@ -1,0 +1,14 @@
+; FUN_0041c260
+XOR EDX,EDX
+XOR ECX,ECX
+MOV EAX,0xea0260
+MOV dword ptr [EAX],ECX
+ADD EAX,0x4
+INC ECX
+CMP EAX,0xea02b0
+JL 0x0041c269
+MOV dword ptr [0x00ea02b0],EDX
+MOV dword ptr [0x00ea02b4],EDX
+MOV dword ptr [0x00ea02b8],0x3
+MOV dword ptr [0x00ea02bc],0x2710
+RET

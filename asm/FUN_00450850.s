@@ -1,0 +1,38 @@
+; FUN_00450850
+PUSH ESI
+MOV ESI,dword ptr [0x004bfec0]
+MOV EAX,dword ptr [ESI]
+TEST EAX,EAX
+JZ 0x004508a1
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0xc]
+PUSH EBP
+PUSH EBX
+CMP dword ptr [EAX],EDI
+JNZ 0x00450894
+MOV EBX,dword ptr [EAX + 0x8]
+MOV ECX,dword ptr [EAX + 0x10]
+XOR EDX,EDX
+TEST EBX,EBX
+JLE 0x00450894
+MOV EBX,dword ptr [EAX]
+MOV word ptr [ECX + 0x4],DX
+MOV dword ptr [ECX],EBX
+MOV BX,word ptr [EAX + 0x4]
+MOV word ptr [ECX + 0x6],BX
+MOV EBP,dword ptr [EAX + 0xc]
+ADD ECX,EBP
+MOV EBP,dword ptr [EAX + 0x8]
+INC EDX
+MOVSX EBX,DX
+CMP EBX,EBP
+JL 0x00450874
+MOV EAX,dword ptr [ESI + 0x4]
+ADD ESI,0x4
+TEST EAX,EAX
+JNZ 0x00450864
+POP EBX
+POP EBP
+POP EDI
+POP ESI
+RET

@@ -1,0 +1,9 @@
+; FUN_00440a00
+CMP byte ptr [ESP + 0x4],0x2
+JG 0x00440a11
+MOV AL,byte ptr [ESP + 0x8]
+CMP AL,0x6
+MOV AL,0x4
+JL 0x00440a13
+MOV AL,0x3
+RET

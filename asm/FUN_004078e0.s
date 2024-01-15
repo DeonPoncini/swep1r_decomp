@@ -1,0 +1,89 @@
+; FUN_004078e0
+SUB ESP,0xc
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x14]
+TEST ESI,ESI
+PUSH EDI
+MOV byte ptr [ESP + 0x8],0x0
+MOV dword ptr [ESP + 0x10],0x0
+JNZ 0x00407901
+MOV EDI,0x4d5fc0
+JMP 0x0040791b
+CMP ESI,0x1
+JNZ 0x0040790d
+MOV EDI,0x4d6518
+JMP 0x0040791b
+CMP ESI,0x2
+MOV EDI,0x4d6828
+JZ 0x0040791b
+MOV EDI,dword ptr [ESP + 0x18]
+MOV ECX,dword ptr [ESP + 0x1c]
+MOV EAX,dword ptr [ESP + 0x20]
+PUSH 0x1
+LEA EDX,[ESP + 0xc]
+PUSH ECX
+PUSH EDX
+MOV dword ptr [ESP + 0x18],EAX
+CALL 0x00407cd0
+ADD ESP,0xc
+TEST EAX,EAX
+JNZ 0x00407941
+POP EDI
+POP ESI
+ADD ESP,0xc
+RET
+MOV EAX,dword ptr [ESP + 0x24]
+TEST EAX,EAX
+JNZ 0x00407951
+MOV AL,byte ptr [ESP + 0x8]
+OR AL,0x8
+JMP 0x00407972
+MOV DL,byte ptr [ESP + 0x8]
+MOV EAX,dword ptr [ESP + 0x28]
+OR DL,0x4
+TEST EAX,EAX
+MOV byte ptr [ESP + 0x8],DL
+JLE 0x0040796a
+MOV AL,DL
+OR AL,0x10
+JMP 0x00407972
+JGE 0x00407976
+MOV AL,byte ptr [ESP + 0x8]
+OR AL,0x20
+MOV byte ptr [ESP + 0x8],AL
+MOV EAX,dword ptr [ESP + 0x2c]
+TEST EAX,EAX
+JGE 0x004079c3
+MOV EAX,dword ptr [ESI*0x4 + 0x4d5e20]
+MOV EDX,dword ptr [ESP + 0x8]
+LEA EAX,[EAX + EAX*0x2]
+LEA ECX,[EDI + EAX*0x4]
+MOV dword ptr [EDI + EAX*0x4],EDX
+MOV EAX,dword ptr [ESP + 0xc]
+MOV dword ptr [ECX + 0x4],EAX
+MOV EDX,dword ptr [ESP + 0x10]
+MOV dword ptr [ECX + 0x8],EDX
+MOV EAX,dword ptr [ESI*0x4 + 0x4d5e20]
+INC EAX
+MOV dword ptr [ESI*0x4 + 0x4d5e20],EAX
+MOV ESI,EAX
+LEA EAX,[ESI + ESI*0x2]
+MOV byte ptr [EDI + EAX*0x4],0xff
+MOV EAX,0x1
+POP EDI
+POP ESI
+ADD ESP,0xc
+RET
+LEA ECX,[EAX + EAX*0x2]
+MOV EAX,dword ptr [ESP + 0x8]
+LEA EDX,[EDI + ECX*0x4]
+MOV ECX,dword ptr [ESP + 0xc]
+POP EDI
+POP ESI
+MOV dword ptr [EDX],EAX
+MOV EAX,dword ptr [ESP + 0x8]
+MOV dword ptr [EDX + 0x4],ECX
+MOV dword ptr [EDX + 0x8],EAX
+MOV EAX,0x1
+ADD ESP,0xc
+RET

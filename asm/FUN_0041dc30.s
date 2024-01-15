@@ -1,0 +1,24 @@
+; FUN_0041dc30
+MOV ECX,dword ptr [0x00ec7620]
+MOV EAX,[0x004eb3b4]
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+PUSH 0x0
+PUSH 0x1
+PUSH ECX
+PUSH 0xec7ba0
+MOV [0x00ec7bc8],EAX
+MOV dword ptr [0x00ec7bcc],ESI
+MOV dword ptr [0x00ec7ba4],0x0
+MOV word ptr [0x00ec7bc4],0x33
+MOV dword ptr [0x00ec7bc0],0x8
+CALL 0x0041b760
+MOV EDX,dword ptr [0x004eb3b4]
+ADD ESP,0x10
+PUSH 0xec7bc8
+PUSH 0x33
+MOV dword ptr [EDX*0x4 + 0xea0260],ESI
+CALL 0x00411120
+ADD ESP,0x8
+POP ESI
+RET

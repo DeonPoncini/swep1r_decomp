@@ -1,0 +1,31 @@
+; FUN_0048fc90
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [ESP + 0x8]
+MOV dword ptr [EAX],ECX
+SUB ECX,0x0
+JZ 0x0048fccb
+DEC ECX
+JNZ 0x0048fcf2
+CMP dword ptr [EAX + 0x40],0x3f800000
+JNZ 0x0048fcbb
+MOV dword ptr [EAX + 0x4c],0x4902d0
+MOV dword ptr [EAX + 0x50],0x490310
+JMP 0x0048fcf2
+MOV dword ptr [EAX + 0x4c],0x490210
+MOV dword ptr [EAX + 0x50],0x490250
+JMP 0x0048fcf2
+CMP dword ptr [EAX + 0x40],0x3f800000
+JNZ 0x0048fce4
+MOV dword ptr [EAX + 0x4c],0x490160
+MOV dword ptr [EAX + 0x50],0x4901a0
+JMP 0x0048fcf2
+MOV dword ptr [EAX + 0x4c],0x4900a0
+MOV dword ptr [EAX + 0x50],0x4900e0
+MOV ECX,dword ptr [EAX + 0x4]
+TEST ECX,ECX
+JZ 0x0048fd02
+PUSH EAX
+CALL 0x0048fdc0
+ADD ESP,0x4
+MOV EAX,0x1
+RET

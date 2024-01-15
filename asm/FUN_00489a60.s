@@ -1,0 +1,35 @@
+; FUN_00489a60
+PUSH EBX
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0xc]
+MOV BL,0x4
+MOV EAX,dword ptr [ESI]
+PUSH 0x0
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x80]
+TEST EAX,EAX
+JZ 0x00489aa6
+CMP EAX,0x887601c2
+JNZ 0x00489a9a
+TEST byte ptr [ESI + 0x6c],BL
+JZ 0x00489a92
+MOV EAX,[0x00ec8d00]
+PUSH EAX
+MOV EDX,dword ptr [EAX]
+CALL dword ptr [EDX + 0x6c]
+JMP 0x00489a9a
+MOV EAX,dword ptr [ESI]
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x6c]
+TEST EAX,EAX
+JZ 0x00489a68
+MOV EAX,0x1
+POP ESI
+POP EBX
+RET
+POP ESI
+XOR EAX,EAX
+POP EBX
+RET

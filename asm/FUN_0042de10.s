@@ -1,0 +1,9 @@
+; FUN_0042de10
+MOV EAX,dword ptr [ESP + 0x8]
+MOV EDX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [EAX*0x4 + 0xe99720]
+PUSH ECX
+PUSH EDX
+CALL 0x0042de30
+ADD ESP,0x8
+RET

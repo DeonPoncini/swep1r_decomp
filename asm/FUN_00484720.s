@@ -1,0 +1,16 @@
+; FUN_00484720
+PUSH EBP
+MOV EBP,ESP
+MOV EAX,dword ptr [EBP + 0x8]
+MOV [0x00ecc420],EAX
+FNSTCW word ptr [0x00ec8c80]
+MOV AX,[0x00ec8c80]
+MOV AH,0xb
+MOV [0x00ec8c84],AX
+MOV AX,[0x00ec8c80]
+MOV AH,0x7
+MOV [0x00ec8c82],AX
+MOV AX,[0x00ec8c80]
+MOV dword ptr [0x0050d518],0x1
+POP EBP
+RET

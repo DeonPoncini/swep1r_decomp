@@ -1,0 +1,17 @@
+; FUN_00485070
+MOV EAX,[0x0050d548]
+TEST EAX,EAX
+JNZ 0x0048507c
+XOR EAX,EAX
+RET
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+PUSH ESI
+MOV EAX,dword ptr [ESI]
+CALL dword ptr [EAX + 0x38]
+MOV ECX,dword ptr [ESI]
+PUSH ESI
+CALL dword ptr [ECX + 0x3c]
+MOV EAX,0x1
+POP ESI
+RET

@@ -1,0 +1,23 @@
+; FUN_0047f890
+PUSH ESI
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0xc]
+FLD dword ptr [EDI + 0x8]
+FMUL dword ptr [0x004adf38]
+FCOM dword ptr [0x004adf40]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0047f8b2
+FSUB dword ptr [0x004adf64]
+CALL 0x0049ed20
+PUSH 0x0
+PUSH EDI
+MOV ESI,EAX
+CALL 0x0044e620
+LEA EAX,[EAX + EAX*0x4]
+ADD ESP,0x8
+LEA EAX,[ESI + EAX*0x2]
+POP EDI
+POP ESI
+MOV EAX,dword ptr [EAX*0x4 + 0xe23240]
+RET

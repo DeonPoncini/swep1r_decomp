@@ -1,0 +1,22 @@
+; FUN_004a9c10
+MOV EAX,dword ptr [ESP + 0x4]
+PUSH ESI
+PUSH EDI
+MOV EDX,dword ptr [EAX + 0x8]
+MOV ECX,dword ptr [EAX + 0x4]
+MOV ESI,EDX
+MOV EDI,ECX
+SHL ESI,0x1f
+SHR ECX,0x1
+OR ECX,ESI
+MOV dword ptr [EAX + 0x4],ECX
+MOV ECX,dword ptr [EAX]
+SHL EDI,0x1f
+SHR ECX,0x1
+SHR EDX,0x1
+OR ECX,EDI
+POP EDI
+MOV dword ptr [EAX + 0x8],EDX
+MOV dword ptr [EAX],ECX
+POP ESI
+RET

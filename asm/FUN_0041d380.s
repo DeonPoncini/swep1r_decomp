@@ -1,0 +1,12 @@
+; FUN_0041d380
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [0x004eb3b8]
+CMP EAX,ECX
+JNC 0x0041d39e
+LEA ECX,[EAX + EAX*0x4]
+LEA EDX,[EAX + ECX*0x2]
+SHL EDX,0x4
+MOV EAX,dword ptr [EDX + 0xe9f448]
+RET
+OR EAX,0xffffffff
+RET

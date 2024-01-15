@@ -1,0 +1,44 @@
+; __aulldiv
+PUSH EBX
+PUSH ESI
+MOV EAX,dword ptr [ESP + 0x18]
+OR EAX,EAX
+JNZ 0x004a6bb2
+MOV ECX,dword ptr [ESP + 0x14]
+MOV EAX,dword ptr [ESP + 0x10]
+XOR EDX,EDX
+DIV ECX
+MOV EBX,EAX
+MOV EAX,dword ptr [ESP + 0xc]
+DIV ECX
+MOV EDX,EBX
+JMP 0x004a6bf3
+MOV ECX,EAX
+MOV EBX,dword ptr [ESP + 0x14]
+MOV EDX,dword ptr [ESP + 0x10]
+MOV EAX,dword ptr [ESP + 0xc]
+SHR ECX,0x1
+RCR EBX,0x1
+SHR EDX,0x1
+RCR EAX,0x1
+OR ECX,ECX
+JNZ 0x004a6bc0
+DIV EBX
+MOV ESI,EAX
+MUL dword ptr [ESP + 0x18]
+MOV ECX,EAX
+MOV EAX,dword ptr [ESP + 0x14]
+MUL ESI
+ADD EDX,ECX
+JC 0x004a6bee
+CMP EDX,dword ptr [ESP + 0x10]
+JA 0x004a6bee
+JC 0x004a6bef
+CMP EAX,dword ptr [ESP + 0xc]
+JBE 0x004a6bef
+DEC ESI
+XOR EDX,EDX
+MOV EAX,ESI
+POP ESI
+POP EBX
+RET 0x10

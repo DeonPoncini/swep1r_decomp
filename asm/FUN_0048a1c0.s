@@ -1,0 +1,32 @@
+; FUN_0048a1c0
+PUSH ESI
+CALL 0x0048ac50
+MOV EAX,[0x0052e63c]
+XOR ESI,ESI
+CMP EAX,ESI
+JZ 0x0048a1dd
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x8]
+MOV dword ptr [0x0052e63c],ESI
+MOV EAX,[0x0052e648]
+CMP EAX,ESI
+JZ 0x0048a1f2
+MOV EDX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [EDX + 0x8]
+MOV dword ptr [0x0052e648],ESI
+MOV EAX,[0x0052e644]
+CMP EAX,ESI
+JZ 0x0048a207
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x8]
+MOV dword ptr [0x0052e644],ESI
+MOV dword ptr [0x0052e61c],ESI
+MOV dword ptr [0x0052d55c],ESI
+MOV dword ptr [0x0052e618],ESI
+MOV dword ptr [0x0052e620],ESI
+MOV dword ptr [0x0052e650],ESI
+POP ESI
+RET

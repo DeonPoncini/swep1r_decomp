@@ -1,0 +1,214 @@
+; FUN_0045c560
+SUB ESP,0x44
+FLD dword ptr [0x00e22a50]
+MOV ECX,dword ptr [ESP + 0x48]
+PUSH EBX
+FMUL dword ptr [0x004ad1e0]
+MOV ECX,dword ptr [ECX + 0x8]
+PUSH EBP
+MOV EBP,dword ptr [ESP + 0x54]
+PUSH ESI
+CMP ECX,0x11
+PUSH EDI
+MOV EAX,dword ptr [EBP]
+MOV dword ptr [ESP + 0x14],0x44c80000
+FSTP dword ptr [ESP + 0x5c]
+MOV dword ptr [ESP + 0x10],EAX
+JZ 0x0045c5da
+CMP ECX,0x12
+JZ 0x0045c5da
+CMP ECX,0x8
+JNZ 0x0045c5b3
+FLD dword ptr [0x0050c95c]
+FCOMP dword ptr [0x004acfcc]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0045c5da
+CMP ECX,0x3
+JNZ 0x0045c5c1
+MOV EAX,[0x0050c944]
+TEST EAX,EAX
+JZ 0x0045c5da
+CMP ECX,0x10
+JNZ 0x0045c5f0
+FLD dword ptr [ESP + 0x5c]
+FMUL dword ptr [0x004acff0]
+MOV dword ptr [ESP + 0x14],0x42a00000
+JMP 0x0045c5ec
+FLD dword ptr [ESP + 0x5c]
+FMUL dword ptr [0x004ad1e8]
+MOV dword ptr [ESP + 0x14],0x43a00000
+FSTP dword ptr [ESP + 0x5c]
+MOV ESI,dword ptr [ESP + 0x64]
+LEA EDX,[ESP + 0x48]
+PUSH ESI
+PUSH EDX
+CALL 0x0042f7d0
+FLD dword ptr [ESP + 0x1c]
+FMUL dword ptr [ESP + 0x74]
+MOV EBX,dword ptr [ESP + 0x70]
+MOV EDI,dword ptr [ESP + 0x68]
+ADD ESP,0x8
+LEA EAX,[ESP + 0x24]
+MOV dword ptr [0x0050c9a4],0x0
+FSTP dword ptr [ESP + 0x14]
+FLD dword ptr [ESP + 0x5c]
+FMUL dword ptr [ESP + 0x6c]
+PUSH EBX
+PUSH EDI
+PUSH EAX
+FSTP dword ptr [ESP + 0x68]
+CALL 0x0042f860
+ADD ESP,0xc
+LEA ECX,[ESP + 0x24]
+PUSH ECX
+CALL 0x0042f8c0
+FMUL dword ptr [0x004ad118]
+ADD ESP,0x4
+LEA EDX,[ESP + 0x30]
+PUSH ESI
+PUSH EBX
+FSTP dword ptr [ESP + 0x70]
+PUSH EDX
+CALL 0x0042f860
+ADD ESP,0xc
+LEA EAX,[ESP + 0x30]
+PUSH EAX
+CALL 0x0042f8c0
+ADD ESP,0x4
+LEA ECX,[ESP + 0x18]
+FSTP ST0
+PUSH ESI
+PUSH EDI
+PUSH ECX
+CALL 0x0042f860
+ADD ESP,0xc
+LEA EDX,[ESP + 0x18]
+PUSH EDX
+CALL 0x0042f8c0
+FSTP dword ptr [ESP + 0x68]
+FLD dword ptr [ESP + 0x60]
+FMUL dword ptr [0x004acf98]
+ADD ESP,0x4
+FCOM dword ptr [ESP + 0x68]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0045c6ab
+FSTP ST0
+FLD dword ptr [ESP + 0x68]
+FLD dword ptr [ESP + 0x64]
+FCOMP
+FNSTSW AX
+TEST AH,0x1
+JNZ 0x0045c6f6
+FLD dword ptr [ESP + 0x10]
+FCOMP dword ptr [ESP + 0x5c]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0045c6f6
+FSTP ST0
+FLD dword ptr [ESP + 0x6c]
+FMUL dword ptr [0x00e22a50]
+FMUL dword ptr [0x004ad1f0]
+FSUBR dword ptr [ESP + 0x10]
+FST dword ptr [ESP + 0x10]
+FCOMP dword ptr [ESP + 0x5c]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0045c769
+MOV EAX,dword ptr [ESP + 0x5c]
+MOV dword ptr [ESP + 0x10],EAX
+JMP 0x0045c769
+FLD dword ptr [ESP + 0x64]
+FCOMP
+FNSTSW AX
+TEST AH,0x1
+JNZ 0x0045c712
+FLD dword ptr [ESP + 0x10]
+FCOMP dword ptr [ESP + 0x5c]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0045c767
+FLD dword ptr [ESP + 0x64]
+FCOMP
+FNSTSW AX
+TEST AH,0x1
+FSTP ST0
+JZ 0x0045c769
+FLD dword ptr [ESP + 0x64]
+FCOMP dword ptr [0x004acf54]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0045c769
+CMP dword ptr [0x004bfedc],-0x1
+JZ 0x0045c749
+MOV ECX,dword ptr [ESP + 0x58]
+CMP dword ptr [ECX + 0x8],0x12
+JNZ 0x0045c7f6
+FLD dword ptr [ESP + 0x64]
+FDIV dword ptr [ESP + 0x14]
+PUSH ECX
+FSTP dword ptr [ESP]
+CALL 0x00480670
+FMUL dword ptr [ESP + 0x18]
+ADD ESP,0x4
+FSTP dword ptr [ESP + 0x10]
+JMP 0x0045c769
+FSTP ST0
+FLD dword ptr [ESP + 0x64]
+FCOMP dword ptr [0x004acf54]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0045c7e5
+LEA EDX,[ESP + 0x18]
+PUSH EDX
+CALL 0x0042f9b0
+FSTP ST0
+FLD dword ptr [ESP + 0x14]
+FMUL dword ptr [0x00e22a50]
+ADD ESP,0x4
+LEA EAX,[ESP + 0x18]
+PUSH EAX
+PUSH ECX
+FSTP dword ptr [ESP]
+PUSH ESI
+PUSH ESI
+CALL 0x0042fa80
+ADD ESP,0x10
+LEA ECX,[ESP + 0x3c]
+PUSH ESI
+PUSH EDI
+PUSH ECX
+CALL 0x0042f860
+ADD ESP,0xc
+LEA EDX,[ESP + 0x3c]
+LEA EAX,[ESP + 0x18]
+PUSH EDX
+PUSH EAX
+CALL 0x0042f890
+FCOMP dword ptr [0x004acf50]
+ADD ESP,0x8
+FNSTSW AX
+TEST AH,0x1
+JNZ 0x0045c7e5
+MOV ECX,dword ptr [ESP + 0x10]
+XOR EAX,EAX
+MOV dword ptr [EBP],ECX
+POP EDI
+POP ESI
+POP EBP
+POP EBX
+ADD ESP,0x44
+RET
+PUSH EDI
+PUSH ESI
+CALL 0x0042f7d0
+ADD ESP,0x8
+MOV dword ptr [EBP],0x0
+POP EDI
+POP ESI
+POP EBP
+MOV EAX,0x1
+POP EBX
+ADD ESP,0x44
+RET

@@ -1,0 +1,6 @@
+; FUN_00446fb0
+MOV EAX,dword ptr [ESP + 0x4]
+PUSH EAX
+CALL 0x00446ca0
+ADD ESP,0x4
+RET

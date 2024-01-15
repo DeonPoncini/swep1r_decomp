@@ -1,0 +1,35 @@
+; FUN_0044e190
+MOV ECX,dword ptr [ESP + 0x4]
+TEST ECX,ECX
+JL 0x0044e1e6
+CMP ECX,0xc
+JGE 0x0044e1e6
+MOV EAX,dword ptr [ESP + 0x10]
+MOV DX,word ptr [EAX + 0x4]
+NEG DX
+PUSH EDX
+MOV DX,word ptr [EAX + 0x2]
+MOV AX,word ptr [EAX]
+NEG DX
+NEG AX
+PUSH EDX
+PUSH EAX
+MOV EAX,dword ptr [ESP + 0x18]
+INC ECX
+MOV DX,word ptr [EAX + 0x4]
+PUSH EDX
+MOV DX,word ptr [EAX + 0x2]
+MOV AX,word ptr [EAX]
+PUSH EDX
+PUSH EAX
+MOV EAX,dword ptr [ESP + 0x20]
+MOV DX,word ptr [EAX + 0x4]
+PUSH EDX
+MOV DX,word ptr [EAX + 0x2]
+MOV AX,word ptr [EAX]
+PUSH EDX
+PUSH EAX
+PUSH ECX
+CALL 0x00409600
+ADD ESP,0x28
+RET

@@ -1,0 +1,10 @@
+; FUN_0048c000
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [EAX + 0x4]
+TEST ECX,ECX
+JZ 0x0048c014
+MOV EAX,ECX
+MOV ECX,dword ptr [EAX + 0x4]
+TEST ECX,ECX
+JNZ 0x0048c00b
+RET

@@ -1,0 +1,19 @@
+; FUN_00492410
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+MOV EAX,dword ptr [ESI + 0x14]
+TEST EAX,EAX
+JZ 0x00492428
+PUSH EAX
+MOV EAX,[0x00ecc428]
+CALL dword ptr [EAX + 0x24]
+ADD ESP,0x4
+MOV EAX,dword ptr [ESI + 0x18]
+TEST EAX,EAX
+JZ 0x0049243c
+MOV ECX,dword ptr [0x00ecc428]
+PUSH EAX
+CALL dword ptr [ECX + 0x24]
+ADD ESP,0x4
+POP ESI
+RET

@@ -1,0 +1,6 @@
+; FUN_00487350
+MOV EAX,dword ptr [ESP + 0x4]
+LEA ECX,[EAX + EAX*0x4]
+LEA EDX,[EAX + ECX*0x2]
+MOV EAX,dword ptr [EDX*0x4 + 0x50ff08]
+RET

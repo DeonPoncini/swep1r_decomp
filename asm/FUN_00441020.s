@@ -1,0 +1,3 @@
+; FUN_00441020
+MOV dword ptr [0x0050c5d0],0x0
+RET

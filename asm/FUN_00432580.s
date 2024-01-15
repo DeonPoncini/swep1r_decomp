@@ -1,0 +1,20 @@
+; FUN_00432580
+MOV EDX,dword ptr [ESP + 0x4]
+XOR EAX,EAX
+MOV ECX,dword ptr [EDX + 0x7c]
+TEST ECX,ECX
+JBE 0x004325ab
+PUSH EDI
+PUSH ESI
+XOR ECX,ECX
+MOV ESI,dword ptr [EDX + 0x6c]
+MOV EDI,dword ptr [0x00e996a4]
+INC EAX
+MOV dword ptr [ESI + ECX*0x1 + 0x1c],EDI
+MOV ESI,dword ptr [EDX + 0x7c]
+ADD ECX,0x48
+CMP EAX,ESI
+JC 0x00432591
+POP ESI
+POP EDI
+RET

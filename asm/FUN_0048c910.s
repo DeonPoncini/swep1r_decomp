@@ -1,0 +1,21 @@
+; FUN_0048c910
+PUSH EBP
+MOV EBP,ESP
+PUSH ECX
+MOV EAX,dword ptr [EBP + 0x8]
+PUSH EAX
+CALL 0x0048c830
+ADD ESP,0x4
+FST dword ptr [EBP + -0x4]
+FCOMP dword ptr [0x004af6d0]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0048c93e
+FLD dword ptr [0x004af6cc]
+FSUB dword ptr [EBP + -0x4]
+FCHS
+FSTP dword ptr [EBP + -0x4]
+FLD dword ptr [EBP + -0x4]
+MOV ESP,EBP
+POP EBP
+RET

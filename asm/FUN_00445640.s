@@ -1,0 +1,10 @@
+; FUN_00445640
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [ESP + 0x8]
+CMP EAX,0x3
+JNZ 0x00445653
+MOV dword ptr [0x004c177c],ECX
+CMP EAX,0x5
+JNZ 0x0044565e
+MOV dword ptr [0x0050c5dc],ECX
+RET

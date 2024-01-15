@@ -1,0 +1,135 @@
+; FUN_004a9750
+SUB ESP,0x8
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x14]
+PUSH EDI
+TEST byte ptr [ESI + 0xc],0x40
+JNZ 0x004a987b
+MOV EAX,dword ptr [ESI + 0x10]
+CMP EAX,-0x1
+JZ 0x004a9782
+MOV ECX,EAX
+SAR ECX,0x5
+AND EAX,0x1f
+LEA EDX,[EAX + EAX*0x8]
+MOV EAX,dword ptr [ECX*0x4 + 0xecd500]
+LEA EAX,[EAX + EDX*0x4]
+JMP 0x004a9787
+MOV EAX,0x4d43a0
+TEST byte ptr [EAX + 0x4],0x80
+JZ 0x004a987b
+MOV EDI,dword ptr [ESP + 0x14]
+LEA ECX,[ESP + 0x8]
+PUSH EDI
+PUSH ECX
+CALL 0x004a6aa0
+ADD ESP,0x8
+CMP EAX,-0x1
+JNZ 0x004a97bd
+CALL 0x004a3dc0
+MOV dword ptr [EAX],0x2a
+OR AX,0xffff
+POP EDI
+POP ESI
+ADD ESP,0x8
+RET
+CMP EAX,0x1
+MOV EAX,dword ptr [ESI + 0x4]
+JNZ 0x004a9801
+DEC EAX
+MOV dword ptr [ESI + 0x4],EAX
+JS 0x004a97e3
+MOV EDX,dword ptr [ESI]
+MOV AL,byte ptr [ESP + 0x8]
+MOV byte ptr [EDX],AL
+MOV EAX,dword ptr [ESP + 0x8]
+MOV ECX,dword ptr [ESI]
+AND EAX,0xff
+INC ECX
+MOV dword ptr [ESI],ECX
+JMP 0x004a97f2
+MOVSX ECX,byte ptr [ESP + 0x8]
+PUSH ESI
+PUSH ECX
+CALL 0x004a17f0
+ADD ESP,0x8
+CMP EAX,-0x1
+JNZ 0x004a9868
+OR AX,0xffff
+POP EDI
+POP ESI
+ADD ESP,0x8
+RET
+DEC EAX
+MOV dword ptr [ESI + 0x4],EAX
+JS 0x004a981f
+MOV EDX,dword ptr [ESI]
+MOV AL,byte ptr [ESP + 0x8]
+MOV byte ptr [EDX],AL
+MOV EAX,dword ptr [ESP + 0x8]
+MOV ECX,dword ptr [ESI]
+AND EAX,0xff
+INC ECX
+MOV dword ptr [ESI],ECX
+JMP 0x004a982e
+MOVSX ECX,byte ptr [ESP + 0x8]
+PUSH ESI
+PUSH ECX
+CALL 0x004a17f0
+ADD ESP,0x8
+CMP EAX,-0x1
+JZ 0x004a9871
+MOV EAX,dword ptr [ESI + 0x4]
+DEC EAX
+MOV dword ptr [ESI + 0x4],EAX
+JS 0x004a9854
+MOV EDX,dword ptr [ESI]
+MOV AL,byte ptr [ESP + 0x9]
+MOV byte ptr [EDX],AL
+MOV EAX,dword ptr [ESP + 0x9]
+MOV ECX,dword ptr [ESI]
+AND EAX,0xff
+INC ECX
+MOV dword ptr [ESI],ECX
+JMP 0x004a9863
+MOVSX ECX,byte ptr [ESP + 0x9]
+PUSH ESI
+PUSH ECX
+CALL 0x004a17f0
+ADD ESP,0x8
+CMP EAX,-0x1
+JZ 0x004a9871
+MOV AX,DI
+POP EDI
+POP ESI
+ADD ESP,0x8
+RET
+OR AX,0xffff
+POP EDI
+POP ESI
+ADD ESP,0x8
+RET
+MOV EAX,dword ptr [ESI + 0x4]
+ADD EAX,-0x2
+MOV dword ptr [ESI + 0x4],EAX
+JS 0x004a989c
+MOV EDX,dword ptr [ESI]
+MOV EAX,dword ptr [ESP + 0x14]
+MOV word ptr [EDX],AX
+MOV ECX,dword ptr [ESI]
+ADD ECX,0x2
+MOV dword ptr [ESI],ECX
+POP EDI
+POP ESI
+ADD ESP,0x8
+RET
+MOV EAX,dword ptr [ESP + 0x14]
+PUSH ESI
+AND EAX,0xffff
+PUSH EAX
+CALL 0x004aaa20
+ADD ESP,0x8
+POP EDI
+POP ESI
+ADD ESP,0x8
+RET

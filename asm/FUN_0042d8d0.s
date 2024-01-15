@@ -1,0 +1,14 @@
+; FUN_0042d8d0
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [0x0050c0c0]
+MOVSX EDX,AX
+CMP EDX,ECX
+JL 0x0042d8e4
+LEA EAX,[ECX + -0x1]
+TEST AX,AX
+JGE 0x0042d8eb
+XOR EAX,EAX
+MOVSX EAX,AX
+MOV ECX,dword ptr [EAX*0x4 + 0xe99720]
+MOV dword ptr [0x0050c0c4],ECX
+RET

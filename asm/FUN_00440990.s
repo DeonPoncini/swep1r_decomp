@@ -1,0 +1,27 @@
+; FUN_00440990
+MOV EAX,[0x0050c048]
+TEST AH,0x40
+JNZ 0x0044099d
+XOR EAX,EAX
+RET
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [ESP + 0x8]
+PUSH EBX
+MOV DL,byte ptr [EAX]
+MOV BL,byte ptr [ECX]
+CMP DL,BL
+JNZ 0x004409c9
+MOV DL,byte ptr [EAX + 0x1]
+MOV BL,byte ptr [ECX + 0x1]
+CMP DL,BL
+JNZ 0x004409c9
+MOV AL,byte ptr [EAX + 0x2]
+MOV DL,byte ptr [ECX + 0x2]
+CMP AL,DL
+JNZ 0x004409c9
+MOV EAX,0x1
+POP EBX
+RET
+XOR EAX,EAX
+POP EBX
+RET

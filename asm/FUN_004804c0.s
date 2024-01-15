@@ -1,0 +1,25 @@
+; FUN_004804c0
+FLD qword ptr [0x0050cb70]
+FCOMP qword ptr [0x004adf70]
+FNSTSW AX
+TEST AH,0x41
+JZ 0x004804e7
+MOV dword ptr [0x0050cb70],0x20000000
+MOV dword ptr [0x0050cb74],0x3fb11111
+MOV EAX,[0x0050cb70]
+MOV ECX,dword ptr [0x0050cb74]
+FLD qword ptr [0x0050cb70]
+MOV [0x00e22a40],EAX
+MOV dword ptr [0x00e22a44],ECX
+MOV ECX,dword ptr [0x0050cb68]
+XOR EAX,EAX
+FSTP dword ptr [0x00e22a50]
+CMP ECX,EAX
+MOV dword ptr [0x00e22a38],0x0
+MOV dword ptr [0x00e22a3c],0x0
+MOV [0x00e22a30],EAX
+MOV [0x0050cb64],EAX
+JNZ 0x0048053d
+CALL 0x0048c490
+MOV [0x0050cb60],EAX
+RET

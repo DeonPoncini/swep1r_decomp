@@ -1,0 +1,47 @@
+; FUN_0048fd10
+MOV ECX,dword ptr [ESP + 0x4]
+FLD dword ptr [ESP + 0x8]
+MOV EAX,dword ptr [ECX]
+FSTP dword ptr [ECX + 0x40]
+SUB EAX,0x0
+JZ 0x0048fd74
+DEC EAX
+JNZ 0x0048fdb0
+FLD dword ptr [ESP + 0x8]
+FCOMP dword ptr [0x004af7b4]
+FNSTSW AX
+TEST AH,0x40
+JZ 0x0048fd57
+PUSH ECX
+MOV dword ptr [ECX + 0x4c],0x4902d0
+MOV dword ptr [ECX + 0x50],0x490310
+CALL 0x0048fdc0
+ADD ESP,0x4
+MOV EAX,0x1
+RET
+PUSH ECX
+MOV dword ptr [ECX + 0x4c],0x490210
+MOV dword ptr [ECX + 0x50],0x490250
+CALL 0x0048fdc0
+ADD ESP,0x4
+MOV EAX,0x1
+RET
+FLD dword ptr [ESP + 0x8]
+FCOMP dword ptr [0x004af7b4]
+FNSTSW AX
+TEST AH,0x40
+JZ 0x0048fda2
+PUSH ECX
+MOV dword ptr [ECX + 0x4c],0x490160
+MOV dword ptr [ECX + 0x50],0x4901a0
+CALL 0x0048fdc0
+ADD ESP,0x4
+MOV EAX,0x1
+RET
+MOV dword ptr [ECX + 0x4c],0x4900a0
+MOV dword ptr [ECX + 0x50],0x4900e0
+PUSH ECX
+CALL 0x0048fdc0
+ADD ESP,0x4
+MOV EAX,0x1
+RET

@@ -1,0 +1,22 @@
+; FUN_00440bc0
+MOV EAX,dword ptr [ESP + 0x4]
+MOV CL,byte ptr [EAX + 0x6c]
+TEST CL,CL
+JNZ 0x00440bda
+TEST byte ptr [0x00e364a8],0x20
+JZ 0x00440c0b
+MOV EAX,0x1
+RET
+MOV EAX,0x3fff
+CMP word ptr [0x00e35a8a],AX
+JNZ 0x00440c0b
+CMP word ptr [0x00e35a8c],AX
+JNZ 0x00440c0b
+CMP word ptr [0x00e35a8e],AX
+JNZ 0x00440c0b
+CMP word ptr [0x00e35a90],0xff
+JNZ 0x00440c0b
+MOV EAX,0x1
+RET
+XOR EAX,EAX
+RET

@@ -1,0 +1,53 @@
+; FUN_004887c0
+PUSH ECX
+MOV EAX,[0x00ec8e00]
+LEA EDX,[ESP]
+PUSH EDX
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x44]
+TEST EAX,EAX
+JNZ 0x00488844
+MOV EAX,dword ptr [ESP]
+PUSH EDI
+PUSH 0x1
+PUSH EAX
+CALL dword ptr [0x004ac03c]
+MOV ECX,dword ptr [0x00529510]
+MOV EDX,dword ptr [ESP + 0x4]
+PUSH ECX
+PUSH EDX
+CALL dword ptr [0x004ac038]
+MOV EAX,dword ptr [ESP + 0x4]
+PUSH 0xffff
+PUSH EAX
+CALL dword ptr [0x004ac040]
+MOV EDX,dword ptr [ESP + 0xc]
+OR ECX,0xffffffff
+MOV EDI,EDX
+XOR EAX,EAX
+SCASB.REPNE ES:EDI
+MOV EAX,dword ptr [ESP + 0x4]
+NOT ECX
+DEC ECX
+PUSH ECX
+MOV ECX,dword ptr [ESP + 0x18]
+PUSH EDX
+MOV EDX,dword ptr [ESP + 0x18]
+PUSH ECX
+PUSH EDX
+PUSH EAX
+CALL dword ptr [0x004ac04c]
+MOV EAX,[0x00ec8e00]
+MOV EDX,dword ptr [ESP + 0x4]
+PUSH EDX
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x68]
+MOV EAX,0x1
+POP EDI
+POP ECX
+RET
+XOR EAX,EAX
+POP ECX
+RET

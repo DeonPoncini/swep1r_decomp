@@ -1,0 +1,28 @@
+; FUN_0044bad0
+MOV EDX,dword ptr [ESP + 0x4]
+MOV EAX,dword ptr [ESP + 0x8]
+PUSH EBX
+PUSH EBP
+PUSH ESI
+PUSH EDI
+MOV EDI,0x4
+XOR EBX,EBX
+MOV ECX,EDX
+MOV ESI,0x3
+MOV EBP,dword ptr [EAX]
+ADD EAX,0x4
+MOV dword ptr [ECX],EBP
+ADD ECX,0x4
+DEC ESI
+JNZ 0x0044baea
+MOV dword ptr [EDX + 0xc],EBX
+ADD EDX,0x10
+DEC EDI
+JNZ 0x0044bae3
+MOV EAX,dword ptr [ESP + 0x14]
+POP EDI
+POP ESI
+POP EBP
+MOV dword ptr [EAX + 0x3c],0x3f800000
+POP EBX
+RET

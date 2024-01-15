@@ -1,0 +1,12 @@
+; FUN_00420fc0
+PUSH 0x0
+PUSH 0x48616e67
+CALL 0x00450aa0
+ADD ESP,0x8
+TEST EAX,EAX
+JZ 0x00420fe0
+MOV byte ptr [EAX + 0x70],0x1
+MOV CL,byte ptr [0x004eb3b8]
+MOV byte ptr [EAX + 0x71],CL
+MOV EAX,0x1
+RET

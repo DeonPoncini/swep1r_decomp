@@ -1,0 +1,49 @@
+; FUN_0048dea0
+MOV EAX,[0x00af30d8]
+CMP EAX,0x400
+JC 0x0048deaf
+XOR EAX,EAX
+RET
+SHL EAX,0x6
+PUSH EDI
+ADD EAX,0x6830c8
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0xc]
+MOV EDI,EAX
+MOV dword ptr [ESP + 0xc],0x7f7fffff
+TEST ESI,ESI
+MOV dword ptr [EDI + 0x8],ESI
+JBE 0x0048def1
+MOV ECX,dword ptr [EDI + 0x10]
+MOV EDX,ESI
+ADD ECX,0x8
+FLD dword ptr [ECX]
+FCOM dword ptr [ESP + 0xc]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0048dee9
+FSTP dword ptr [ESP + 0xc]
+JMP 0x0048deeb
+FSTP ST0
+ADD ECX,0xc
+DEC EDX
+JNZ 0x0048ded6
+MOV EAX,dword ptr [ESP + 0xc]
+MOV dword ptr [EDI + 0x34],EAX
+MOV AL,byte ptr [ESP + 0x10]
+TEST AL,0x1
+JZ 0x0048df06
+ADD dword ptr [0x00deb0fc],ESI
+TEST AL,0x2
+JZ 0x0048df10
+ADD dword ptr [0x00deb100],ESI
+TEST AL,0x4
+JZ 0x0048df1a
+ADD dword ptr [0x00deb104],ESI
+MOV EAX,[0x00af30d8]
+POP ESI
+INC EAX
+POP EDI
+MOV [0x00af30d8],EAX
+MOV EAX,0x1
+RET

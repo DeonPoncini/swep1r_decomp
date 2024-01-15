@@ -1,0 +1,74 @@
+; FUN_00418bc0
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+TEST ESI,ESI
+PUSH EDI
+JZ 0x00418cab
+MOV EDI,dword ptr [ESI + 0xc]
+TEST EDI,EDI
+JZ 0x00418cab
+MOV EAX,dword ptr [EDI + 0x18]
+AND EAX,0xc
+CMP AL,0xc
+JNZ 0x00418ca0
+MOV CL,byte ptr [ESI + 0x4c3]
+MOV DL,byte ptr [ESI + 0x4c2]
+MOV AL,byte ptr [ESI + 0x4c1]
+PUSH ECX
+MOV CL,byte ptr [ESI + 0x4c0]
+PUSH EDX
+PUSH EAX
+PUSH ECX
+PUSH EDI
+CALL 0x00414be0
+MOV DL,byte ptr [ESI + 0x4c7]
+MOV AL,byte ptr [ESI + 0x4c6]
+MOV CL,byte ptr [ESI + 0x4c5]
+ADD ESP,0x14
+PUSH EDX
+MOV DL,byte ptr [ESI + 0x4c4]
+PUSH EAX
+PUSH ECX
+PUSH EDX
+PUSH EDI
+CALL 0x00414ca0
+MOV AL,byte ptr [ESI + 0x4cf]
+MOV CL,byte ptr [ESI + 0x4ce]
+MOV DL,byte ptr [ESI + 0x4cd]
+ADD ESP,0x14
+PUSH EAX
+MOV AL,byte ptr [ESI + 0x4cc]
+PUSH ECX
+PUSH EDX
+PUSH EAX
+PUSH EDI
+CALL 0x00414c10
+MOV CL,byte ptr [ESI + 0x4cb]
+MOV DL,byte ptr [ESI + 0x4ca]
+MOV AL,byte ptr [ESI + 0x4c9]
+ADD ESP,0x14
+PUSH ECX
+MOV CL,byte ptr [ESI + 0x4c8]
+PUSH EDX
+PUSH EAX
+PUSH ECX
+PUSH EDI
+CALL 0x00414c40
+MOV DL,byte ptr [ESI + 0x4d3]
+MOV AL,byte ptr [ESI + 0x4d2]
+MOV CL,byte ptr [ESI + 0x4d1]
+ADD ESP,0x14
+PUSH EDX
+MOV DL,byte ptr [ESI + 0x4d0]
+PUSH EAX
+PUSH ECX
+PUSH EDX
+PUSH EDI
+CALL 0x00414c70
+ADD ESP,0x14
+MOV EDI,dword ptr [EDI + 0x4]
+TEST EDI,EDI
+JNZ 0x00418bd9
+POP EDI
+POP ESI
+RET

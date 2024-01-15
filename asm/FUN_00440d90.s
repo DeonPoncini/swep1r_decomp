@@ -1,0 +1,19 @@
+; FUN_00440d90
+MOV ECX,dword ptr [0x004c1770]
+XOR EAX,EAX
+CMP ECX,EAX
+JNZ 0x00440da7
+MOV ECX,dword ptr [0x00e996dc]
+TEST CH,0x10
+JZ 0x00440dd2
+XOR ECX,ECX
+MOV [0x00e98ef4],EAX
+MOV dword ptr [0x00e98ee4],ECX
+MOV [0x00e98ee0],AX
+MOV dword ptr [0x00e98ee8],ECX
+MOV [0x00e98ee2],AX
+MOV dword ptr [0x00e98eec],ECX
+MOV dword ptr [0x00e98ef0],ECX
+MOV [0x004c1770],EAX
+MOV EAX,0xe98ee0
+RET

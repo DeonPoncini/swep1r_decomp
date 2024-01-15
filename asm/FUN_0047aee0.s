@@ -1,0 +1,113 @@
+; FUN_0047aee0
+MOV EAX,dword ptr [ESP + 0x8]
+MOV ECX,dword ptr [ESP + 0x4]
+MOV EDX,dword ptr [ESP + 0x1c]
+PUSH EBX
+FLD dword ptr [EAX]
+FSUB dword ptr [ECX]
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x14]
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0x2c]
+FSTP dword ptr [EDX]
+FLD dword ptr [EAX + 0x4]
+FSUB dword ptr [ECX + 0x4]
+MOV EAX,dword ptr [ESP + 0x1c]
+FSTP dword ptr [EDX + 0x4]
+FLD dword ptr [EAX]
+FSUB dword ptr [ESI]
+FSTP dword ptr [EDI]
+FLD dword ptr [EAX + 0x4]
+FSUB dword ptr [ESI + 0x4]
+FST dword ptr [EDI + 0x4]
+FLD dword ptr [EDX + 0x4]
+FLD dword ptr [EDX]
+FSUB dword ptr [EDI]
+FXCH
+FSUB ST0,ST2
+FLD dword ptr [ECX]
+FLD dword ptr [ECX + 0x4]
+FXCH ST3
+FSTP ST4
+FLD ST3
+FLD ST2
+FXCH
+FMUL ST5
+FXCH ST2
+FSUB dword ptr [ESI]
+FXCH
+FMUL ST3
+FXCH ST4
+FSUB dword ptr [ESI + 0x4]
+FXCH ST4
+FADDP ST2,ST0
+FXCH
+FCOM dword ptr [0x004add54]
+FXCH ST2
+FXCH ST3
+FXCH
+FXCH ST2
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0047af82
+FLD ST0
+FCHS
+FCOMP dword ptr [0x004add54]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0047af82
+FSTP ST0
+FSTP ST0
+FSTP ST0
+FSTP ST0
+FSTP ST0
+FLD dword ptr [0x004adce4]
+POP EDI
+POP ESI
+POP EBX
+RET
+FXCH ST4
+FMUL ST2
+FXCH ST3
+FMUL ST1
+FADDP ST3,ST0
+FXCH ST2
+FCHS
+FDIV ST0,ST3
+FSTP dword ptr [ESP + 0x14]
+FXCH ST2
+FSTP ST0
+FSTP ST0
+FSTP ST0
+FLD dword ptr [ESP + 0x14]
+FCOMP dword ptr [0x004adc48]
+FNSTSW AX
+TEST AH,0x1
+JZ 0x0047afb7
+MOV dword ptr [ESP + 0x14],0x0
+FLD dword ptr [ESP + 0x14]
+FCOMP dword ptr [0x004adc50]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0047afd0
+MOV dword ptr [ESP + 0x14],0x3f800000
+MOV EBX,dword ptr [ESP + 0x14]
+MOV EAX,dword ptr [ESP + 0x20]
+PUSH EDX
+PUSH EBX
+PUSH ECX
+PUSH EAX
+CALL 0x0042f720
+MOV ECX,dword ptr [ESP + 0x34]
+ADD ESP,0x10
+PUSH EDI
+PUSH EBX
+PUSH ESI
+PUSH ECX
+CALL 0x0042f720
+FLD dword ptr [ESP + 0x24]
+ADD ESP,0x10
+POP EDI
+POP ESI
+POP EBX
+RET

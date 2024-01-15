@@ -1,0 +1,15 @@
+#include "prototype.h"
+
+
+void FUN_0049ec10(void)
+
+{
+  PTR_FUN_004d208c = FUN_004a24a0;
+  PTR_FUN_004d2088 = FUN_004a2900;
+  PTR_LAB_004d2090 = &LAB_004a2530;
+  PTR_FUN_004d2094 = FUN_004a2440;
+  PTR_LAB_004d2098 = &LAB_004a2510;
+  PTR_FUN_004d209c = FUN_004a2900;
+  return;
+}
+

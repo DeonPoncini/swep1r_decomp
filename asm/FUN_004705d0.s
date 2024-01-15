@@ -1,0 +1,22 @@
+; FUN_004705d0
+MOV EAX,dword ptr [ESP + 0xc]
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0xc]
+PUSH EAX
+PUSH ESI
+CALL 0x0044bb10
+MOV ECX,dword ptr [ESP + 0x10]
+ADD ESP,0x8
+LEA EAX,[ESI + 0x30]
+ADD ESI,0x10
+FLD dword ptr [ECX + 0x1a0]
+FMUL dword ptr [ESP + 0x14]
+PUSH ESI
+PUSH ECX
+FSTP dword ptr [ESP]
+PUSH EAX
+PUSH EAX
+CALL 0x0042fa80
+ADD ESP,0x10
+POP ESI
+RET

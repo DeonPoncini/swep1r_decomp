@@ -1,0 +1,12 @@
+; FUN_0045a3e0
+XOR EAX,EAX
+OR ECX,0xffffffff
+MOV [0x0050c918],EAX
+MOV dword ptr [0x0050c908],ECX
+MOV [0x0050c91c],EAX
+MOV dword ptr [0x0050c90c],ECX
+MOV [0x0050c920],EAX
+MOV dword ptr [0x0050c910],ECX
+MOV [0x0050c924],EAX
+MOV dword ptr [0x0050c914],ECX
+RET

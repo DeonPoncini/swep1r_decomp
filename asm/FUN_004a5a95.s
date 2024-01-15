@@ -1,0 +1,12 @@
+; FUN_004a5a95
+PUSH EBP
+MOV ECX,dword ptr [ESP + 0x8]
+MOV EBP,dword ptr [ECX]
+MOV EAX,dword ptr [ECX + 0x1c]
+PUSH EAX
+MOV EAX,dword ptr [ECX + 0x18]
+PUSH EAX
+CALL 0x004a5922
+ADD ESP,0x8
+POP EBP
+RET 0x4

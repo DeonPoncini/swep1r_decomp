@@ -1,0 +1,12 @@
+; FUN_004a0ec0
+MOV EAX,dword ptr [ESP + 0x4]
+PUSH EAX
+CALL dword ptr [0x004ac084]
+TEST EAX,EAX
+JNZ 0x004a0ede
+CALL 0x004a3dc0
+MOV dword ptr [EAX],0x16
+OR EAX,0xffffffff
+RET
+XOR EAX,EAX
+RET

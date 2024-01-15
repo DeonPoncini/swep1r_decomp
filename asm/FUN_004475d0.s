@@ -1,0 +1,10 @@
+; FUN_004475d0
+MOV ECX,dword ptr [ESP + 0x4]
+MOV EAX,0xe93860
+CMP dword ptr [EAX],ECX
+JBE 0x004475e3
+MOV dword ptr [EAX],0x0
+ADD EAX,0x4
+CMP EAX,0xe952f0
+JL 0x004475d9
+RET

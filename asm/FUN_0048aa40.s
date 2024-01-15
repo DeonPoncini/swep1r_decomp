@@ -1,0 +1,24 @@
+; FUN_0048aa40
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0x8]
+MOV EAX,dword ptr [EDI + 0x7c]
+TEST EAX,EAX
+JZ 0x0048aa52
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x8]
+MOV EAX,dword ptr [EDI + 0x80]
+TEST EAX,EAX
+JZ 0x0048aa71
+PUSH EDI
+CALL 0x0048ba90
+MOV EAX,dword ptr [EDI + 0x80]
+ADD ESP,0x4
+MOV EDX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [EDX + 0x8]
+MOV ECX,0x25
+XOR EAX,EAX
+STOSD.REP ES:EDI
+POP EDI
+RET

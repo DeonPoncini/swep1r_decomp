@@ -1,0 +1,21 @@
+; FUN_00484d90
+MOV EAX,[0x0050d548]
+TEST EAX,EAX
+JZ 0x00484dc8
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+PUSH ESI
+CALL 0x00485040
+ADD ESP,0x4
+TEST AL,0x20
+JZ 0x00484db9
+FLD dword ptr [ESP + 0xc]
+FMUL dword ptr [0x004c7d7c]
+FSTP dword ptr [ESP + 0xc]
+MOV ECX,dword ptr [ESP + 0xc]
+MOV EAX,dword ptr [ESI]
+PUSH ECX
+PUSH ESI
+CALL dword ptr [EAX + 0xa0]
+POP ESI
+RET

@@ -1,0 +1,26 @@
+; FUN_0044fce0
+MOV ECX,dword ptr [ESP + 0x4]
+TEST ECX,ECX
+JZ 0x0044fd43
+FLD dword ptr [ESP + 0x8]
+FCOMP qword ptr [0x004acd08]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0044fd43
+CMP byte ptr [ECX],0x7e
+JNZ 0x0044fd13
+CMP byte ptr [ECX + 0x1],0x5f
+JNZ 0x0044fd13
+MOV dword ptr [0x0050c870],0x1
+ADD ECX,0x2
+JMP 0x0044fd1d
+MOV dword ptr [0x0050c870],0x0
+PUSH ECX
+PUSH 0x4b2304
+PUSH 0x50c770
+CALL 0x0049eb80
+MOV EAX,dword ptr [ESP + 0x14]
+ADD ESP,0xc
+MOV [0x004c3e40],EAX
+MOV dword ptr [0x004c3e44],0x3f800000
+RET

@@ -1,0 +1,37 @@
+; FUN_004a6b10
+MOV EAX,dword ptr [ESP + 0x4]
+TEST EAX,EAX
+JNZ 0x004a6b19
+RET
+MOV ECX,dword ptr [0x00dfab38]
+TEST ECX,ECX
+JNZ 0x004a6b37
+MOV CX,word ptr [ESP + 0x8]
+CMP CX,0xff
+JA 0x004a6b73
+MOV byte ptr [EAX],CL
+MOV EAX,0x1
+RET
+MOV EDX,dword ptr [0x004d1f9c]
+LEA ECX,[ESP + 0x4]
+PUSH ECX
+MOV ECX,dword ptr [0x00dfab48]
+PUSH 0x0
+PUSH EDX
+PUSH EAX
+LEA EAX,[ESP + 0x18]
+PUSH 0x1
+PUSH EAX
+PUSH 0x220
+PUSH ECX
+MOV dword ptr [ESP + 0x24],0x0
+CALL dword ptr [0x004ac0d0]
+TEST EAX,EAX
+JZ 0x004a6b73
+MOV ECX,dword ptr [ESP + 0x4]
+TEST ECX,ECX
+JZ 0x004a6b81
+CALL 0x004a3dc0
+MOV dword ptr [EAX],0x2a
+OR EAX,0xffffffff
+RET

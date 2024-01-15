@@ -1,0 +1,6 @@
+; FUN_0049d0e0
+XOR EAX,EAX
+MOV [0x00dfaa40],EAX
+MOV [0x00dfaa44],EAX
+MOV [0x00dfaa3c],EAX
+RET

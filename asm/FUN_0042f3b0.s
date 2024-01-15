@@ -1,0 +1,14 @@
+; FUN_0042f3b0
+PUSH ECX
+MOV EDX,dword ptr [ESP + 0x8]
+LEA EAX,[ESP]
+LEA ECX,[ESP + 0x8]
+PUSH EAX
+PUSH ECX
+PUSH EDX
+CALL 0x0042f380
+FLD dword ptr [ESP + 0x14]
+FDIV dword ptr [ESP + 0xc]
+ADD ESP,0xc
+POP ECX
+RET

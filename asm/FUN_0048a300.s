@@ -1,0 +1,10 @@
+; FUN_0048a300
+MOV EAX,[0x004c98b4]
+INC EAX
+MOV [0x004c98b4],EAX
+MOV EAX,[0x0052e644]
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x24]
+MOV dword ptr [0x0052e628],0x0
+RET

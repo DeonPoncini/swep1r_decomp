@@ -1,0 +1,53 @@
+; FUN_0047bc40
+PUSH EBX
+MOV EBX,dword ptr [ESP + 0x18]
+CMP EBX,0x10
+PUSH ESI
+JL 0x0047bcc9
+PUSH 0x546f7373
+CALL 0x00450d20
+MOV ESI,EAX
+ADD ESP,0x4
+TEST ESI,ESI
+JNZ 0x0047bc61
+POP ESI
+POP EBX
+RET
+MOV EAX,dword ptr [ESP + 0x20]
+MOV EDX,dword ptr [ESP + 0x24]
+MOV dword ptr [ESI + 0x6c],EAX
+MOV ECX,EAX
+MOV AL,byte ptr [ESP + 0x10]
+MOV dword ptr [ESI + 0x68],ECX
+MOV CL,byte ptr [ESP + 0x14]
+MOV byte ptr [ESI + 0x70],AL
+MOV EAX,dword ptr [ESI + 0x78]
+MOV dword ptr [ESI + 0x64],EDX
+MOV DL,byte ptr [ESP + 0x18]
+PUSH EAX
+MOV byte ptr [ESI + 0x71],CL
+MOV byte ptr [ESI + 0x72],DL
+MOV byte ptr [ESI + 0x73],BL
+CALL 0x0042b560
+MOV ECX,dword ptr [ESP + 0x10]
+ADD ESP,0x4
+LEA EDX,[ESI + 0x20]
+MOV dword ptr [ESI + 0x74],EAX
+PUSH ECX
+PUSH EDX
+CALL 0x0044bb10
+MOV ESI,dword ptr [ESI + 0x78]
+ADD ESP,0x8
+TEST ESI,ESI
+JZ 0x0047bcc4
+PUSH 0x2
+PUSH 0x10
+PUSH 0x3
+PUSH 0x2
+PUSH ESI
+CALL 0x00431a50
+ADD ESP,0x14
+MOV EAX,0x1
+POP ESI
+POP EBX
+RET

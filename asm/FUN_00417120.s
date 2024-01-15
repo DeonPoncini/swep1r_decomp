@@ -1,0 +1,18 @@
+; FUN_00417120
+MOV EAX,dword ptr [ESP + 0x4]
+PUSH EAX
+CALL 0x00417010
+ADD ESP,0x4
+TEST EAX,EAX
+JZ 0x0041714c
+MOV ECX,dword ptr [ESP + 0x8]
+TEST ECX,ECX
+JZ 0x0041713e
+MOVSX EDX,word ptr [EAX]
+MOV dword ptr [ECX],EDX
+MOV ECX,dword ptr [ESP + 0xc]
+TEST ECX,ECX
+JZ 0x0041714c
+MOVSX EAX,word ptr [EAX + 0x2]
+MOV dword ptr [ECX],EAX
+RET

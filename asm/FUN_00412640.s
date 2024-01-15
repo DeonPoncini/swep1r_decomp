@@ -1,0 +1,4 @@
+; FUN_00412640
+MOV EAX,dword ptr [ESP + 0x4]
+MOV [0x004d87a0],EAX
+RET

@@ -1,0 +1,24 @@
+; FUN_00488880
+SUB ESP,0x10
+MOV EDX,dword ptr [ESP + 0x18]
+XOR EAX,EAX
+MOV dword ptr [ESP],EAX
+PUSH EDX
+MOV EDX,dword ptr [ESP + 0x18]
+MOV dword ptr [ESP + 0x8],EAX
+MOV dword ptr [ESP + 0xc],EAX
+PUSH EDX
+MOV dword ptr [ESP + 0x14],EAX
+MOV EAX,[0x0052d454]
+LEA EDX,[ESP + 0x8]
+MOV dword ptr [ESP + 0x8],0x1000
+MOV ECX,dword ptr [EAX]
+PUSH EDX
+PUSH EAX
+CALL dword ptr [ECX + 0x5c]
+XOR ECX,ECX
+TEST EAX,EAX
+SETNZ CL
+MOV EAX,ECX
+ADD ESP,0x10
+RET

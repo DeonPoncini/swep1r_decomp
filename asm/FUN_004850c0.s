@@ -1,0 +1,33 @@
+; FUN_004850c0
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+TEST ESI,ESI
+JNZ 0x004850ce
+OR EAX,0xffffffff
+POP ESI
+RET
+MOV EAX,dword ptr [ESI]
+LEA ECX,[ESP + 0x8]
+PUSH ECX
+PUSH ESI
+CALL dword ptr [EAX + 0xe0]
+TEST EAX,EAX
+JGE 0x004850e5
+OR EAX,0xffffffff
+POP ESI
+RET
+TEST byte ptr [ESP + 0x8],0x1
+JNZ 0x004850f0
+XOR EAX,EAX
+POP ESI
+RET
+MOV EAX,dword ptr [ESP + 0xc]
+TEST EAX,EAX
+JZ 0x004850ff
+MOV EDX,dword ptr [ESI]
+PUSH EAX
+PUSH ESI
+CALL dword ptr [EDX + 0x4c]
+MOV EAX,0x1
+POP ESI
+RET

@@ -1,0 +1,15 @@
+; FUN_004246d0
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+PUSH -0x6
+PUSH ESI
+CALL dword ptr [0x004ac1f8]
+MOV ECX,dword ptr [ESP + 0xc]
+PUSH ECX
+PUSH 0x424700
+PUSH ESI
+PUSH 0x65
+PUSH EAX
+CALL dword ptr [0x004ac1f4]
+POP ESI
+RET

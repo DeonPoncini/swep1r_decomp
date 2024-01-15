@@ -1,0 +1,25 @@
+; FUN_00468d00
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+CMP dword ptr [ESI + 0x8],0x2
+JNZ 0x00468d11
+MOV EAX,dword ptr [ESI + 0x4c]
+MOV dword ptr [ESI + 0x58],EAX
+LEA ECX,[ESI + 0x44]
+LEA EDX,[ESI + 0x50]
+PUSH ECX
+PUSH EDX
+CALL 0x0042f950
+FCOMP dword ptr [0x004ad668]
+ADD ESP,0x8
+FNSTSW AX
+TEST AH,0x41
+JZ 0x00468d3b
+MOV EAX,0x1
+MOV dword ptr [ESI + 0xa0],EAX
+POP ESI
+RET
+XOR EAX,EAX
+MOV dword ptr [ESI + 0xa0],EAX
+POP ESI
+RET

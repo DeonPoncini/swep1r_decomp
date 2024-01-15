@@ -1,0 +1,6 @@
+; FUN_0041c760
+XOR EAX,EAX
+MOV dword ptr [0x004eb1cc],0x1
+MOV [0x00ec7620],EAX
+MOV [0x004eb1c8],EAX
+RET

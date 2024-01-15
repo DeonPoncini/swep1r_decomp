@@ -1,0 +1,6 @@
+; FUN_00490990
+CMP dword ptr [0x00df7f30],0x1
+JNZ 0x004909a8
+CALL 0x00493e10
+MOV dword ptr [0x00df7f30],0x0
+RET

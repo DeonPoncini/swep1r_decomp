@@ -1,0 +1,20 @@
+; FUN_0045bee0
+MOV ECX,dword ptr [ESP + 0x4]
+MOV EAX,dword ptr [ESP + 0x8]
+MOV EDX,dword ptr [ESP + 0x10]
+MOV dword ptr [ECX + 0x34],EAX
+PUSH EDX
+SHL EAX,0x5
+PUSH 0x0
+PUSH 0x1
+LEA ECX,[EAX + 0x4c401c]
+LEA EDX,[EAX + 0x4c4010]
+PUSH ECX
+PUSH EDX
+CALL 0x0045c010
+MOV EAX,dword ptr [ESP + 0x20]
+ADD ESP,0x14
+CMP EAX,-0x1
+JZ 0x0045bf1b
+MOV [0x004bfedc],EAX
+RET

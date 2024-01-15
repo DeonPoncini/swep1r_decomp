@@ -1,0 +1,3 @@
+; FUN_0042d440
+MOV byte ptr [0x004b9520],0x0
+JMP 0x0042d380

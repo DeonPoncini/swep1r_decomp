@@ -1,0 +1,9 @@
+; FUN_0047dd90
+PUSH 0x5064
+PUSH 0xe25de0
+CALL 0x00431b20
+ADD ESP,0x8
+MOV dword ptr [0x00e25df4],0x0
+MOV dword ptr [0x00e25df8],0xe259c0
+MOV EAX,0xe25de0
+RET

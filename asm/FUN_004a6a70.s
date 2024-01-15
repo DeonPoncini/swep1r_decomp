@@ -1,0 +1,15 @@
+; FUN_004a6a70
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [0x00ecd600]
+CMP EAX,ECX
+JC 0x004a6a81
+XOR EAX,EAX
+RET
+MOV ECX,EAX
+AND EAX,0x1f
+SAR ECX,0x5
+LEA EDX,[EAX + EAX*0x8]
+MOV EAX,dword ptr [ECX*0x4 + 0xecd500]
+MOV AL,byte ptr [EAX + EDX*0x4 + 0x4]
+AND EAX,0x40
+RET

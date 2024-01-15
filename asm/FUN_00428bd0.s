@@ -1,0 +1,30 @@
+; FUN_00428bd0
+MOV EAX,[0x0050c038]
+CMP EAX,-0x1
+JZ 0x00428bf2
+MOV EDX,dword ptr [0x004b91c4]
+MOV ECX,EAX
+SHL ECX,0x5
+SUB ECX,EAX
+LEA EAX,[EDX + ECX*0x4]
+MOV ECX,dword ptr [EDX + ECX*0x4]
+AND ECX,0xfffffffe
+MOV dword ptr [EAX],ECX
+MOV AX,word ptr [ESP + 0x4]
+CMP AX,0xffff
+JNZ 0x00428c08
+MOV dword ptr [0x0050c038],0xffffffff
+RET
+MOVSX EAX,AX
+MOV EDX,dword ptr [0x004b91c4]
+MOV ECX,EAX
+SHL ECX,0x5
+SUB ECX,EAX
+MOV [0x0050c038],EAX
+LEA EAX,[EDX + ECX*0x4]
+MOV [0x0050c034],EAX
+MOV ECX,dword ptr [EAX]
+OR ECX,0x1
+MOV dword ptr [EAX],ECX
+MOV dword ptr [0x0050c03c],0x0
+RET

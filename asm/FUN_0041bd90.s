@@ -1,0 +1,17 @@
+; FUN_0041bd90
+MOV EAX,dword ptr [ESP + 0x8]
+MOV ECX,dword ptr [ESP + 0xc]
+MOV EDX,dword ptr [ESP + 0x4]
+PUSH ESI
+MOV [0x004eb224],EAX
+MOV dword ptr [0x004eb228],ECX
+MOV dword ptr [0x004eb1dc],EDX
+XOR ESI,ESI
+PUSH ESI
+CALL 0x0041e7c0
+ADD ESP,0x4
+INC ESI
+CMP ESI,0xf
+JL 0x0041bdb0
+POP ESI
+RET

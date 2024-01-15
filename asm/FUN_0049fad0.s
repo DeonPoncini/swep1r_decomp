@@ -1,0 +1,24 @@
+; FUN_0049fad0
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [ESP + 0x8]
+CMP EAX,ECX
+PUSH ESI
+JZ 0x0049fafa
+MOV EDX,dword ptr [ESP + 0x10]
+MOV ESI,EDX
+DEC EDX
+TEST ESI,ESI
+JZ 0x0049fafa
+PUSH EBX
+LEA ESI,[EDX + 0x1]
+MOV BL,byte ptr [ECX]
+MOV DL,byte ptr [EAX]
+MOV byte ptr [EAX],BL
+INC EAX
+MOV byte ptr [ECX],DL
+INC ECX
+DEC ESI
+JNZ 0x0049faec
+POP EBX
+POP ESI
+RET

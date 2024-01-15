@@ -1,0 +1,9 @@
+; FUN_004a16f0
+PUSH EBP
+MOV EBP,ESP
+MOV EAX,dword ptr [EBP + 0x8]
+MOV ECX,dword ptr [EAX*0x4 + 0x4d1fc0]
+PUSH ECX
+CALL dword ptr [0x004ac138]
+POP EBP
+RET

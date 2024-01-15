@@ -1,0 +1,26 @@
+; FUN_00408e60
+MOV EAX,dword ptr [ESP + 0x4]
+PUSH ESI
+PUSH EDI
+PUSH EAX
+CALL 0x00445b60
+MOV ECX,dword ptr [0x00ecc420]
+ADD ESP,0x4
+MOV EDI,EAX
+PUSH 0x8
+CALL dword ptr [ECX + 0x20]
+MOV EDX,dword ptr [ESP + 0x14]
+ADD ESP,0x4
+MOV ESI,EAX
+MOV EAX,[0x00ecc420]
+PUSH EDX
+CALL dword ptr [EAX + 0x20]
+MOV dword ptr [ESI],EAX
+MOV ECX,dword ptr [EDI*0x4 + 0xec8700]
+ADD ESP,0x4
+MOV dword ptr [ESI + 0x4],ECX
+MOV dword ptr [EDI*0x4 + 0xec8700],ESI
+MOV EAX,dword ptr [ESI]
+POP EDI
+POP ESI
+RET

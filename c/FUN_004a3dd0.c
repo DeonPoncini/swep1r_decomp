@@ -1,0 +1,12 @@
+#include "prototype.h"
+
+
+int FUN_004a3dd0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_004a3cc0();
+  return iVar1 + 0xc;
+}
+

@@ -1,0 +1,22 @@
+; FUN_00426c80
+FLD dword ptr [ESP + 0x10]
+FCOMP dword ptr [0x004ac47c]
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x00426cbb
+MOV EAX,dword ptr [ESP + 0x14]
+MOV ECX,dword ptr [ESP + 0x10]
+MOV EDX,dword ptr [ESP + 0xc]
+PUSH 0x50b5f0
+PUSH 0x0
+PUSH EAX
+MOV EAX,dword ptr [ESP + 0x14]
+PUSH 0x40
+PUSH ECX
+MOV ECX,dword ptr [ESP + 0x18]
+PUSH EDX
+PUSH EAX
+PUSH ECX
+CALL 0x00426a00
+ADD ESP,0x20
+RET

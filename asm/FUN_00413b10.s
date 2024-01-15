@@ -1,0 +1,8 @@
+; FUN_00413b10
+MOV EAX,dword ptr [ESP + 0x4]
+TEST EAX,EAX
+JZ 0x00413b1f
+MOV EAX,dword ptr [EAX + 0x55c]
+RET
+XOR EAX,EAX
+RET

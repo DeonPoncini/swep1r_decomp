@@ -1,0 +1,14 @@
+; FUN_0041e7c0
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+MOV EAX,dword ptr [ESI*0x4 + 0x4eb188]
+TEST EAX,EAX
+JZ 0x0041e7fa
+PUSH EAX
+CALL 0x0049f200
+ADD ESP,0x4
+MOV dword ptr [ESI*0x4 + 0x4eb188],0x0
+MOV dword ptr [ESI*0x4 + 0x4ea940],0x0
+MOV dword ptr [ESI*0x4 + 0x4e9ed8],0x0
+POP ESI
+RET

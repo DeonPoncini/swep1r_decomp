@@ -1,0 +1,35 @@
+#include "prototype.h"
+
+
+int FUN_00413430(undefined4 param_1,undefined4 param_2,int *param_3,undefined4 param_4,uint param_5,
+                undefined4 param_6)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int local_10;
+  int local_c;
+  
+  iVar3 = 0;
+  iVar2 = 0;
+  local_10 = 0;
+  local_c = 0;
+  iVar1 = FUN_00416d90(param_1,param_2,param_4,0,param_5,param_6,0,&LAB_00416370,0);
+  if (param_3 != (int *)0x0) {
+    local_10 = *param_3;
+    local_c = param_3[1];
+    iVar3 = param_3[2];
+    iVar2 = param_3[3];
+  }
+  FUN_00414b40(iVar1,(iVar3 - local_10) + 1,(iVar2 - local_c) + 1);
+  FUN_00414b60(iVar1,local_10,local_c);
+  FUN_00419830(iVar1,1,0);
+  *(uint *)(iVar1 + 0x52c) = param_5 & 0xffff0000;
+  *(uint *)(iVar1 + 0x20) = *(uint *)(iVar1 + 0x20) | 4;
+  FUN_00413500(iVar1,0x400);
+  FUN_00414e60(iVar1,1);
+  *(undefined4 *)(iVar1 + 0x18) = 9;
+  return iVar1;
+}
+

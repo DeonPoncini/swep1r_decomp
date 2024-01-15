@@ -1,0 +1,7 @@
+; FUN_00413500
+MOV EAX,dword ptr [ESP + 0x4]
+TEST EAX,EAX
+JZ 0x00413512
+MOV ECX,dword ptr [ESP + 0x8]
+MOV dword ptr [EAX + 0x534],ECX
+RET

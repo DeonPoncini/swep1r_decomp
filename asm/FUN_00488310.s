@@ -1,0 +1,35 @@
+; FUN_00488310
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x8]
+MOV EAX,dword ptr [ESI]
+SUB EAX,0x0
+JZ 0x00488341
+DEC EAX
+JNZ 0x0048835c
+MOV EAX,dword ptr [ESI + 0x60]
+TEST EAX,EAX
+JZ 0x0048835c
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x8]
+MOV dword ptr [ESI + 0x60],0x0
+MOV EAX,[0x00ecc420]
+PUSH ESI
+CALL dword ptr [EAX + 0x24]
+ADD ESP,0x4
+POP ESI
+RET
+MOV EAX,dword ptr [ESI + 0x58]
+TEST EAX,EAX
+JZ 0x0048835c
+MOV EDX,dword ptr [0x00ecc420]
+PUSH EAX
+CALL dword ptr [EDX + 0x24]
+ADD ESP,0x4
+MOV dword ptr [ESI + 0x58],0x0
+MOV EAX,[0x00ecc420]
+PUSH ESI
+CALL dword ptr [EAX + 0x24]
+ADD ESP,0x4
+POP ESI
+RET

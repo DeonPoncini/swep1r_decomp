@@ -1,0 +1,3 @@
+; FUN_0042d450
+MOV byte ptr [0x004b9520],0x1
+RET

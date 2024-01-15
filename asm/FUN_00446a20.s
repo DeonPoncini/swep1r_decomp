@@ -1,0 +1,104 @@
+; FUN_00446a20
+SUB ESP,0x1c
+PUSH EBX
+PUSH EBP
+PUSH ESI
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0x30]
+MOVSX EBX,word ptr [EDI]
+MOVSX ESI,word ptr [EDI + 0x2]
+MOV EAX,dword ptr [EDI + 0x8]
+PUSH EBX
+MOV dword ptr [ESP + 0x18],EAX
+MOV dword ptr [ESP + 0x1c],EBX
+MOV dword ptr [ESP + 0x28],ESI
+CALL 0x00445c90
+ADD ESP,0x4
+MOV EBP,EAX
+MOV dword ptr [ESP + 0x30],EBP
+PUSH ESI
+CALL 0x00445c90
+MOV dword ptr [ESP + 0x24],EAX
+IMUL EAX,EBP
+MOV ESI,dword ptr [EDI + 0x10]
+ADD ESP,0x4
+SHL EAX,0x1
+MOV ECX,dword ptr [ESI + 0x4]
+PUSH EAX
+PUSH ECX
+CALL 0x00408e60
+MOVSX EBP,word ptr [EDI + 0xc]
+ADD ESP,0x8
+DEC EBP
+MOV dword ptr [ESP + 0x10],EAX
+MOV dword ptr [ESP + 0x1c],EAX
+JS 0x00446af6
+MOV EBX,dword ptr [ESP + 0x30]
+MOV EDX,dword ptr [EDI + 0x10]
+XOR EAX,EAX
+MOV AL,byte ptr [EDI + 0x5]
+MOVSX ECX,word ptr [EDX + EBP*0x8]
+LEA ESI,[EDX + EBP*0x8]
+CMP EAX,0x3
+MOVSX EDX,word ptr [ESI + 0x2]
+JA 0x00446abe
+JMP dword ptr [EAX*0x4 + 0x446b44]
+MOV EBX,0xf
+JMP 0x00446abe
+MOV EBX,0x7
+JMP 0x00446abe
+MOV EBX,0x3
+JMP 0x00446abe
+MOV EBX,0x1
+LEA EAX,[ESP + 0x10]
+ADD ECX,EBX
+PUSH EAX
+MOV EAX,dword ptr [ESP + 0x18]
+PUSH EAX
+MOV EAX,dword ptr [ESI + 0x4]
+PUSH EAX
+MOV EAX,dword ptr [ESP + 0x3c]
+PUSH EAX
+PUSH EDX
+MOV EDX,EBX
+NOT EDX
+AND ECX,EDX
+PUSH ECX
+CALL 0x00445e50
+ADD ESP,0x18
+XOR EAX,EAX
+DEC EBP
+MOV word ptr [ESI],AX
+MOV word ptr [ESI + 0x2],AX
+MOV dword ptr [ESI + 0x4],EAX
+JNS 0x00446a85
+MOV EBX,dword ptr [ESP + 0x18]
+MOV EAX,dword ptr [ESP + 0x1c]
+MOV EDX,dword ptr [ESI + 0x4]
+MOV ESI,dword ptr [ESP + 0x24]
+LEA ECX,[ESP + 0x28]
+PUSH EAX
+MOV EAX,dword ptr [ESP + 0x24]
+PUSH ECX
+MOV ECX,dword ptr [ESP + 0x38]
+PUSH EDX
+PUSH EAX
+PUSH ECX
+PUSH ESI
+PUSH EBX
+CALL 0x00445cd0
+MOV EDX,dword ptr [EDI + 0x10]
+ADD ESP,0x1c
+MOV word ptr [EDX],BX
+MOV EAX,dword ptr [EDI + 0x10]
+MOV word ptr [EAX + 0x2],SI
+MOV ECX,dword ptr [EDI + 0x10]
+MOV EDX,dword ptr [ESP + 0x28]
+MOV dword ptr [ECX + 0x4],EDX
+MOV word ptr [EDI + 0xc],0x1
+POP EDI
+POP ESI
+POP EBP
+POP EBX
+ADD ESP,0x1c
+RET

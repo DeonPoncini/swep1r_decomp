@@ -1,0 +1,4 @@
+; FUN_0044f5f0
+CALL 0x00426910
+MOV dword ptr [0x0050c744],0x0
+RET

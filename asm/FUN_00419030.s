@@ -1,0 +1,18 @@
+; FUN_00419030
+MOV ECX,dword ptr [ESP + 0x4]
+TEST ECX,ECX
+JZ 0x00419063
+MOV EAX,dword ptr [ESP + 0x8]
+TEST EAX,EAX
+JL 0x00419063
+CMP EAX,0x14
+JGE 0x00419063
+MOV EDX,EAX
+SHL EDX,0x3
+SUB EDX,EAX
+LEA EAX,[ECX + EDX*0x8]
+MOV ECX,dword ptr [ESP + 0xc]
+MOV EDX,dword ptr [ESP + 0x10]
+MOV dword ptr [EAX + 0x8c],ECX
+MOV dword ptr [EAX + 0x90],EDX
+RET

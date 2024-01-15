@@ -1,0 +1,8 @@
+; FUN_00433700
+MOV EAX,[0x0050c454]
+TEST EAX,EAX
+JZ 0x00433711
+MOV EAX,dword ptr [EAX + 0x8]
+MOV [0x004bfec8],EAX
+MOV dword ptr [0x004bfecc],0xffffffff
+RET

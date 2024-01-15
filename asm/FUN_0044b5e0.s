@@ -1,0 +1,14 @@
+; FUN_0044b5e0
+MOV dword ptr [0x004c2b7c],0x12d
+MOV dword ptr [0x004c2b80],0x12c
+MOV dword ptr [0x004c2b84],0x12f
+MOV dword ptr [0x004c2b8c],0x4c3b24
+MOV dword ptr [0x004c2b90],0x4c3b1c
+MOV dword ptr [0x004c2ba8],0x131
+MOV dword ptr [0x004c7a0c],0x3f851eb8
+MOV dword ptr [0x004c7a10],0x40051eb8
+MOV dword ptr [0x004c7a14],0xbf8a3d71
+MOV dword ptr [0x004c7a00],0xbda3d70a
+MOV dword ptr [0x004c7a04],0xbfd47ae1
+MOV dword ptr [0x004c7a08],0x4009999a
+RET

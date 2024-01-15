@@ -1,0 +1,11 @@
+; FUN_00480670
+PUSH EBP
+MOV EBP,ESP
+PUSH ECX
+FLD dword ptr [EBP + 0x8]
+FSQRT
+FSTP dword ptr [EBP + -0x4]
+FLD dword ptr [EBP + -0x4]
+MOV ESP,EBP
+POP EBP
+RET

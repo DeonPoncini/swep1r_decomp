@@ -1,0 +1,4 @@
+; FUN_00490a20
+MOV EAX,dword ptr [ESP + 0x4]
+MOV [0x00ecc438],EAX
+RET

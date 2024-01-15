@@ -1,0 +1,22 @@
+; FUN_0044eeb0
+SUB ESP,0x30
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x38]
+MOV EAX,dword ptr [ESP + 0x3c]
+PUSH EDI
+MOV ECX,0xc
+LEA EDI,[ESP + 0x8]
+MOVSD.REP ES:EDI,ESI
+FLD dword ptr [ESP + 0x10]
+FADD dword ptr [ESP + 0x44]
+FSTP dword ptr [ESP + 0x10]
+LEA ECX,[ESP + 0x8]
+PUSH EAX
+PUSH ECX
+MOV dword ptr [ESP + 0x14],0x0
+CALL 0x0044ed80
+ADD ESP,0x8
+POP EDI
+POP ESI
+ADD ESP,0x30
+RET

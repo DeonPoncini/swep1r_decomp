@@ -1,0 +1,53 @@
+; FUN_0049f440
+PUSH ECX
+MOV ECX,dword ptr [ESP + 0x8]
+PUSH ESI
+LEA EAX,[ECX + 0x1]
+CMP EAX,0x100
+JA 0x0049f465
+MOV EDX,dword ptr [0x004d1d90]
+XOR EAX,EAX
+MOV AX,word ptr [EDX + ECX*0x2]
+MOV ECX,dword ptr [ESP + 0x10]
+AND EAX,ECX
+POP ESI
+POP ECX
+RET
+MOV ESI,dword ptr [0x004d1d90]
+MOV EAX,ECX
+SAR EAX,0x8
+MOV EDX,EAX
+AND EDX,0xff
+TEST byte ptr [ESI + EDX*0x2 + 0x1],0x80
+JZ 0x0049f493
+MOV byte ptr [ESP + 0xc],AL
+MOV byte ptr [ESP + 0xd],CL
+MOV byte ptr [ESP + 0xe],0x0
+MOV EAX,0x2
+JMP 0x0049f4a1
+MOV byte ptr [ESP + 0xc],CL
+MOV byte ptr [ESP + 0xd],0x0
+MOV EAX,0x1
+PUSH 0x1
+PUSH 0x0
+LEA ECX,[ESP + 0xc]
+PUSH 0x0
+PUSH ECX
+LEA EDX,[ESP + 0x1c]
+PUSH EAX
+PUSH EDX
+PUSH 0x1
+CALL 0x004a3b00
+ADD ESP,0x1c
+TEST EAX,EAX
+JNZ 0x0049f4c3
+POP ESI
+POP ECX
+RET
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,dword ptr [ESP + 0x10]
+AND EAX,0xffff
+POP ESI
+AND EAX,ECX
+POP ECX
+RET

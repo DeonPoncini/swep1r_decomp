@@ -1,0 +1,16 @@
+; FUN_0048c020
+MOV EAX,dword ptr [ESP + 0x4]
+MOV EAX,dword ptr [EAX + 0x4]
+TEST EAX,EAX
+JZ 0x0048c043
+PUSH ESI
+MOV ECX,dword ptr [0x00ecc420]
+MOV ESI,dword ptr [EAX + 0x4]
+PUSH EAX
+CALL dword ptr [ECX + 0x24]
+ADD ESP,0x4
+MOV EAX,ESI
+TEST ESI,ESI
+JNZ 0x0048c02c
+POP ESI
+RET

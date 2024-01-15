@@ -1,0 +1,122 @@
+; FUN_0047c920
+SUB ESP,0x4c
+PUSH ESI
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0x58]
+MOV EAX,dword ptr [EDI + 0x3c]
+TEST EAX,EAX
+JZ 0x0047c941
+PUSH 0x3
+PUSH 0x10
+PUSH -0x4
+PUSH 0x2
+PUSH EAX
+CALL 0x00431a50
+ADD ESP,0x14
+MOV EAX,dword ptr [EDI + 0xc]
+PUSH 0x2
+OR AL,0x2
+MOV dword ptr [EDI + 0xc],EAX
+CALL 0x0047bf20
+ADD ESP,0x4
+TEST EAX,EAX
+JNZ 0x0047c961
+PUSH 0x6c
+CALL 0x0047c080
+ADD ESP,0x4
+MOV EAX,dword ptr [EDI + 0xc]
+OR AL,0x1
+MOV dword ptr [EDI + 0xc],EAX
+LEA EAX,[ESP + 0x14]
+PUSH EAX
+CALL 0x004313d0
+MOV ECX,dword ptr [EDI + 0x4c]
+ADD ESP,0x4
+LEA EDX,[ESP + 0x8]
+MOV EAX,dword ptr [ECX]
+PUSH EDX
+MOV dword ptr [ESP + 0x48],EAX
+MOV EAX,dword ptr [ESP + 0x60]
+MOV ESI,dword ptr [ECX + 0x4]
+FLD dword ptr [EAX + 0x50]
+FLD dword ptr [ESP + 0x48]
+MOV dword ptr [ESP + 0x4c],ESI
+FLD dword ptr [ECX + 0x8]
+FLD dword ptr [EAX + 0x54]
+FLD dword ptr [EAX + 0x58]
+FXCH ST3
+FSUB dword ptr [0x004ade74]
+FXCH ST4
+FSUB dword ptr [EAX + 0x16c]
+FXCH
+FSUB dword ptr [EAX + 0x170]
+FXCH ST3
+FSUB dword ptr [EAX + 0x174]
+FXCH ST2
+FSUB dword ptr [0x004ade70]
+FXCH ST4
+FSTP dword ptr [ESP + 0x48]
+FSTP dword ptr [ESP + 0xc]
+FXCH ST2
+FSTP dword ptr [ESP + 0x50]
+FSTP dword ptr [ESP + 0x10]
+FSTP dword ptr [ESP + 0x14]
+CALL 0x0042f780
+FCOMP dword ptr [0x004ade78]
+ADD ESP,0x4
+FNSTSW AX
+TEST AH,0x41
+JNZ 0x0047ca14
+MOV EDX,dword ptr [ESP + 0xc]
+MOV ECX,dword ptr [ESP + 0x8]
+FLD dword ptr [ESP + 0x8]
+FCHS
+FSTP dword ptr [ESP + 0x18]
+MOV EAX,EDX
+MOV dword ptr [ESP + 0x24],ECX
+MOV dword ptr [ESP + 0x28],EDX
+MOV dword ptr [ESP + 0x14],EAX
+MOV EDX,dword ptr [0x00e26fe8]
+LEA ECX,[ESP + 0x14]
+PUSH ECX
+PUSH EDX
+CALL 0x00431640
+MOV EAX,[0x00e26fe8]
+ADD ESP,0x8
+TEST EAX,EAX
+JZ 0x0047ca42
+PUSH 0x2
+PUSH 0x10
+PUSH 0x3
+PUSH 0x2
+PUSH EAX
+CALL 0x00431a50
+ADD ESP,0x14
+MOV EAX,dword ptr [EDI + 0x4c]
+PUSH EAX
+CALL 0x0047c0f0
+MOV ESI,EAX
+ADD ESP,0x4
+TEST ESI,ESI
+MOV dword ptr [EDI + 0x48],ESI
+JZ 0x0047ca7d
+PUSH 0x3
+PUSH 0x10
+PUSH -0x4
+PUSH 0x2
+PUSH ESI
+CALL 0x00431a50
+ADD ESP,0x14
+LEA ECX,[ESP + 0x14]
+PUSH ECX
+PUSH ESI
+CALL 0x00431640
+ADD ESP,0x8
+MOV dword ptr [ESI + 0x18],0xe26fd0
+PUSH 0x2
+CALL 0x0047bea0
+ADD ESP,0x4
+POP EDI
+POP ESI
+ADD ESP,0x4c
+RET

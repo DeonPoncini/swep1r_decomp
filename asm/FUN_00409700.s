@@ -1,0 +1,20 @@
+; FUN_00409700
+MOVSX EDX,word ptr [ESP + 0x4]
+MOV ECX,EDX
+XOR EAX,EAX
+SHL ECX,0x4
+ADD ECX,0x4b4688
+PUSH ESI
+SHL EDX,0x4
+MOV ESI,dword ptr [EAX + 0x4b4348]
+ADD ECX,0x4
+MOV dword ptr [EDX + EAX*0x1 + 0x4b4348],ESI
+MOV ESI,dword ptr [EAX + 0x4b4418]
+MOV dword ptr [EDX + EAX*0x1 + 0x4b4418],ESI
+MOV ESI,dword ptr [EAX + 0x4b4688]
+MOV dword ptr [ECX + -0x4],ESI
+ADD EAX,0x4
+CMP EAX,0xc
+JL 0x00409716
+POP ESI
+RET

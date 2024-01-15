@@ -1,0 +1,107 @@
+#include "prototype.h"
+
+
+void FUN_00483270(int param_1)
+
+{
+  int iVar1;
+  uint *puVar2;
+  
+  iVar1 = param_1 * 0x16c;
+  puVar2 = (uint *)(&DAT_00dfb040 + iVar1);
+  *puVar2 = *(uint *)(&DAT_00dfb040 + param_1 * 0x16c) & 0xfffffffe;
+  (&DAT_00dfb044)[param_1 * 0x5b] = 0xffffffff;
+  *(undefined4 *)(&DAT_00dfb048 + iVar1) = 0xffffffff;
+  *(undefined4 *)(&DAT_00dfb04c + iVar1) = 0xffffffff;
+  *(undefined4 *)(&DAT_00dfb050 + iVar1) = DAT_004c7ce0;
+  *(undefined4 *)(&DAT_00dfb054 + iVar1) = DAT_004c7ce4;
+  *(undefined4 *)(&DAT_00dfb058 + iVar1) = DAT_004c7ce8;
+  *(undefined4 *)(&DAT_00dfb05c + iVar1) = DAT_004c7cec;
+  *(undefined4 *)(&DAT_00dfb060 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb064 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb068 + iVar1) = 0x140;
+  *(undefined4 *)(&DAT_00dfb06c + iVar1) = 0xf0;
+  *(undefined4 *)(&DAT_00dfb070 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb074 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb078 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb07c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb080 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb084 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb088 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb08c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb090 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb094 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb098 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb09c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0a0 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0a4 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0a8 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0ac + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb0b0 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb0b4 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0b8 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0bc + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0c0 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0c4 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb0c8 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0cc + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0d0 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0d4 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0d8 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb0dc + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0e0 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0e4 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0e8 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0ec + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb0f0 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb0f4 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0f8 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb0fc + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb100 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb104 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb108 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb10c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb110 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb114 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb118 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb11c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb120 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb124 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb128 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb12c + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb130 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb134 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb138 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb13c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb140 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb144 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb148 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb14c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb150 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb154 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb158 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb15c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb160 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb164 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb168 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb16c + iVar1) = 0x3f800000;
+  *(undefined2 *)(&DAT_00dfb170 + iVar1) = 0x10;
+  *(undefined4 *)(&DAT_00dfb174 + iVar1) = 0x42b40000;
+  *(undefined4 *)(&DAT_00dfb178 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb17c + iVar1) = 0xbf800000;
+  *(undefined4 *)(&DAT_00dfb180 + iVar1) = 0x40a00000;
+  *(undefined4 *)(&DAT_00dfb184 + iVar1) = 0x459c4000;
+  *(undefined4 *)(&DAT_00dfb188 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb18c + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb190 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb194 + iVar1) = 0x3f800000;
+  *(undefined4 *)(&DAT_00dfb198 + iVar1) = 6;
+  *(undefined4 *)(&DAT_00dfb19c + iVar1) = 0xffffffff;
+  *(undefined4 *)(&DAT_00dfb1a0 + iVar1) = 0;
+  *(undefined4 *)(&DAT_00dfb1a4 + iVar1) = 0xffffffff;
+  *(undefined4 *)(&DAT_00dfb1a8 + iVar1) = 0;
+  FUN_004830e0(puVar2);
+  FUN_00482f10(puVar2);
+  return;
+}
+

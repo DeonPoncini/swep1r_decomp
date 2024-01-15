@@ -1,0 +1,13 @@
+; FUN_0048a2d0
+MOV EAX,dword ptr [ESP + 0x4]
+MOV EAX,dword ptr [EAX + 0x2c]
+SUB EAX,0x0
+JZ 0x0048a2eb
+DEC EAX
+JZ 0x0048a2e5
+MOV EAX,0x2
+RET
+MOV EAX,0x1
+RET
+XOR EAX,EAX
+RET

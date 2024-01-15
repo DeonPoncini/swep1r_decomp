@@ -1,0 +1,17 @@
+; FUN_004043d0
+MOV EAX,[0x004b2910]
+TEST EAX,EAX
+JNZ 0x004043dd
+OR EAX,0xffffffff
+RET
+MOV ECX,dword ptr [ESP + 0x4]
+MOV EAX,dword ptr [ECX + 0x4]
+TEST EAX,EAX
+JNZ 0x004043ec
+OR EAX,0xffffffff
+RET
+MOV EAX,0x51eb851f
+MUL dword ptr [ECX + 0x18]
+MOV EAX,EDX
+SHR EAX,0x5
+RET

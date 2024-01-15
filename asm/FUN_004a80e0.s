@@ -1,0 +1,26 @@
+; FUN_004a80e0
+MOV ECX,dword ptr [ESP + 0x4]
+MOV AL,byte ptr [ECX]
+TEST AL,AL
+JZ 0x004a80fd
+CMP AL,0x30
+JL 0x004a80fe
+CMP AL,0x39
+JG 0x004a80fe
+SUB AL,0x30
+MOV byte ptr [ECX],AL
+INC ECX
+MOV AL,byte ptr [ECX]
+TEST AL,AL
+JNZ 0x004a80ea
+RET
+CMP AL,0x3b
+JNZ 0x004a80f6
+MOV EAX,ECX
+MOV DL,byte ptr [EAX + 0x1]
+MOV byte ptr [EAX],DL
+MOV DL,byte ptr [EAX + 0x1]
+INC EAX
+TEST DL,DL
+JNZ 0x004a8104
+JMP 0x004a80f7

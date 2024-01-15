@@ -1,0 +1,3 @@
+; FUN_0048db80
+MOV EAX,[0x00deb0ec]
+RET

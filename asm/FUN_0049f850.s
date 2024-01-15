@@ -1,0 +1,37 @@
+; FUN_0049f850
+SUB ESP,0x20
+MOV EAX,dword ptr [ESP + 0x24]
+MOV EDX,dword ptr [ESP + 0x2c]
+MOV dword ptr [ESP + 0x8],EAX
+MOV dword ptr [ESP],EAX
+MOV EAX,dword ptr [ESP + 0x28]
+LEA ECX,[ESP + 0x30]
+PUSH ESI
+MOV dword ptr [ESP + 0x8],EAX
+PUSH ECX
+LEA EAX,[ESP + 0x8]
+PUSH EDX
+PUSH EAX
+MOV dword ptr [ESP + 0x1c],0x42
+CALL 0x004a1920
+MOV ESI,EAX
+MOV EAX,dword ptr [ESP + 0x14]
+ADD ESP,0xc
+DEC EAX
+MOV dword ptr [ESP + 0x8],EAX
+JS 0x0049f8a2
+MOV ECX,dword ptr [ESP + 0x4]
+MOV EAX,ESI
+MOV byte ptr [ECX],0x0
+POP ESI
+ADD ESP,0x20
+RET
+LEA EDX,[ESP + 0x4]
+PUSH EDX
+PUSH 0x0
+CALL 0x004a17f0
+ADD ESP,0x8
+MOV EAX,ESI
+POP ESI
+ADD ESP,0x20
+RET

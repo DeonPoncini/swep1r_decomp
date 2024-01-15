@@ -1,0 +1,95 @@
+; FUN_00484aa0
+SUB ESP,0x18
+MOV ECX,dword ptr [0x0050d548]
+PUSH EBX
+TEST ECX,ECX
+PUSH ESI
+MOV dword ptr [ESP + 0x8],0x0
+JNZ 0x00484abf
+XOR EAX,EAX
+POP ESI
+POP EBX
+ADD ESP,0x18
+RET
+MOV ESI,dword ptr [ESP + 0x24]
+MOV DL,byte ptr [ESP + 0x34]
+XOR EAX,EAX
+TEST ESI,ESI
+SETNZ AL
+TEST DL,0x4
+JZ 0x00484ad5
+OR AL,0x4
+MOV EDX,dword ptr [ECX]
+LEA EBX,[ESP + 0x8]
+PUSH EBX
+PUSH EAX
+PUSH ECX
+CALL dword ptr [EDX + 0x44]
+TEST EAX,EAX
+JL 0x00484b8b
+MOV EAX,[0x0050d550]
+TEST EAX,EAX
+JNZ 0x00484b09
+MOV EAX,dword ptr [ESP + 0x8]
+PUSH 0x20
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0xd0]
+TEST EAX,EAX
+JL 0x00484b8b
+MOV ECX,dword ptr [ESP + 0x2c]
+XOR EDX,EDX
+TEST ESI,ESI
+MOV ESI,dword ptr [ESP + 0x28]
+MOV word ptr [ESP + 0x1a],CX
+SETNZ DL
+INC EDX
+MOV dword ptr [ESP + 0x10],ESI
+MOV word ptr [ESP + 0xe],DX
+MOV EAX,dword ptr [ESP + 0xe]
+AND EAX,0xffff
+AND ECX,0xffff
+IMUL EAX,ECX
+CDQ
+AND EDX,0x7
+MOV word ptr [ESP + 0xc],0x1
+ADD EAX,EDX
+LEA EDX,[ESP + 0xc]
+SAR EAX,0x3
+MOV word ptr [ESP + 0x18],AX
+MOV EAX,dword ptr [ESP + 0x18]
+AND EAX,0xffff
+MOV word ptr [ESP + 0x1c],0x0
+IMUL EAX,ESI
+MOV dword ptr [ESP + 0x14],EAX
+MOV EAX,dword ptr [ESP + 0x8]
+PUSH EDX
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x1c]
+TEST EAX,EAX
+JL 0x00484b8b
+MOV EAX,dword ptr [ESP + 0x8]
+MOV EDX,dword ptr [ESP + 0x30]
+PUSH EDX
+PUSH EAX
+MOV ECX,dword ptr [EAX]
+CALL dword ptr [ECX + 0x14]
+TEST EAX,EAX
+JGE 0x00484ba1
+MOV EAX,dword ptr [ESP + 0x8]
+TEST EAX,EAX
+JZ 0x00484b99
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x8]
+XOR EAX,EAX
+POP ESI
+POP EBX
+ADD ESP,0x18
+RET
+MOV EAX,dword ptr [ESP + 0x8]
+POP ESI
+POP EBX
+ADD ESP,0x18
+RET

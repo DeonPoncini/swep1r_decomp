@@ -1,0 +1,47 @@
+; FUN_0048b340
+FLD dword ptr [ESP + 0x8]
+FMUL dword ptr [0x004aeea8]
+PUSH EBX
+PUSH ESI
+MOV ESI,dword ptr [0x0052e644]
+PUSH EDI
+MOV EDI,dword ptr [ESI]
+CALL 0x0049ed20
+FLD dword ptr [ESP + 0x10]
+FMUL dword ptr [0x004aeea8]
+MOV EBX,EAX
+CALL 0x0049ed20
+FLD dword ptr [ESP + 0x18]
+FMUL dword ptr [0x004aeea8]
+OR EAX,0xffffff00
+SHL EAX,0x8
+OR EBX,EAX
+SHL EBX,0x8
+CALL 0x0049ed20
+OR EBX,EAX
+PUSH EBX
+PUSH 0x22
+PUSH ESI
+CALL dword ptr [EDI + 0x58]
+TEST EAX,EAX
+JNZ 0x0048b3bc
+MOV EAX,[0x0052e644]
+MOV EDX,dword ptr [ESP + 0x1c]
+PUSH EDX
+PUSH 0x24
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x58]
+TEST EAX,EAX
+JNZ 0x0048b3bc
+MOV EAX,[0x0052e644]
+MOV EDX,dword ptr [ESP + 0x20]
+PUSH EDX
+PUSH 0x25
+MOV ECX,dword ptr [EAX]
+PUSH EAX
+CALL dword ptr [ECX + 0x58]
+POP EDI
+POP ESI
+POP EBX
+RET

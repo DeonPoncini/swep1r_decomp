@@ -1,0 +1,3 @@
+; FUN_0048a2f0
+MOV EAX,[0x0052e61c]
+RET

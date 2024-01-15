@@ -1,0 +1,11 @@
+; FUN_004a4aa0
+MOV EAX,dword ptr [ESP + 0x4]
+MOV ECX,EAX
+AND EAX,0x1f
+SAR ECX,0x5
+LEA EDX,[EAX + EAX*0x8]
+MOV EAX,dword ptr [ECX*0x4 + 0xecd500]
+LEA ECX,[EAX + EDX*0x4 + 0xc]
+PUSH ECX
+CALL dword ptr [0x004ac138]
+RET

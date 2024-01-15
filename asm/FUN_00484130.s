@@ -1,0 +1,3 @@
+; FUN_00484130
+MOV word ptr [0x0050cd10],0x0
+RET

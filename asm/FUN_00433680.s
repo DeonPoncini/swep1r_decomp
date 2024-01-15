@@ -1,0 +1,6 @@
+; FUN_00433680
+MOV EAX,dword ptr [ESP + 0x4]
+TEST EAX,EAX
+JZ 0x00433692
+MOV dword ptr [0x0050c0d0],0x0
+RET

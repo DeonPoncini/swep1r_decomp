@@ -1,0 +1,13 @@
+; FUN_004a6fc0
+MOV ECX,dword ptr [ESP + 0x4]
+XOR EAX,EAX
+CMP dword ptr [ECX],0x0
+JNZ 0x004a6fda
+INC EAX
+ADD ECX,0x4
+CMP EAX,0x3
+JL 0x004a6fc6
+MOV EAX,0x1
+RET
+XOR EAX,EAX
+RET

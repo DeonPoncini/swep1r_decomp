@@ -1,0 +1,4 @@
+; FUN_004a3dc0
+CALL 0x004a3cc0
+ADD EAX,0x8
+RET

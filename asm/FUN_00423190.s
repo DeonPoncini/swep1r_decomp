@@ -1,0 +1,7 @@
+; FUN_00423190
+MOV ECX,dword ptr [0x004eb418]
+MOV EDX,dword ptr [ESP + 0x4]
+XOR EAX,EAX
+CMP ECX,EDX
+SETZ AL
+RET

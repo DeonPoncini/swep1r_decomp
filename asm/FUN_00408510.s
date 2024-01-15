@@ -1,0 +1,71 @@
+; FUN_00408510
+SUB ESP,0x6c
+MOV ECX,0x1f
+XOR EAX,EAX
+PUSH EBX
+PUSH ESI
+PUSH EDI
+MOV EDI,0x4d6be4
+STOSD.REP ES:EDI
+MOV EAX,[0x0052e638]
+XOR ESI,ESI
+MOV EBX,0x8
+PUSH ESI
+MOV dword ptr [0x004d6be4],0x7c
+MOV dword ptr [0x004d6be8],0x7
+MOV dword ptr [0x004d6bf0],EBX
+MOV dword ptr [0x004d6bec],EBX
+MOV dword ptr [0x004d6c4c],0x800
+MOV ECX,dword ptr [EAX]
+PUSH 0x4d6be0
+PUSH 0x4d6be4
+PUSH EAX
+CALL dword ptr [ECX + 0x18]
+CMP EAX,ESI
+JZ 0x00408580
+MOV dword ptr [0x004b4758],0x1
+POP EDI
+POP ESI
+POP EBX
+ADD ESP,0x6c
+RET
+MOV EDX,dword ptr [0x00ec8cac]
+MOV dword ptr [ESP + 0x10],ESI
+MOV dword ptr [ESP + 0xc],EDX
+FILD qword ptr [ESP + 0xc]
+FMUL dword ptr [0x004ac348]
+CALL 0x0049ed20
+MOV [0x004d6bdc],EAX
+MOV [0x004d6b74],EAX
+MOV EAX,[0x00ec8cb0]
+LEA EDI,[ESP + 0x14]
+MOV ECX,EAX
+LEA EDX,[ESP + 0x14]
+SHR EAX,0x3
+SUB ECX,EAX
+XOR EAX,EAX
+MOV dword ptr [0x004d6b70],ECX
+MOV ECX,0x19
+STOSD.REP ES:EDI
+MOV EAX,[0x004d6be0]
+PUSH EDX
+PUSH 0x1000400
+PUSH ESI
+MOV dword ptr [0x004d6bd8],0xa
+MOV dword ptr [ESP + 0x20],0x64
+MOV dword ptr [ESP + 0x70],0xff
+MOV ECX,dword ptr [EAX]
+PUSH ESI
+PUSH ESI
+PUSH EAX
+CALL dword ptr [ECX + 0x14]
+MOV dword ptr [0x00ec86d4],ESI
+MOV dword ptr [0x00ec86d0],ESI
+MOV dword ptr [0x004b4758],ESI
+POP EDI
+MOV dword ptr [0x00ec86d8],EBX
+MOV dword ptr [0x00ec86dc],EBX
+POP ESI
+POP EBX
+ADD ESP,0x6c
+RET

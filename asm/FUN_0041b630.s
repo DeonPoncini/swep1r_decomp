@@ -1,0 +1,28 @@
+; FUN_0041b630
+MOV EAX,dword ptr [ESP + 0x4]
+TEST byte ptr [EAX + 0x20],0x20
+JZ 0x0041b660
+MOV CL,byte ptr [EAX + 0x4d3]
+MOV DL,byte ptr [EAX + 0x4d2]
+PUSH ECX
+MOV CL,byte ptr [EAX + 0x4d1]
+PUSH EDX
+MOV DL,byte ptr [EAX + 0x4d0]
+PUSH ECX
+PUSH EDX
+PUSH EAX
+CALL 0x00414be0
+ADD ESP,0x14
+RET
+MOV CL,byte ptr [EAX + 0x4c7]
+MOV DL,byte ptr [EAX + 0x4c6]
+PUSH ECX
+MOV CL,byte ptr [EAX + 0x4c5]
+PUSH EDX
+MOV DL,byte ptr [EAX + 0x4c4]
+PUSH ECX
+PUSH EDX
+PUSH EAX
+CALL 0x00414be0
+ADD ESP,0x14
+RET

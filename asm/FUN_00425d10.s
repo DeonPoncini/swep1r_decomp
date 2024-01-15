@@ -1,0 +1,62 @@
+; FUN_00425d10
+SUB ESP,0x18
+LEA EDX,[ESP]
+PUSH ESI
+MOV ESI,dword ptr [ESP + 0x20]
+MOV EAX,dword ptr [ESI + 0x118]
+MOV ECX,dword ptr [ESI + 0x114]
+PUSH EAX
+PUSH ECX
+PUSH ESI
+PUSH EDX
+CALL 0x00425a60
+MOV EAX,dword ptr [ESI + 0x100]
+ADD ESP,0x10
+TEST EAX,0x20000000
+JZ 0x00425db1
+MOV EAX,dword ptr [ESI + 0xe8]
+FILD dword ptr [ESI + 0xec]
+PUSH EAX
+PUSH ECX
+LEA ECX,[ESP + 0x18]
+FSTP dword ptr [ESP]
+PUSH ESI
+PUSH ECX
+CALL 0x00425a60
+FLD dword ptr [ESI + 0xe4]
+FMUL dword ptr [ESP + 0x14]
+ADD ESP,0x10
+LEA EDX,[ESP + 0x10]
+LEA EAX,[ESP + 0x4]
+PUSH EDX
+PUSH ECX
+FSTP dword ptr [ESP + 0xc]
+FLD dword ptr [ESI + 0xe4]
+FMUL dword ptr [ESP + 0x10]
+LEA ECX,[ESP + 0xc]
+FSTP dword ptr [ESP + 0x10]
+FLD dword ptr [ESI + 0xe4]
+FMUL dword ptr [ESP + 0x14]
+FSTP dword ptr [ESP + 0x14]
+FLD dword ptr [0x004ac450]
+FSUB dword ptr [ESI + 0xe4]
+FSTP dword ptr [ESP]
+PUSH EAX
+PUSH ECX
+CALL 0x0042fa80
+ADD ESP,0x10
+MOV ESI,dword ptr [ESI + 0x124]
+TEST ESI,ESI
+JZ 0x00425dd3
+MOV EDX,dword ptr [ESP + 0xc]
+MOV EAX,dword ptr [ESP + 0x8]
+MOV ECX,dword ptr [ESP + 0x4]
+PUSH EDX
+PUSH EAX
+PUSH ECX
+PUSH ESI
+CALL 0x00431620
+ADD ESP,0x10
+POP ESI
+ADD ESP,0x18
+RET

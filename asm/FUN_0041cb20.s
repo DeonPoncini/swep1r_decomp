@@ -1,0 +1,27 @@
+; FUN_0041cb20
+MOV EAX,dword ptr [ESP + 0x8]
+MOV ECX,dword ptr [ESP + 0x4]
+MOV [0x00ec7bc8],EAX
+PUSH 0xf
+LEA EDX,[EAX + EAX*0x4]
+MOV dword ptr [0x00ec7bcc],ECX
+LEA EAX,[EAX + EDX*0x2]
+SHL EAX,0x4
+ADD EAX,0xe9f3c4
+PUSH EAX
+PUSH 0xec7bd0
+CALL 0x0049ef50
+MOV ECX,dword ptr [ESP + 0x18]
+ADD ESP,0xc
+XOR EAX,EAX
+MOV word ptr [0x00ec7bc4],0x21
+PUSH 0x1
+PUSH 0x1
+PUSH ECX
+PUSH 0xec7ba0
+MOV [0x00ec7bee],AX
+MOV [0x00ec7ba4],EAX
+MOV dword ptr [0x00ec7bc0],0x28
+CALL 0x0041b760
+ADD ESP,0x10
+RET

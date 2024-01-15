@@ -1,0 +1,7 @@
+; FUN_0045bb60
+OR EAX,0xffffffff
+MOV [0x004c3fd8],EAX
+MOV [0x004c3fdc],EAX
+MOV [0x004c3fe0],EAX
+MOV [0x004c3fe4],EAX
+RET

@@ -1,0 +1,23 @@
+; FUN_004872e0
+SUB ESP,0x10
+MOV EAX,dword ptr [ESP + 0x14]
+XOR ECX,ECX
+PUSH ECX
+PUSH ECX
+PUSH ECX
+MOV dword ptr [ESP + 0x10],ECX
+MOV dword ptr [ESP + 0x18],ECX
+PUSH ECX
+LEA ECX,[ESP + 0x10]
+MOV dword ptr [ESP + 0x18],EAX
+MOV EAX,[0x00510254]
+PUSH ECX
+LEA ECX,[ESP + 0x28]
+MOV dword ptr [ESP + 0x14],0x10
+MOV EDX,dword ptr [EAX]
+PUSH ECX
+PUSH EAX
+CALL dword ptr [EDX + 0x18]
+MOV EAX,dword ptr [ESP + 0x14]
+ADD ESP,0x10
+RET

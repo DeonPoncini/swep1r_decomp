@@ -1,0 +1,22 @@
+; FUN_004277f0
+MOV EAX,dword ptr [ESP + 0x4]
+CMP EAX,0x3
+JA 0x00427864
+JMP dword ptr [EAX*0x4 + 0x427868]
+MOV dword ptr [0x0050b6e0],0x0
+MOV dword ptr [0x004b8744],0xffffffff
+RET
+PUSH 0x54657374
+MOV dword ptr [0x0050b6e0],0x1
+CALL 0x00450b00
+ADD ESP,0x4
+TEST EAX,EAX
+JG 0x00427864
+MOV dword ptr [0x004b8744],0x8f
+RET
+MOV dword ptr [0x0050b6e0],0x2
+MOV dword ptr [0x0050b6e8],0xbe4ccccd
+RET
+MOV dword ptr [0x0050b6e0],0x3
+MOV dword ptr [0x0050b6e8],0xc0000000
+RET

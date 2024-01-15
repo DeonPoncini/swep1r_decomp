@@ -1,0 +1,128 @@
+; FUN_00408640
+MOV EAX,[0x004b4758]
+SUB ESP,0x10
+TEST EAX,EAX
+JNZ 0x004087f7
+MOV EAX,[0x004d6b74]
+MOV EDX,dword ptr [0x004d6bdc]
+MOV ECX,dword ptr [0x004d6b70]
+ADD EDX,EAX
+PUSH ESI
+MOV dword ptr [ESP + 0xc],EDX
+MOV EDX,dword ptr [0x004d6be0]
+PUSH 0x0
+PUSH 0x1000000
+MOV dword ptr [ESP + 0xc],EAX
+MOV EAX,[0x00ec8d00]
+MOV dword ptr [ESP + 0x10],ECX
+PUSH 0xec86d0
+INC ECX
+PUSH EDX
+LEA EDX,[ESP + 0x14]
+MOV dword ptr [ESP + 0x20],ECX
+MOV ECX,dword ptr [EAX]
+PUSH EDX
+PUSH EAX
+CALL dword ptr [ECX + 0x14]
+MOV EAX,[0x004d6b70]
+MOV EDX,dword ptr [0x004d6bd8]
+MOV ECX,dword ptr [0x004d6b74]
+ADD EAX,EDX
+PUSH 0x0
+PUSH 0x1000000
+LEA EDX,[EAX + -0x1]
+MOV dword ptr [ESP + 0x18],EAX
+MOV dword ptr [ESP + 0x10],EDX
+MOV EDX,dword ptr [0x004d6bdc]
+MOV EAX,[0x00ec8d00]
+ADD EDX,ECX
+MOV dword ptr [ESP + 0x14],EDX
+MOV EDX,dword ptr [0x004d6be0]
+PUSH 0xec86d0
+PUSH EDX
+LEA EDX,[ESP + 0x14]
+MOV dword ptr [ESP + 0x14],ECX
+MOV ECX,dword ptr [EAX]
+PUSH EDX
+PUSH EAX
+CALL dword ptr [ECX + 0x14]
+MOV EAX,[0x004d6b74]
+MOV ECX,dword ptr [0x004d6b70]
+MOV EDX,dword ptr [0x004d6be0]
+MOV dword ptr [ESP + 0x4],EAX
+INC EAX
+PUSH 0x0
+MOV dword ptr [ESP + 0x10],EAX
+MOV EAX,[0x004d6bd8]
+ADD EAX,ECX
+PUSH 0x1000000
+MOV dword ptr [ESP + 0x18],EAX
+MOV EAX,[0x00ec8d00]
+PUSH 0xec86d0
+PUSH EDX
+LEA EDX,[ESP + 0x14]
+MOV dword ptr [ESP + 0x18],ECX
+MOV ECX,dword ptr [EAX]
+PUSH EDX
+PUSH EAX
+CALL dword ptr [ECX + 0x14]
+MOV EAX,[0x004d6b74]
+MOV ECX,dword ptr [0x004d6bdc]
+ADD EAX,ECX
+MOV ECX,dword ptr [0x004d6b70]
+MOV dword ptr [ESP + 0xc],EAX
+PUSH 0x0
+LEA EDX,[EAX + -0x1]
+MOV EAX,[0x004d6bd8]
+ADD EAX,ECX
+MOV dword ptr [ESP + 0x8],EDX
+MOV EDX,dword ptr [0x004d6be0]
+MOV dword ptr [ESP + 0x14],EAX
+MOV EAX,[0x00ec8d00]
+PUSH 0x1000000
+MOV dword ptr [ESP + 0x10],ECX
+PUSH 0xec86d0
+MOV ECX,dword ptr [EAX]
+PUSH EDX
+LEA EDX,[ESP + 0x14]
+PUSH EDX
+PUSH EAX
+CALL dword ptr [ECX + 0x14]
+MOV EAX,dword ptr [ESP + 0x18]
+CMP EAX,0x64
+JLE 0x0040878d
+MOV EAX,0x64
+TEST EAX,EAX
+JGE 0x00408793
+XOR EAX,EAX
+IMUL EAX,dword ptr [0x004d6bdc]
+MOV EDX,EAX
+MOV EAX,0x51eb851f
+IMUL EDX
+MOV ECX,dword ptr [0x004d6b74]
+MOV ESI,dword ptr [0x004d6b70]
+SAR EDX,0x5
+MOV EAX,EDX
+MOV dword ptr [ESP + 0x4],ECX
+SHR EAX,0x1f
+ADD EDX,EAX
+MOV EAX,[0x00ec8d00]
+ADD EDX,ECX
+MOV ECX,dword ptr [0x004d6bd8]
+ADD ECX,ESI
+PUSH 0x0
+MOV dword ptr [ESP + 0x14],ECX
+MOV ECX,dword ptr [0x004d6be0]
+PUSH 0x1000000
+PUSH 0xec86d0
+PUSH ECX
+LEA ECX,[ESP + 0x14]
+MOV dword ptr [ESP + 0x18],ESI
+MOV dword ptr [ESP + 0x1c],EDX
+MOV EDX,dword ptr [EAX]
+PUSH ECX
+PUSH EAX
+CALL dword ptr [EDX + 0x14]
+POP ESI
+ADD ESP,0x10
+RET

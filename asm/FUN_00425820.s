@@ -1,0 +1,70 @@
+; FUN_00425820
+SUB ESP,0x30
+PUSH EBX
+MOV EBX,dword ptr [ESP + 0x38]
+PUSH EBP
+MOV EBP,dword ptr [0x004ac1f0]
+PUSH ESI
+LEA EAX,[ESP + 0xc]
+PUSH EDI
+PUSH EAX
+PUSH EBX
+CALL EBP
+LEA ECX,[ESP + 0x30]
+PUSH ECX
+PUSH EBX
+CALL dword ptr [0x004ac1ec]
+MOV ESI,dword ptr [ESP + 0x18]
+MOV EDX,dword ptr [ESP + 0x10]
+MOV EDI,dword ptr [ESP + 0x1c]
+MOV ECX,dword ptr [ESP + 0x14]
+SUB ESI,EDX
+LEA EDX,[ESP + 0x20]
+PUSH EDX
+SUB EDI,ECX
+CALL dword ptr [0x004ac220]
+PUSH EAX
+CALL EBP
+MOV EAX,dword ptr [ESP + 0x2c]
+MOV ECX,dword ptr [ESP + 0x1c]
+MOV EBP,dword ptr [ESP + 0x14]
+MOV EDX,dword ptr [ESP + 0x24]
+SUB EAX,ECX
+PUSH 0x1
+SUB EAX,EBP
+MOV EBP,dword ptr [ESP + 0x14]
+SUB EAX,EDX
+CDQ
+SUB EAX,EDX
+MOV EDX,dword ptr [ESP + 0x1c]
+MOV ECX,EAX
+MOV EAX,dword ptr [ESP + 0x2c]
+SUB EAX,EDX
+MOV EDX,dword ptr [ESP + 0x24]
+SUB EAX,EBP
+SUB EAX,EDX
+CDQ
+SUB EAX,EDX
+SAR ECX,0x1
+SAR EAX,0x1
+ADD EDI,ECX
+MOV dword ptr [ESP + 0x18],ECX
+LEA EDX,[ESI + EAX*0x1]
+MOV dword ptr [ESP + 0x20],EDI
+MOV dword ptr [ESP + 0x1c],EDX
+SUB EDI,ECX
+SUB EDX,EAX
+PUSH EDI
+PUSH EDX
+PUSH ECX
+PUSH EAX
+PUSH EBX
+MOV dword ptr [ESP + 0x28],EAX
+CALL dword ptr [0x004ac21c]
+POP EDI
+POP ESI
+POP EBP
+MOV EAX,0x1
+POP EBX
+ADD ESP,0x30
+RET

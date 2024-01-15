@@ -1,0 +1,31 @@
+; FUN_0048c380
+PUSH ESI
+PUSH EDI
+MOV EDI,dword ptr [ESP + 0x14]
+XOR EAX,EAX
+TEST EDI,EDI
+JLE 0x0048c3b7
+MOV ECX,dword ptr [ESP + 0x10]
+MOV ESI,dword ptr [ESP + 0xc]
+MOV DX,word ptr [ECX]
+TEST DX,DX
+JZ 0x0048c3bb
+CMP DX,0xff
+JBE 0x0048c3a8
+MOV byte ptr [ESI],0x3f
+JMP 0x0048c3ac
+MOV DL,byte ptr [ECX]
+MOV byte ptr [ESI],DL
+ADD ECX,0x2
+INC ESI
+INC EAX
+CMP EAX,EDI
+JL 0x0048c394
+JMP 0x0048c3bb
+MOV ESI,dword ptr [ESP + 0xc]
+CMP EAX,EDI
+JGE 0x0048c3c2
+MOV byte ptr [ESI],0x0
+POP EDI
+POP ESI
+RET

@@ -1,0 +1,46 @@
+; FUN_0044b4a0
+MOV EAX,dword ptr [ESP + 0x8]
+SUB ESP,0x40
+TEST EAX,EAX
+JNZ 0x0044b4b5
+FLD dword ptr [0x004acc38]
+ADD ESP,0x40
+RET
+CMP dword ptr [EAX],0x0
+JNZ 0x0044b4c4
+FLD dword ptr [0x004acc38]
+ADD ESP,0x40
+RET
+MOV EAX,dword ptr [ESP + 0x44]
+TEST EAX,EAX
+JNZ 0x0044b4d6
+FLD dword ptr [0x004acc38]
+ADD ESP,0x40
+RET
+MOV ECX,dword ptr [EAX + 0x4]
+TEST ECX,ECX
+JNZ 0x0044b4e7
+FLD dword ptr [0x004acc38]
+ADD ESP,0x40
+RET
+MOV EAX,dword ptr [EAX + 0x8]
+TEST EAX,EAX
+JNZ 0x0044b4f8
+FLD dword ptr [0x004acc38]
+ADD ESP,0x40
+RET
+LEA ECX,[ESP]
+PUSH ECX
+PUSH EAX
+CALL 0x004316a0
+MOV EDX,dword ptr [ESP + 0x1c]
+ADD ESP,0x8
+FLD dword ptr [ESP + 0x10]
+PUSH EDX
+PUSH ECX
+FCHS
+FSTP dword ptr [ESP]
+CALL 0x0042f560
+ADD ESP,0x8
+ADD ESP,0x40
+RET
